@@ -8,27 +8,27 @@ import {
 } from "@repo/utilities";
 import { FC, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
-import AddNewListing from "./addNewListing";
+import { useNavigate } from "react-router";
+import AddNewCode from "./addNewCode";
 import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
-import { useNavigate } from "react-router";
 
-export const Listing: FC = (): JSX.Element => {
+export const Codes: FC = (): JSX.Element => {
   // Hooks
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   // Variables
-  const translationKey = "PAGES.LISTING";
+  const translationKey = "PAGES.CODES";
   const showData = TableColumn.map((el) => el.id);
 
   // Local State
-  const [enableAddListingModal, setEnableAddListingModal] = useState(false);
+  const [enableAddCodeModal, setEnableAddCodeModal] = useState(false);
 
   // Functions
-  const handleEnableAddListingModal = () => {
-    setEnableAddListingModal(!enableAddListingModal);
+  const handleEnableAddCodeModal = () => {
+    setEnableAddCodeModal(!enableAddCodeModal);
   };
 
   const handleRowClick = () => {
@@ -48,7 +48,7 @@ export const Listing: FC = (): JSX.Element => {
         heading={t(`${translationKey}.heading`)}
         isButton
         buttonTitle={t(`${translationKey}.new_cta`)}
-        onButtonClick={handleEnableAddListingModal}
+        onButtonClick={handleEnableAddCodeModal}
         rightChildren={
           <WalkthroughVideoButton text={t(`${translationKey}.cta`)} />
         }
@@ -66,10 +66,10 @@ export const Listing: FC = (): JSX.Element => {
       />
 
       {/* Modal */}
-      {enableAddListingModal && (
-        <AddNewListing
-          isOpen={enableAddListingModal}
-          onClose={handleEnableAddListingModal}
+      {enableAddCodeModal && (
+        <AddNewCode
+          isOpen={enableAddCodeModal}
+          onClose={handleEnableAddCodeModal}
         />
       )}
     </div>

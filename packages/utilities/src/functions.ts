@@ -20,6 +20,10 @@ export const getStatusColor = (status: string) => {
       return "--black";
     case CONSTANTS.ROLE.ADMIN:
       return "--information";
+    case CONSTANTS.STATUS.ACTIVE:
+      return "--active";
+    case CONSTANTS.STATUS.INACTIVE:
+      return "--inactive";
   }
 };
 

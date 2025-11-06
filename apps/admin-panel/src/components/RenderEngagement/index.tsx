@@ -1,19 +1,19 @@
 import { ASSET_PATHS } from "@repo/assets";
 import { Image, Text } from "@repo/ui";
+import clsx from "clsx";
 import { CSSProperties } from "react";
 import styles from "./style.module.css";
-import clsx from "clsx";
 
 const RenderEngagement = ({
   likes,
-  comments,
+  // comments,
   shares,
   engagementRowStyle,
   engagementRowClassName,
   className,
 }: {
   likes: number;
-  comments: number;
+  // comments: number;
   shares: number;
   engagementRowStyle?: CSSProperties;
   engagementRowClassName?: string;
@@ -24,10 +24,10 @@ const RenderEngagement = ({
       count: likes,
       icon: ASSET_PATHS.SVGS.LIKE,
     },
-    {
-      count: comments,
-      icon: ASSET_PATHS.SVGS.COMMENT,
-    },
+    // {
+    //   count: comments,
+    //   icon: ASSET_PATHS.SVGS.COMMENT,
+    // },
     {
       count: shares,
       icon: ASSET_PATHS.SVGS.SHARE,

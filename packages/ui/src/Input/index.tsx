@@ -12,6 +12,7 @@ export const Input: FC<{
   helperText?: string;
   errorText?: string;
   showCounter?: boolean;
+  helperTextIcon?: string;
 }> = ({
   containerProps,
   label,
@@ -19,6 +20,7 @@ export const Input: FC<{
   helperText,
   errorText,
   showCounter,
+  helperTextIcon,
 }): JSX.Element => {
   return (
     <div
@@ -72,6 +74,7 @@ export const Input: FC<{
       ) : null}
       {helperText ? (
         <HelperText
+          icon={helperTextIcon}
           text={helperText}
           containerProps={{ className: "helperText" }}
         />

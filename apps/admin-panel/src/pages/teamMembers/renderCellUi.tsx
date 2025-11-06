@@ -1,9 +1,9 @@
+import RoleChip from "@/components/RoleChip";
 import TableAction from "@/components/TableAction";
 import { Text } from "@repo/ui";
 import { FC } from "react";
 import styles from "./style.module.css";
 import { TableColumnId } from "./tableColumn";
-import StatusChip from "@/components/StatusChip";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -43,12 +43,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   else if (el === "role") {
     return (
       <td style={{ whiteSpace: "nowrap" }}>
-        {
-          <StatusChip
-            status={row?.role}
-            style={{ textTransform: "uppercase" }}
-          />
-        }
+        {<RoleChip status={row?.role} style={{ textTransform: "uppercase" }} />}
       </td>
     );
   }

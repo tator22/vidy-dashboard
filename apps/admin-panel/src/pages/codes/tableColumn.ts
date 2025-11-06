@@ -19,6 +19,10 @@ export const TableColumn = [
     id: "engagement",
     label: "engagement",
   },
+  {
+    id: "status",
+    label: "status",
+  },
   { id: "action", label: "action" },
 ] as const;
 

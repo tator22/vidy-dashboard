@@ -1,4 +1,5 @@
 import { ASSET_PATHS } from "@repo/assets";
+import { STATUS_CODES } from "http";
 
 export const CONSTANTS = {
   APP_NAME: "Listing Hype",
@@ -24,6 +25,10 @@ export const CONSTANTS = {
   ROLE: {
     ADMIN: "admin",
     EDITOR: "editor",
+  },
+  STATUS: {
+    ACTIVE: "active",
+    INACTIVE: "inactive",
   },
   SIDEBAR_MODE: "sidebarMode",
   QR_BODY_SHAPES: [

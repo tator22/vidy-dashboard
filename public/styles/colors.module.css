@@ -5,6 +5,8 @@
   --secondary: 242, 242, 242;
   --secondary-hover: 225, 225, 225;
   --header-button-background-color: 0, 122, 255;
+  --active: 0, 184, 46;
+  --inactive: 255, 59, 48;
 
   /* Black & White */
   --black: 0, 0, 0;

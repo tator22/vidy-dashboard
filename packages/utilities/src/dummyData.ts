@@ -9,6 +9,7 @@ export const LISTING_DUMMY_DATA = [
     likes: 37,
     comments: 26,
     shares: 12,
+    status: "active",
   },
   {
     title: "Fermentum Venenatis Tortor",
@@ -19,6 +20,7 @@ export const LISTING_DUMMY_DATA = [
     likes: 37,
     comments: 26,
     shares: 12,
+    status: "active",
   },
   {
     title: "Malesuada Ipsum",
@@ -29,6 +31,7 @@ export const LISTING_DUMMY_DATA = [
     likes: 37,
     comments: 26,
     shares: 12,
+    status: "active",
   },
   {
     title: "Venenatis Mollis",
@@ -40,6 +43,7 @@ export const LISTING_DUMMY_DATA = [
     likes: 37,
     comments: 26,
     shares: 12,
+    status: "inactive",
   },
   {
     title: "Magna Malesuada",
@@ -50,6 +54,7 @@ export const LISTING_DUMMY_DATA = [
     likes: 37,
     comments: 26,
     shares: 12,
+    status: "inactive",
   },
   {
     title: "Parturient Lorem",
@@ -61,6 +66,7 @@ export const LISTING_DUMMY_DATA = [
     likes: 37,
     comments: 26,
     shares: 12,
+    status: "inactive",
   },
 ];
 

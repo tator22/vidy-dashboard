@@ -132,6 +132,7 @@ import WEBSITE from "./svgs/socialIcons/website.svg";
 import PHONE from "./svgs/socialIcons/phone.svg";
 import EMAIL from "./svgs/socialIcons/email.svg";
 import MESSAGE from "./svgs/socialIcons/message.svg";
+import WARNING from "./svgs/warning.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -273,5 +274,6 @@ export const ASSET_PATHS = {
     PHONE,
     EMAIL,
     MESSAGE,
+    WARNING,
   },
 };

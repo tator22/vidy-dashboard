@@ -1,8 +1,9 @@
-import { CheckBox, Input, Label, Modal, Textarea } from "@repo/ui";
+import { Input, Label, Modal, Textarea } from "@repo/ui";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
+import { ASSET_PATHS } from "@repo/assets";
 
-const AddNewListing = ({
+const AddNewCode = ({
   isOpen,
   onClose,
 }: {
@@ -13,13 +14,13 @@ const AddNewListing = ({
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.LISTING";
+  const translationKey = "PAGES.CODES";
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={t(`${translationKey}.new_listing`)}
+      title={t(`${translationKey}.new_code`)}
       primaryButtonText={t(`${translationKey}.modal_cta`)}
       primaryButtonProps={{ className: styles.primaryButton, onClick: onClose }}
     >
@@ -28,16 +29,16 @@ const AddNewListing = ({
           label={t(`${translationKey}.name`)}
           inputProps={{
             required: true,
-            placeholder: t(`${translationKey}.enter_listing_name`),
+            placeholder: t(`${translationKey}.enter_name`),
           }}
         />
         <Textarea
-          label={t(`${translationKey}.listing_details`)}
-          placeholder={t(`${translationKey}.enter_listing_details`)}
+          label={t(`${translationKey}.detail`)}
+          placeholder={t(`${translationKey}.enter_detail`)}
         />
 
         <div className={styles?.listingUrl}>
-          <Label text={t(`${translationKey}.listing_url`)} />
+          <Label text={t(`${translationKey}.link`)} />
           <div className={styles?.input}>
             <Input
               inputProps={{
@@ -55,8 +56,9 @@ const AddNewListing = ({
             <Input
               inputProps={{
                 required: true,
-                placeholder: t(`${translationKey}.listing_url`),
               }}
+              helperText={t(`${translationKey}.link_warning`)}
+              helperTextIcon={ASSET_PATHS.SVGS.WARNING}
             />
           </div>
         </div>
@@ -85,4 +87,4 @@ const AddNewListing = ({
   );
 };
 
-export default AddNewListing;
+export default AddNewCode;
