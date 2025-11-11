@@ -155,7 +155,8 @@
       "payment": "Payment",
       "choose_another_payment_method": "Choose another payment method",
       "credit_card": "Credit Card",
-      "pay": "Pay"
+      "pay": "Pay",
+      "includes": "Includes: "
     }
   },
   "COMPONENTS": {

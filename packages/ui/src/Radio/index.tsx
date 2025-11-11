@@ -1,5 +1,11 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { FC, InputHTMLAttributes, LabelHTMLAttributes, useId } from "react";
+import {
+  CSSProperties,
+  FC,
+  InputHTMLAttributes,
+  LabelHTMLAttributes,
+  useId,
+} from "react";
 import { Label } from "../Label";
 import "./style.css";
 
@@ -7,7 +13,8 @@ export const Radio: FC<{
   containerProps?: LabelHTMLAttributes<HTMLLabelElement>;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   label?: string;
-}> = ({ containerProps, inputProps, label }): JSX.Element => {
+  iconStyle?: CSSProperties;
+}> = ({ containerProps, inputProps, label, iconStyle }): JSX.Element => {
   // Hooks
   const id = useId();
   return (
@@ -18,6 +25,9 @@ export const Radio: FC<{
       aria-disabled={inputProps?.disabled}
     >
       <img
+        style={{
+          ...iconStyle,
+        }}
         className="icon"
         src={
           inputProps?.checked

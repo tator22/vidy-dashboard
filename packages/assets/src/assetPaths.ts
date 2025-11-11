@@ -134,6 +134,7 @@ import EMAIL from "./svgs/socialIcons/email.svg";
 import MESSAGE from "./svgs/socialIcons/message.svg";
 import WARNING from "./svgs/warning.svg";
 import UPLOAD_QR_LOGO from "./svgs/upload_qr.svg";
+import CHECKED_ICON from "./svgs/check.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -277,5 +278,6 @@ export const ASSET_PATHS = {
     MESSAGE,
     WARNING,
     UPLOAD_QR_LOGO,
+    CHECKED_ICON,
   },
 };

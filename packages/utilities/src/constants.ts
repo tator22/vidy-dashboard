@@ -1,7 +1,7 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { STATUS_CODES } from "http";
 
 export const CONSTANTS = {
+  CURRENCY_SYMBOL: "$",
   APP_NAME: "Listing Hype",
   PRODUCTS: {
     ADMIN_PANEL: "Admin Panel",
