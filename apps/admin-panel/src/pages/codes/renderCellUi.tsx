@@ -4,6 +4,7 @@ import { Text } from "@repo/ui";
 import { FC } from "react";
 import styles from "./style.module.css";
 import { TableColumnId } from "./tableColumn";
+import StatusChip from "@/components/StatusChip";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -49,10 +50,19 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     return (
       <td>
         <RenderEngagement
-          comments={row?.comments}
+          // comments={row?.comments}
           likes={row?.likes}
           shares={row?.shares}
         />
+      </td>
+    );
+  }
+
+  // Status
+  else if (el === "status") {
+    return (
+      <td style={{ whiteSpace: "nowrap" }}>
+        <StatusChip status={row?.status} />
       </td>
     );
   }

@@ -1,48 +1,74 @@
-.Input {
+.InputMainContainer {
   width: 100%;
 }
 
-.Input > .labelContainer {
+.InputMainContainer > .labelContainer {
   margin-bottom: 0.8rem;
 }
 
-.Input > .input {
+.InputMainContainer > .inputFieldBox {
   width: 100%;
-  outline: none;
   background-color: rgba(var(--primary), 0.01);
   border-width: 0.01rem;
   border-style: solid;
   border-color: rgba(var(--primary), 0.1);
   border-radius: 1rem;
+  padding-inline: 1.2rem;
+  cursor: text;
+  display: flex;
+  align-items: center;
   font-size: 1.3rem;
   line-height: 100%;
-  padding: 1.2rem 1.4rem;
-  color: rgb(var(--black));
 }
 
-.Input > .input::placeholder {
+.InputMainContainer > .inputFieldBox::placeholder {
   color: rgba(var(--primary), 0.3);
 }
 
-.Input > .input:enabled:hover {
+.InputMainContainer > .inputFieldBox:hover {
   border-color: rgba(var(--primary), 0.35);
 }
 
-.Input > .input:enabled:focus {
+.InputMainContainer > .inputFieldBox:focus-within {
   border-color: rgb(var(--primary));
 }
 
-.Input > .errorTextAndCounterContainer {
+.inputFieldBox > .input {
+  width: 100%;
+  outline: none;
+  font-size: inherit;
+  line-height: inherit;
+  padding-block: 1.4rem;
+  color: rgb(var(--black));
+  border: none;
+  background-color: rgba(var(--primary), 0.001);
+}
+
+.inputFieldBox > .input::placeholder {
+  color: rgba(var(--primary), 0.3);
+}
+
+/* 
+
+.inputFieldBox > .input:enabled:hover {
+  border-color: rgba(var(--primary), 0.35);
+}
+
+.inputFieldBox > .input:enabled:focus {
+  border-color: rgb(var(--primary));
+} */
+
+.InputMainContainer > .errorTextAndCounterContainer {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   margin-top: 0.5rem;
 }
 
-.Input > .errorTextAndCounterContainer > .counterText {
+.InputMainContainer > .errorTextAndCounterContainer > .counterText {
   text-align: right;
 }
 
-.Input > .helperText {
+.InputMainContainer > .helperText {
   margin-top: 0.8rem;
 }

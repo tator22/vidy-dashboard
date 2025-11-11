@@ -53,13 +53,21 @@
       }
     }
 
-    .vanityGroup {
-      .vanityInputGroup {
+    .engagementGroup {
+      .engagementInputGroup {
         display: flex;
         align-items: center;
         gap: 2rem;
         margin-top: 1rem;
       }
+    }
+
+    .radioGroup {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
   }
 

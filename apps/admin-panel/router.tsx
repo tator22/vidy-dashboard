@@ -1,6 +1,10 @@
 import Authentication from "@/pages/authentication/index.js";
-import { Listing } from "@/pages/listing/index.js";
-import ListingDetail from "@/pages/listing/listingDetail/index.js";
+import Billing from "@/pages/billing/index.js";
+import { Codes } from "@/pages/codes/index.js";
+import CodeDetail from "@/pages/codes/codeDetail/index.js";
+import Defaults from "@/pages/defaults/index.js";
+import Media from "@/pages/media/index.js";
+import Support from "@/pages/support/index.js";
 import { TeamMembers } from "@/pages/teamMembers/index.js";
 import { CONSTANTS } from "@repo/utilities";
 import { lazy } from "react";
@@ -10,10 +14,6 @@ import {
   useRouteError,
 } from "react-router";
 import "./i18n.js";
-import Media from "@/pages/media/index.js";
-import Support from "@/pages/support/index.js";
-import Billing from "@/pages/billing/index.js";
-import Defaults from "@/pages/defaults/index.js";
 
 const Error = lazy(() => import("./src/pages/error"));
 const Layout = lazy(() => import("./src/layout"));
@@ -33,11 +33,11 @@ const Router = () => {
       children: [
         {
           path: CONSTANTS.PATHS.LISTING,
-          element: <Listing />,
+          element: <Codes />,
         },
         {
           path: CONSTANTS.PATHS.LISTING_DETAIL,
-          element: <ListingDetail />,
+          element: <CodeDetail />,
         },
         {
           path: CONSTANTS.PATHS.MEDIA,

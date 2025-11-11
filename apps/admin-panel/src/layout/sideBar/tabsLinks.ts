@@ -16,13 +16,13 @@ export const ADMIN_SIDEBAR_TABS = [
     icon: ASSET_PATHS.SVGS.MEDIA_OUTLINE,
     active_icon: ASSET_PATHS.SVGS.MEDIA_FILLED,
   },
-  {
-    key: "defaults",
-    label: "defaults",
-    link: CONSTANTS.PATHS.DEFAULTS,
-    icon: ASSET_PATHS.SVGS.DEFAULT_OUTLINE,
-    active_icon: ASSET_PATHS.SVGS.DEFAULT_FILLED,
-  },
+  // {
+  //   key: "defaults",
+  //   label: "defaults",
+  //   link: CONSTANTS.PATHS.DEFAULTS,
+  //   icon: ASSET_PATHS.SVGS.DEFAULT_OUTLINE,
+  //   active_icon: ASSET_PATHS.SVGS.DEFAULT_FILLED,
+  // },
   {
     key: "team_members",
     label: "team members",
@@ -44,11 +44,11 @@ export const ADMIN_SIDEBAR_TABS = [
     icon: ASSET_PATHS.SVGS.SUPPORT_OUTLINE,
     active_icon: ASSET_PATHS.SVGS.SUPPORT_FILLED,
   },
-  // {
-  //   key: "inspiration",
-  //   label: "inspiration",
-  //   link: CONSTANTS.PATHS.INSPIRATION,
-  //   icon: ASSET_PATHS.SVGS.INSPIRATION_OUTLINE,
-  //   active_icon: ASSET_PATHS.SVGS.INSPIRATION_FILLED,
-  // },
+  {
+    key: "inspiration",
+    label: "inspiration",
+    link: CONSTANTS.PATHS.INSPIRATION,
+    icon: ASSET_PATHS.SVGS.INSPIRATION_OUTLINE,
+    active_icon: ASSET_PATHS.SVGS.INSPIRATION_FILLED,
+  },
 ];

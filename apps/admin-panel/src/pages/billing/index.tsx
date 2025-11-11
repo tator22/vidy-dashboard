@@ -4,6 +4,7 @@ import { Button, Image, Input, Radio, Separator, Text } from "@repo/ui";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
+import { CONSTANTS } from "@repo/utilities";
 
 const Billing = () => {
   // Hooks
@@ -64,44 +65,35 @@ const Billing = () => {
           styles.sectionPadding
         )}
       >
-        <div className={styles.planDetails}>
-          <div className={styles.planNameAndLogo}>
-            <Image
-              imageProps={{
-                src: ASSET_PATHS.ICONS.LOGO,
-              }}
-              containerProps={{
-                className: styles.logo,
-              }}
-            />
-            <Text
-              children={"Base Plan"}
-              tag="h6"
-              containerProps={{
-                className: styles.planNameText,
-              }}
-            />
-          </div>
-          <div className={styles.planBilling}>
-            <Text
-              children={`$20/month`}
-              tag="h6"
-              containerProps={{ className: styles.billingAmount }}
-            />
-            <Text
-              children={t(`${translationKey}.billed_annually`)}
-              tag="p"
-              containerProps={{
-                className: styles.billingPeriod,
-              }}
-            />
-          </div>
-          <Text
-            children={`${t(`${translationKey}.next_billing_date`)}: 1 Feb, 2025`}
-            tag="p"
-            containerProps={{
-              className: styles.billingPeriod,
-            }}
+        <div className={styles.renderPlanDetailCard}>
+          <PlanDetailCard
+            planName="Plus Plan"
+            pricePerMonth={29}
+            nextBillingDate="1 Feb, 2025"
+            includes={[
+              "1GB Storage",
+              "5 Active Codes",
+              "10 Total Codes",
+              "2 Team members",
+            ]}
+          />
+          <PlanDetailCard
+            planName="Storage Add-on"
+            pricePerMonth={10}
+            nextBillingDate="1 Feb, 2025"
+            includes={["+1GB Additional Storage"]}
+          />
+          <PlanDetailCard
+            planName="Team Member Add-on"
+            pricePerMonth={15}
+            nextBillingDate="1 Feb, 2025"
+            includes={["+1 Additional Team Member"]}
+          />
+          <PlanDetailCard
+            planName="Code Add-on"
+            pricePerMonth={10}
+            nextBillingDate="1 Feb, 2025"
+            includes={["+10 Additional Videocodes"]}
           />
         </div>
 
@@ -129,7 +121,6 @@ const Billing = () => {
           },
         }}
       />
-
       <section
         className={clsx(
           styles.billingSection,
@@ -178,7 +169,6 @@ const Billing = () => {
           />
         </div>
       </section>
-
       <Separator
         containerProps={{
           style: {
@@ -186,7 +176,6 @@ const Billing = () => {
           },
         }}
       />
-
       <section
         className={clsx(
           styles.paymentSection,
@@ -261,7 +250,6 @@ const Billing = () => {
           />
         </div>
       </section>
-
       <Separator
         containerProps={{
           style: {
@@ -295,6 +283,9 @@ const PaymentMethodRow = ({
           }}
           inputProps={{
             checked: checked,
+          }}
+          iconStyle={{
+            filter: `var(--black-filter)`,
           }}
         />
         <Image
@@ -341,5 +332,99 @@ const SectionHeading = ({ text }: { text: string }) => {
         className: styles.sectionHeading,
       }}
     />
+  );
+};
+
+const PlanDetailCard = ({
+  planName,
+  pricePerMonth,
+  nextBillingDate,
+  includes,
+}: {
+  planName: string;
+  pricePerMonth: number;
+  nextBillingDate: string;
+  includes: string[];
+}) => {
+  // Hooks
+  const { t } = useTranslation();
+
+  // Variables
+  const translationKey = "PAGES.BILLING";
+
+  return (
+    <div className={styles.planDetails}>
+      <div className={styles.planNameAndLogo}>
+        <Image
+          imageProps={{
+            src: ASSET_PATHS.ICONS.LOGO,
+          }}
+          containerProps={{
+            className: styles.logo,
+          }}
+        />
+        <Text
+          children={planName}
+          tag="h6"
+          containerProps={{
+            className: styles.planNameText,
+          }}
+        />
+      </div>
+      <div className={styles.planBilling}>
+        <Text
+          children={`${CONSTANTS.CURRENCY_SYMBOL}${pricePerMonth}/month`}
+          tag="h6"
+          containerProps={{ className: styles.billingAmount }}
+        />
+        <Text
+          children={t(`${translationKey}.billed_annually`)}
+          tag="p"
+          containerProps={{
+            className: styles.billingPeriod,
+          }}
+        />
+      </div>
+      <Text
+        children={`${t(`${translationKey}.next_billing_date`)}: ${nextBillingDate}`}
+        tag="p"
+        containerProps={{
+          className: styles.billingPeriod,
+        }}
+      />
+
+      <section className={styles.includeSection}>
+        <Text
+          tag="p"
+          containerProps={{
+            className: styles.includeHeading,
+          }}
+        >
+          {t(`${translationKey}.includes`)}
+        </Text>
+        <div className={styles.renderIncludes}>
+          {includes.map((item, index) => {
+            return (
+              <div className={styles.includeRow} key={`${index}+${item}`}>
+                <Image
+                  imageProps={{
+                    src: ASSET_PATHS.SVGS.CHECKED_ICON,
+                    className: styles.checkIcon,
+                  }}
+                />
+                <Text
+                  tag="p"
+                  containerProps={{
+                    className: styles.includeRowText,
+                  }}
+                >
+                  {item}
+                </Text>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </div>
   );
 };

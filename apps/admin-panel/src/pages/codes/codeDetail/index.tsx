@@ -7,27 +7,26 @@ import { Image, RenderTab, renderTabProps } from "@repo/ui";
 import { Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
+import Analytics from "./tabs/analytics";
 import Media from "./tabs/media";
 import QRCode from "./tabs/QR";
-import Profile from "./tabs/profile";
-import Analytics from "./tabs/analytics";
 import Settings from "./tabs/settings";
 
-const ListingDetail = () => {
+const CodeDetail = () => {
   // Hooks
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.LISTING_DETAIL";
+  const translationKey = "PAGES.CODE_DETAIL";
   const tabs: renderTabProps[] = [
     {
       label: t(`${translationKey}.media`),
       key: "media",
     },
-    {
-      label: t(`${translationKey}.profile`),
-      key: "profile",
-    },
+    // {
+    //   label: t(`${translationKey}.profile`),
+    //   key: "profile",
+    // },
     {
       label: t(`${translationKey}.qr`),
       key: "qr",
@@ -102,8 +101,8 @@ const ListingDetail = () => {
       switch (activeTab.key) {
         case "media":
           return <Media />;
-        case "profile":
-          return <Profile />;
+        // case "profile":
+        //   return <Profile />;
         case "qr":
           return (
             <QRCode setSelectedQR={setSelectedQR} selectedQR={selectedQR} />
@@ -128,7 +127,7 @@ const ListingDetail = () => {
         <Header
           isBack
           isButton={activeTab.key === "media"}
-          heading={"Listing Title"}
+          heading={`"Code Name"`}
           buttonTitle={t(`${translationKey}.cta`)}
           onButtonClick={handleEnableAddMediaModal}
         />
@@ -188,4 +187,4 @@ const ListingDetail = () => {
   );
 };
 
-export default ListingDetail;
+export default CodeDetail;

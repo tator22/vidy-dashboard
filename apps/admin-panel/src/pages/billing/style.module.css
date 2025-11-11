@@ -34,48 +34,10 @@
   .planSection {
     /* padding-left: 3rem; */
 
-    .planDetails {
-      padding: 1.6rem 2rem;
-      background-color: rgb(var(--black), 0.03);
-      border: 0.15rem solid rgb(var(--black), 0.04);
-      border-radius: 1.5rem;
+    .renderPlanDetailCard {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-
-      .planNameAndLogo {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-
-        .logo {
-          width: 3.2rem;
-          height: 3.2rem;
-        }
-
-        .planNameText {
-          font-size: 1.8rem;
-          line-height: 125%;
-        }
-      }
-
-      .planBilling {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        .billingAmount {
-          font-size: 1.3rem;
-          line-height: 125%;
-          font-weight: 600;
-        }
-
-        .billingPeriod {
-          font-size: 1.2rem;
-          line-height: 125%;
-          font-weight: 400;
-        }
-      }
+      gap: 2rem;
     }
 
     .buttonGroup {
@@ -126,12 +88,15 @@
     .buttonGroup {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      /* flex-wrap: wrap; */
       gap: 1rem;
+      /* border: 2px solid green; */
 
       .ctaButton {
         border: 0.15rem solid rgb(var(--black), 0.03);
         white-space: nowrap !important;
+        width: 100%;
 
         .brandLogoContainer {
           width: 1.5rem;
@@ -166,6 +131,7 @@
   }
 }
 
+/* -------------------------------- */
 .paymentMethodRow {
   display: flex;
   align-items: center;
@@ -229,6 +195,88 @@
       .deleteIcon {
         width: 75%;
         height: 75%;
+      }
+    }
+  }
+}
+
+/* --------------------------------------- */
+
+.planDetails {
+  padding: 1.6rem 2rem;
+  background-color: rgb(var(--black), 0.03);
+  border: 0.15rem solid rgb(var(--black), 0.04);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .planNameAndLogo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .logo {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+    .planNameText {
+      font-size: 1.8rem;
+      line-height: 125%;
+    }
+  }
+
+  .planBilling {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .billingAmount {
+      font-size: 1.3rem;
+      line-height: 125%;
+      font-weight: 600;
+    }
+
+    .billingPeriod {
+      font-size: 1.2rem;
+      line-height: 125%;
+      font-weight: 400;
+    }
+  }
+
+  .includeSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    .includeHeading {
+      font-size: 1.2rem;
+      line-height: 125%;
+      font-weight: 400;
+    }
+
+    .renderIncludes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+
+      .includeRow {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        .checkIcon {
+          width: 1.3rem;
+          height: 1.3rem;
+        }
+
+        .includeRowText {
+          font-size: 1.2rem;
+          line-height: 125%;
+          font-weight: 400;
+          color: rgb(var(--black));
+        }
       }
     }
   }

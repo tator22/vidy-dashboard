@@ -12,6 +12,8 @@
   max-width: 1.2rem;
   margin-top: 0.05rem;
   opacity: 0.4;
+  /* filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(39%)
+    hue-rotate(137deg) brightness(83%) contrast(83%); */
 }
 
 .HelperText > .text {

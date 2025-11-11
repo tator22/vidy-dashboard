@@ -5,10 +5,8 @@ import clsx from "clsx";
 import { FC, MouseEventHandler, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
-import ChooseAccountType from "./chooseAccountType";
 import EnterAccountDetails from "./enterAccountDetails";
 import EnterName from "./enterName";
-import EnterYourUsername from "./enterUsername";
 import EnterVerificationCode from "./enterVerificationCode";
 import LogIn from "./login";
 import styles from "./style.module.css";
@@ -23,13 +21,13 @@ const Authentication: FC = (): JSX.Element => {
 
   // Local States
   const [currentStep, setCurrentStep] = useState<
-    | "ENTER_USERNAME"
+    // | "ENTER_USERNAME"
     | "ENTER_ACCOUNT_DETAILS"
     | "ENTER_VERIFICATION_CODE"
     | "ENTER_NAME"
-    | "CHOOSE_ACCOUNT_TYPE"
+    // | "CHOOSE_ACCOUNT_TYPE"
     | "LOG_IN"
-  >("ENTER_USERNAME");
+  >("ENTER_ACCOUNT_DETAILS");
 
   // Functions
   const getStepDetails = (): {
@@ -43,17 +41,17 @@ const Authentication: FC = (): JSX.Element => {
     onPressSecondaryCta?: MouseEventHandler<HTMLButtonElement>;
   } => {
     switch (currentStep) {
-      case "ENTER_USERNAME":
-        return {
-          topBarMode: "LOG_IN",
-          heading: t(`${translationKey}.ENTER_USERNAME.heading`),
-          subHeading: t(`${translationKey}.ENTER_USERNAME.sub_heading`),
-          childrenComponent: <EnterYourUsername />,
-          primaryCtaText: t(`${translationKey}.ENTER_USERNAME.cta`),
-          onPressPrimaryCta: () => {
-            setCurrentStep("ENTER_ACCOUNT_DETAILS");
-          },
-        };
+      // case "ENTER_USERNAME":
+      //   return {
+      //     topBarMode: "LOG_IN",
+      //     heading: t(`${translationKey}.ENTER_USERNAME.heading`),
+      //     subHeading: t(`${translationKey}.ENTER_USERNAME.sub_heading`),
+      //     childrenComponent: <EnterYourUsername />,
+      //     primaryCtaText: t(`${translationKey}.ENTER_USERNAME.cta`),
+      //     onPressPrimaryCta: () => {
+      //       setCurrentStep("ENTER_ACCOUNT_DETAILS");
+      //     },
+      //   };
 
       case "ENTER_ACCOUNT_DETAILS":
         return {
@@ -92,18 +90,18 @@ const Authentication: FC = (): JSX.Element => {
           primaryCtaText: t(`${translationKey}.ENTER_NAME.cta`),
           subHeading: t(`${translationKey}.ENTER_NAME.sub_heading`),
           onPressPrimaryCta: () => {
-            setCurrentStep("CHOOSE_ACCOUNT_TYPE");
+            setCurrentStep("LOG_IN");
           },
         };
 
-      case "CHOOSE_ACCOUNT_TYPE":
-        return {
-          topBarMode: "LOG_IN",
-          heading: t(`${translationKey}.CHOOSE_ACCOUNT_TYPE.heading`),
-          childrenComponent: (
-            <ChooseAccountType onClick={() => setCurrentStep("LOG_IN")} />
-          ),
-        };
+      // case "CHOOSE_ACCOUNT_TYPE":
+      //   return {
+      //     topBarMode: "LOG_IN",
+      //     heading: t(`${translationKey}.CHOOSE_ACCOUNT_TYPE.heading`),
+      //     childrenComponent: (
+      //       <ChooseAccountType onClick={() => setCurrentStep("LOG_IN")} />
+      //     ),
+      //   };
 
       case "LOG_IN":
         return {
@@ -144,7 +142,7 @@ const Authentication: FC = (): JSX.Element => {
               if (getStepDetails()?.topBarMode === "LOG_IN") {
                 setCurrentStep("LOG_IN");
               } else {
-                setCurrentStep("ENTER_USERNAME");
+                setCurrentStep("ENTER_ACCOUNT_DETAILS");
               }
             },
           }}

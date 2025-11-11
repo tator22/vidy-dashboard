@@ -6,23 +6,23 @@
       "error": "Error:",
       "cta": "Back to Home"
     },
-    "LISTING": {
-      "heading": "Listings",
-      "new_cta": "New Listing",
+    "CODES": {
+      "heading": "Codes",
+      "new_cta": "New Code",
       "cta": "Walkthrough Video",
       "modal_cta": "Add",
-      "new_listing": "New Listing",
-      "listing_url": "Listing URL",
-      "enter_listing_url": "Enter Listing URL",
-      "name": "Listing Name",
-      "enter_listing_name": "Enter Listing Name",
-      "listing_details": "Listing Details",
-      "enter_listing_details": "Enter Listing Details",
+      "new_code": "New Code",
+      "link": "Link",
+      "link_warning": "This link can not be changed later",
+      "name": "Name",
+      "enter_name": "Enter code Name",
+      "detail": "Details",
+      "enter_detail": "Write code details",
       "listing_type": "Listing Type",
       "multiple_listing": "Multiple Listings",
       "individual_listing": "Individual Listing"
     },
-    "LISTING_DETAIL": {
+    "CODE_DETAIL": {
       "cta": "Add Media",
       "preview": "Preview",
       "media": "media",
@@ -47,19 +47,25 @@
       "body_shapes": "Body Shapes",
       "frame_shapes": "Frame Shapes",
       "ball_shapes": "Ball Shapes",
-      "color": "Color",
-      "logo": "Logo",
-      "select_logo_image": "Select logo image",
-      "upload": "Upload"
+      "pick_a_color": "Pick a Color",
+      "logo": "Add your logo to the center of your code",
+      "select_logo_image": "Drag & Drop or click to upload your logo",
+      "upload": "Upload",
+      "logo_note": "A high-quality PNG is recommended. Supports PNG, JPG, and SVG up to 5MB."
     },
     "ANALYTICS": {
       "code_scans": "Code Scans"
     },
     "SETTINGS": {
-      "listing_name": "Listing Name",
+      "profile_picture": "Profile picture",
+      "change": "Change",
+      "remove": "Remove",
+      "profile_picture_link": "Profile picture link",
+      "enter_profile_picture_link": "Enter profile picture link",
+      "code_name": "Code name",
+      "enter_code_name": "Enter code name",
       "description": "Description",
-      "enter_description": "Enter Description",
-      "enter_listing_name": "Enter Listing Name",
+      "enter_description": "Enter description",
       "save": "Save"
     },
     "DEFAULTS": {
@@ -149,7 +155,8 @@
       "payment": "Payment",
       "choose_another_payment_method": "Choose another payment method",
       "credit_card": "Credit Card",
-      "pay": "Pay"
+      "pay": "Pay",
+      "includes": "Includes: "
     }
   },
   "COMPONENTS": {
@@ -170,7 +177,6 @@
       "input_title": "Title",
       "caption": "Caption",
       "write_your_caption": "Write your caption",
-      "sms_message": "SMS Message",
       "write_your_message": "Write your message",
       "call_to_action_button_text": "Call to Action Button Text",
       "call_to_action_button_url": "Call to Action Button URL",
@@ -179,7 +185,17 @@
       "call_to_action_button_color": "Call to Action Button Color",
       "call_to_action": "Call to Action",
       "preview": "Preview",
-      "vanity_metrics": "Vanity Metrics"
+      "engagement_boost": "Engagement Boost",
+      "radio_label_1": "SMS Message",
+      "radio_label_2": "Call",
+      "radio_label_3": "Web Link",
+      "message": "Message",
+      "sms_number": "SMS Number",
+      "call_number": "Call Number",
+      "sms_number_placeholder": "(704) 555-0127",
+      "call_number_placeholder": "(704) 555-0127",
+      "web_link": "Web Link",
+      "web_link_placeholder": "www.helixheightsrealestate.com"
     },
     "EDIT_PROFILE_MODAL": {
       "title": "Edit Profile",

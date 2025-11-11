@@ -18,7 +18,6 @@ type TextAreaProps = {
   optional?: boolean;
   cols?: number;
   rows?: number;
-  error?: string;
   value?: string | readonly string[] | number | undefined;
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   required?: boolean;
@@ -40,7 +39,6 @@ export const Textarea = ({
   optional,
   cols,
   rows = 5,
-  error,
   value,
   onChange,
   required,
@@ -54,7 +52,7 @@ export const Textarea = ({
   switchInputProps,
 }: TextAreaProps) => {
   const addClassName = () => {
-    if (error) {
+    if (errorText) {
       return "textareaError";
     }
   };
@@ -92,7 +90,9 @@ export const Textarea = ({
               text={errorText}
               containerProps={{ className: "errorText" }}
             />
-          ) : null}
+          ) : (
+            <div />
+          )}
 
           {showCounter ? (
             <CounterText

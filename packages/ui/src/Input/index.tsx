@@ -1,17 +1,22 @@
-import { FC, HTMLAttributes, InputHTMLAttributes } from "react";
+import { FC, HTMLAttributes, InputHTMLAttributes, ReactNode } from "react";
 import { CounterText } from "../CounterText";
 import { ErrorText } from "../ErrorText";
 import { HelperText } from "../HelperText";
 import { Label } from "../Label";
 import "./style.css";
+import clsx from "clsx";
 
 export const Input: FC<{
   containerProps?: HTMLAttributes<HTMLDivElement>;
   label?: string;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
+  inputFieldBoxProps?: HTMLAttributes<HTMLDivElement>;
   helperText?: string;
   errorText?: string;
   showCounter?: boolean;
+  helperTextIcon?: string;
+  leftNode?: ReactNode;
+  rightNode?: ReactNode;
 }> = ({
   containerProps,
   label,
@@ -19,11 +24,15 @@ export const Input: FC<{
   helperText,
   errorText,
   showCounter,
+  helperTextIcon,
+  inputFieldBoxProps,
+  leftNode,
+  rightNode,
 }): JSX.Element => {
   return (
     <div
       {...containerProps}
-      className={`Input ${containerProps?.className || ""}`}
+      className={`InputMainContainer ${containerProps?.className || ""}`}
       style={{
         ...containerProps?.style,
         opacity:
@@ -38,14 +47,25 @@ export const Input: FC<{
         />
       ) : null}
 
-      <input
-        {...inputProps}
-        className={`input largeClickableElement ${inputProps?.className || ""}`}
+      <div
+        {...inputFieldBoxProps}
+        className={clsx("inputFieldBox", inputFieldBoxProps?.className)}
         style={{
-          ...inputProps?.style,
-          borderColor: errorText ? "rgb(var(--error))" : "inital",
+          ...inputFieldBoxProps?.style,
+          borderColor: errorText ? "rgb(var(--error))" : "",
         }}
-      />
+      >
+        {leftNode}
+        <input
+          {...inputProps}
+          className={`input ${inputProps?.className || ""}`}
+          style={{
+            ...inputProps?.style,
+            // borderColor: errorText ? "rgb(var(--error))" : "",
+          }}
+        />
+        {rightNode}
+      </div>
 
       {errorText || showCounter ? (
         <div className="errorTextAndCounterContainer">
@@ -72,6 +92,7 @@ export const Input: FC<{
       ) : null}
       {helperText ? (
         <HelperText
+          icon={helperTextIcon}
           text={helperText}
           containerProps={{ className: "helperText" }}
         />
