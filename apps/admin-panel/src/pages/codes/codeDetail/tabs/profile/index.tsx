@@ -8,7 +8,7 @@ const Profile = () => {
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.LISTING_DETAIL";
+  const translationKey = "PAGES.CODE_DETAIL";
 
   return (
     <div className={styles.profileComponent}>

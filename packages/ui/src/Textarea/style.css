@@ -7,6 +7,16 @@
   margin-bottom: 0.8rem;
 }
 
+.errorTextAndCounterContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+.counterText {
+  width: fit-content !important;
+}
+
 .Textarea {
   width: 100%;
   outline: none;

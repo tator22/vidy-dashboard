@@ -4,11 +4,19 @@ import {
   Image,
   Input,
   Label,
+  Radio,
   Separator,
   Text,
   Textarea,
 } from "@repo/ui";
-import { HTMLAttributes, useRef, useState } from "react";
+import {
+  HTMLAttributes,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 
@@ -56,14 +64,33 @@ const Upload = () => {
 
   // Local State
   const [selectedMedia, setSelectedMedia] = useState<File | null>(null);
+  const [callToAction, setCallToAction] = useState(false);
+  const [selectedAction, setSelectedAction] = useState<
+    "sms_message" | "call" | "web_link" | null
+  >(null);
 
   // Functions
-  const handleMediaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setSelectedMedia(file);
-    }
-  };
+  const handleMediaChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        setSelectedMedia(file);
+      }
+    },
+    []
+  );
+
+  const mediaURL = useMemo(() => {
+    if (!selectedMedia) return null;
+    const url = URL.createObjectURL(selectedMedia);
+    return url;
+  }, [selectedMedia]);
+
+  useEffect(() => {
+    return () => {
+      if (mediaURL) URL.revokeObjectURL(mediaURL);
+    };
+  }, [mediaURL]);
 
   return (
     <>
@@ -80,65 +107,150 @@ const Upload = () => {
             <Textarea
               label={t(`${translationKey}.caption`)}
               placeholder={t(`${translationKey}.write_your_caption`)}
+              maxLength={2000}
+              showCounter
             />
 
-            <div className={styles.vanityGroup}>
-              <Label text={t(`${translationKey}.vanity_metrics`)} />
+            <div className={styles.engagementGroup}>
+              <Label text={t(`${translationKey}.engagement_boost`)} />
 
-              <div className={styles.vanityInputGroup}>
+              <div className={styles.engagementInputGroup}>
                 <VanityInput type="LIKE" />
                 <VanityInput type="SHARE" />
-                <VanityInput type="COMMENT" />
+                {/* <VanityInput type="COMMENT" /> */}
               </div>
             </div>
-            <Textarea
-              label={t(`${translationKey}.sms_message`)}
-              placeholder={t(`${translationKey}.write_your_message`)}
+
+            <Separator direction="horizontal" />
+
+            <Label
+              text={t(`${translationKey}.call_to_action`)}
               isSwitch
-              switchInputProps={{
-                checked: true,
-              }}
-            />
-            <Separator />
-            <Input
-              label={t(`${translationKey}.call_to_action_button_text`)}
               inputProps={{
-                placeholder: t(`${translationKey}.enter_the_text_for_cta`),
-                required: true,
+                onChange: (event) => setCallToAction(event.target.checked),
+                checked: callToAction,
               }}
             />
-            <Input
+
+            {/* <Textarea placeholder={t(`${translationKey}.write_your_message`)} /> */}
+
+            {/* <Input
               label={t(`${translationKey}.call_to_action_button_url`)}
               inputProps={{
                 placeholder: t(`${translationKey}.enter_cta_url`),
                 required: true,
               }}
-            />
+            /> */}
 
-            <div className={styles.actionButtonColorGroup}>
-              <Label
-                text={t(`${translationKey}.call_to_action_button_color`)}
-              />
-              <div className={styles.buttonGroup}>
-                {colors.map((color, index) => {
-                  return (
-                    <Button
-                      key={index}
-                      text={t(`${translationKey}.call_to_action`)}
-                      size="small"
-                      buttonProps={{
-                        style: {
-                          backgroundColor: color.background,
-                          color: color.color,
-                          borderRadius: "0.8rem",
-                          border: "0.1rem solid #8d99ae20",
-                        },
+            {callToAction ? (
+              <>
+                <div className={styles.radioGroup}>
+                  <Radio
+                    label={t(`${translationKey}.radio_label_1`)}
+                    inputProps={{
+                      required: true,
+                      checked: selectedAction === "sms_message",
+                      onChange: () => {
+                        setSelectedAction("sms_message");
+                      },
+                    }}
+                  />
+                  <Radio
+                    label={t(`${translationKey}.radio_label_2`)}
+                    inputProps={{
+                      required: true,
+                      checked: selectedAction === "call",
+                      onChange: () => {
+                        setSelectedAction("call");
+                      },
+                    }}
+                  />
+                  <Radio
+                    label={t(`${translationKey}.radio_label_3`)}
+                    inputProps={{
+                      required: true,
+                      checked: selectedAction === "web_link",
+                      onChange: () => {
+                        setSelectedAction("web_link");
+                      },
+                    }}
+                  />
+                </div>
+
+                {selectedAction === "sms_message" ? (
+                  <>
+                    <Input
+                      label={t(`${translationKey}.sms_number`)}
+                      inputProps={{
+                        placeholder: t(
+                          `${translationKey}.sms_number_placeholder`
+                        ),
+                        required: true,
                       }}
                     />
-                  );
-                })}
-              </div>
-            </div>
+                    <Textarea
+                      label={t(`${translationKey}.message`)}
+                      placeholder={t(`${translationKey}.message`)}
+                    />
+                  </>
+                ) : null}
+
+                {selectedAction === "call" ? (
+                  <Input
+                    label={t(`${translationKey}.call_number`)}
+                    inputProps={{
+                      placeholder: t(
+                        `${translationKey}.call_number_placeholder`
+                      ),
+                      required: true,
+                    }}
+                  />
+                ) : null}
+
+                {selectedAction === "web_link" ? (
+                  <Input
+                    label={t(`${translationKey}.web_link`)}
+                    inputProps={{
+                      placeholder: t(`${translationKey}.web_link_placeholder`),
+                      required: true,
+                    }}
+                  />
+                ) : null}
+
+                <Input
+                  label={t(`${translationKey}.call_to_action_button_text`)}
+                  inputProps={{
+                    placeholder: t(`${translationKey}.enter_the_text_for_cta`),
+                    required: true,
+                  }}
+                />
+
+                <div className={styles.actionButtonColorGroup}>
+                  <Label
+                    text={t(`${translationKey}.call_to_action_button_color`)}
+                  />
+                  <div className={styles.buttonGroup}>
+                    {colors.map((color, index) => {
+                      return (
+                        <Button
+                          key={index}
+                          text={t(`${translationKey}.call_to_action`)}
+                          size="small"
+                          buttonProps={{
+                            style: {
+                              backgroundColor: color.background,
+                              color: color.color,
+                              borderRadius: "0.8rem",
+                              border: "0.1rem solid #8d99ae20",
+                            },
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              </>
+            ) : null}
           </section>
 
           <Separator
@@ -155,14 +267,9 @@ const Upload = () => {
 
             <div
               className={styles.videoContainer}
-              onClick={() =>
-                window.open(URL.createObjectURL(selectedMedia), "_blank")
-              }
+              onClick={() => window.open(mediaURL as string, "_blank")}
             >
-              <video
-                src={URL.createObjectURL(selectedMedia)}
-                className={styles.video}
-              />
+              <video src={mediaURL as string} className={styles.video} />
 
               <Image
                 containerProps={{

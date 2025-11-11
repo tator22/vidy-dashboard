@@ -7,7 +7,11 @@ const Library = () => {
   return (
     <div className={styles.library}>
       <div className={styles.searchBar}>
-        <Searchbar />
+        <Searchbar
+          inputProps={{
+            placeholder: "Search Media",
+          }}
+        />
       </div>
 
       <div className={styles.renderMediaCards}>

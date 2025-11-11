@@ -1,0 +1,54 @@
+.settings {
+  padding: 2rem 3rem 2.5rem;
+
+  .heading {
+    font-size: 1.5rem;
+    line-height: 125%;
+    font-weight: 600;
+    margin-block: 2rem;
+  }
+
+  .profileSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .profileInfo {
+        font-size: 1.3rem;
+        line-height: 125%;
+        font-weight: 400;
+        color: rgb(var(--black), 0.5);
+        width: 40rem;
+      }
+    }
+
+    .buttonGroup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .buttonGroup {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .saveButton {
+        border-radius: 1rem !important;
+        padding-inline: 5.5rem !important;
+      }
+    }
+  }
+}

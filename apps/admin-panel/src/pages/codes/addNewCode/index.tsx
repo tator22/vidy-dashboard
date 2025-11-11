@@ -1,7 +1,7 @@
-import { Input, Label, Modal, Textarea } from "@repo/ui";
+import { ASSET_PATHS } from "@repo/assets";
+import { Input, Modal, Textarea } from "@repo/ui";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import { ASSET_PATHS } from "@repo/assets";
 
 const AddNewCode = ({
   isOpen,
@@ -37,31 +37,15 @@ const AddNewCode = ({
           placeholder={t(`${translationKey}.enter_detail`)}
         />
 
-        <div className={styles?.listingUrl}>
-          <Label text={t(`${translationKey}.link`)} />
-          <div className={styles?.input}>
-            <Input
-              inputProps={{
-                required: true,
-                placeholder: t(`${translationKey}.enter_listing_url`),
-                value: "videoleads.com/",
-                contentEditable: false,
-                readOnly: true,
-                className: styles?.prefix,
-              }}
-              containerProps={{
-                className: styles?.prefixInput,
-              }}
-            />
-            <Input
-              inputProps={{
-                required: true,
-              }}
-              helperText={t(`${translationKey}.link_warning`)}
-              helperTextIcon={ASSET_PATHS.SVGS.WARNING}
-            />
-          </div>
-        </div>
+        <Input
+          label={t(`${translationKey}.link`)}
+          leftNode={<span className={styles.prefix}>videoleads.com/</span>}
+          inputProps={{
+            required: true,
+          }}
+          helperText={t(`${translationKey}.link_warning`)}
+          helperTextIcon={ASSET_PATHS.SVGS.WARNING}
+        />
 
         {/* <div className={styles.listingType}>
           <Label text={t(`${translationKey}.listing_type`)} />

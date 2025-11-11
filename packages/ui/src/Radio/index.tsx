@@ -17,15 +17,6 @@ export const Radio: FC<{
       className={`Radio ${containerProps?.className || ""}`}
       aria-disabled={inputProps?.disabled}
     >
-      {label && <Label text={label} isOptional={!inputProps?.required} />}
-
-      <input
-        {...inputProps}
-        id={id}
-        type="radio"
-        className={`input ${inputProps?.className || ""}`}
-      />
-
       <img
         className="icon"
         src={
@@ -34,6 +25,15 @@ export const Radio: FC<{
             : ASSET_PATHS?.SVGS?.RADIO_OFF
         }
         alt={inputProps?.checked ? "radio on" : "radio off"}
+      />
+
+      {label && <Label text={label} isOptional={!inputProps?.required} />}
+
+      <input
+        {...inputProps}
+        id={id}
+        type="radio"
+        className={`input ${inputProps?.className || ""}`}
       />
     </label>
   );

@@ -1,6 +1,7 @@
 import RenderEngagement from "@/components/RenderEngagement";
 import { ASSET_PATHS } from "@repo/assets";
 import { Button, Image, Text } from "@repo/ui";
+import { mediaCards } from "@repo/utilities";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 
@@ -9,13 +10,24 @@ const Media = () => {
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.LISTING_DETAIL";
+  const translationKey = "PAGES.CODE_DETAIL";
 
   return (
     <div className={styles.mediaComponent}>
       <div className={styles.media}>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <MediaCard key={index} />
+        {mediaCards.map((item, index) => (
+          <MediaCard
+            key={index}
+            description={item.description}
+            likes={item.likes}
+            shares={item.shares}
+            thumbnail={item.image}
+            message={item.message}
+            title={item.title}
+            label={item.label}
+            buttonText={item.button.text}
+            buttonColor={item.button.color}
+          />
         ))}
       </div>
 
@@ -74,13 +86,27 @@ export const ActionIcon = ({ icon }: { icon: string }) => {
   );
 };
 
-export const MediaCard = () => {
-  // Hooks
-  const { t } = useTranslation();
-
-  // Variables
-  const translationKey = "PAGES.LISTING_DETAIL";
-
+export const MediaCard = ({
+  thumbnail,
+  title,
+  description,
+  likes,
+  message,
+  shares,
+  label,
+  buttonText,
+  buttonColor,
+}: {
+  thumbnail: string;
+  title: string;
+  description: string;
+  likes: number;
+  message: string;
+  shares: number;
+  label: string;
+  buttonText: string;
+  buttonColor: string;
+}) => {
   return (
     <div className={styles.mediaCard}>
       <div className={styles.moveIconAndCard}>
@@ -100,7 +126,7 @@ export const MediaCard = () => {
           <Image
             imageProps={{
               className: styles.thumbnail,
-              src: "https://images.unsplash.com/photo-1745179177535-f83fb38821a2?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              src: thumbnail,
             }}
           />
 
@@ -120,7 +146,7 @@ export const MediaCard = () => {
             <div className={styles.text}>
               <Text
                 tag="h6"
-                children={"Fermentum Venenatis Tortor"}
+                children={title}
                 containerProps={{
                   className: styles.title,
                 }}
@@ -128,7 +154,7 @@ export const MediaCard = () => {
               />
               <Text
                 tag="p"
-                children={"Duis aute irure dolor in reprehenderit in voluptate"}
+                children={description}
                 containerProps={{
                   className: styles.description,
                 }}
@@ -144,15 +170,13 @@ export const MediaCard = () => {
 
           <div className={styles.engagementSection}>
             <RenderEngagement
-              comments={2}
-              likes={3}
-              shares={4}
+              likes={likes}
+              shares={shares}
               engagementRowClassName={styles.engagementRowClass}
             />
             <RenderEngagement
-              comments={2}
-              likes={3}
-              shares={4}
+              likes={likes}
+              shares={shares}
               engagementRowClassName={styles.engagementRowTwo}
             />
           </div>
@@ -160,7 +184,7 @@ export const MediaCard = () => {
           <div className={styles.smsSection}>
             <Text
               tag="h6"
-              children={`${t(`${translationKey}.sms_message`)}:`}
+              children={`${label}:`}
               containerProps={{
                 className: styles.messageHeading,
               }}
@@ -168,7 +192,7 @@ export const MediaCard = () => {
             />
             <Text
               tag="p"
-              children={"Duis aute irure dolor in reprehenderit in voluptate"}
+              children={message}
               containerProps={{
                 className: styles.message,
               }}
@@ -178,9 +202,12 @@ export const MediaCard = () => {
 
           <Button
             variant="primary"
-            text="Learn more"
+            text={buttonText}
             buttonProps={{
               className: styles.button,
+              style: {
+                backgroundColor: buttonColor,
+              },
             }}
           />
         </div>

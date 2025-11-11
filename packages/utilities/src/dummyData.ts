@@ -318,3 +318,63 @@ export const scanData = [
     label: "Scans",
   },
 ];
+
+export const mediaCards = [
+  {
+    id: 1,
+    title: "Fermentum Venenatis Tortor",
+    description: "Duis aute irure dolor in reprehenderit in voluptate",
+    image:
+      "https://images.unsplash.com/photo-1745179177535-f83fb38821a2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774",
+    likes: 37,
+    shares: 12,
+    comments: 37,
+    saves: 12,
+    type: "sms",
+    label: "SMS Message",
+    message: "Duis aute irure dolor in reprehenderit in voluptate",
+    button: {
+      text: "Learn more",
+      color: "black",
+      link: "#",
+    },
+  },
+  {
+    id: 2,
+    title: "Fermentum Venenatis Tortor",
+    description: "Duis aute irure dolor in reprehenderit in voluptate",
+    image:
+      "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740",
+    likes: 37,
+    shares: 12,
+    comments: 37,
+    saves: 12,
+    type: "web",
+    label: "Web Link",
+    message: "https://www.example.com",
+    button: {
+      text: "Shop Now",
+      color: "#2E7CF6",
+      link: "https://www.example.com",
+    },
+  },
+  {
+    id: 3,
+    title: "Fermentum Venenatis Tortor",
+    description: "Duis aute irure dolor in reprehenderit in voluptate",
+    image:
+      "https://images.unsplash.com/photo-1495366821225-0a3d30d20b5e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740",
+    likes: 37,
+    shares: 12,
+    comments: 37,
+    saves: 12,
+    type: "call",
+    label: "Call",
+    message: "15551231234",
+    button: {
+      text: "Call Now",
+      color: "#263577",
+      link: "tel:15551231234",
+    },
+  },
+];

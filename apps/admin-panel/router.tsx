@@ -1,7 +1,7 @@
 import Authentication from "@/pages/authentication/index.js";
 import Billing from "@/pages/billing/index.js";
 import { Codes } from "@/pages/codes/index.js";
-import ListingDetail from "@/pages/codes/listingDetail/index.js";
+import CodeDetail from "@/pages/codes/codeDetail/index.js";
 import Defaults from "@/pages/defaults/index.js";
 import Media from "@/pages/media/index.js";
 import Support from "@/pages/support/index.js";
@@ -37,7 +37,7 @@ const Router = () => {
         },
         {
           path: CONSTANTS.PATHS.LISTING_DETAIL,
-          element: <ListingDetail />,
+          element: <CodeDetail />,
         },
         {
           path: CONSTANTS.PATHS.MEDIA,
