@@ -123,7 +123,7 @@ import PATRION from "./svgs/socialIcons/patrion.svg";
 import PINTEREST from "./svgs/socialIcons/pinterest.svg";
 import SIGNAL from "./svgs/socialIcons/signal.svg";
 import SPOTIFY from "./svgs/socialIcons/spotify.svg";
-import SUB_STACK from "./svgs/socialIcons/substack.svg";
+import SUB_STACK from "./svgs/socialIcons/sub-stack.svg";
 import TELEGRAM from "./svgs/socialIcons/telegram.svg";
 import TWITCH from "./svgs/socialIcons/twitch.svg";
 import LEMON8 from "./svgs/socialIcons/lemon8.svg";
@@ -135,6 +135,7 @@ import MESSAGE from "./svgs/socialIcons/message.svg";
 import WARNING from "./svgs/warning.svg";
 import UPLOAD_QR_LOGO from "./svgs/upload_qr.svg";
 import CHECKED_ICON from "./svgs/check.svg";
+import STORAGE from "./svgs/storage.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -279,5 +280,6 @@ export const ASSET_PATHS = {
     WARNING,
     UPLOAD_QR_LOGO,
     CHECKED_ICON,
+    STORAGE,
   },
 };

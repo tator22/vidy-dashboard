@@ -1,0 +1,155 @@
+.account {
+  .headerButtonGroup {
+    display: flex;
+    gap: 1rem;
+
+    .headerActionButton {
+      border-radius: 1rem;
+    }
+  }
+
+  .profileWrapper {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .profileSection {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .profileInfo {
+          font-size: 1.3rem;
+          line-height: 125%;
+          font-weight: 400;
+          color: rgb(var(--black), 0.5);
+        }
+      }
+    }
+
+    .buttonGroup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .storageSection {
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+
+    .iconContainer {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+
+      .icon {
+        width: 66%;
+        height: 66%;
+      }
+    }
+
+    .storageCounter {
+      width: 100%;
+
+      .storageCount {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .storage {
+          font-size: 1.5rem;
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+      }
+
+      .storageSlider {
+        width: 100%;
+        height: 0.4rem;
+        background-color: rgb(var(--black), 0.08);
+        position: relative;
+        margin-top: 0.5rem;
+        border-radius: 100rem;
+
+        &::before {
+          content: "";
+          background-color: rgb(var(--black));
+          position: absolute;
+          width: 40%;
+          height: 100%;
+          border-radius: inherit;
+        }
+      }
+    }
+
+    .addMoreStorageButton {
+      white-space: nowrap;
+      background-color: #007aff !important;
+      padding: 1rem 1.5rem !important;
+      border-radius: 0.8rem;
+      margin-left: 2rem;
+
+      &:hover {
+        background-color: #006fe5 !important;
+      }
+    }
+  }
+
+  .nameSection {
+    padding: 2rem 3rem;
+  }
+
+  .passwordSection {
+    padding: 2rem 3rem;
+
+    .inputGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+  }
+}
+
+/* --------------------------------------- */
+.labelAndSubLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  .label {
+    font-size: 1.5rem !important;
+    line-height: 125%;
+    font-weight: 600;
+  }
+
+  .subLabel {
+    font-size: 1.3rem;
+    line-height: 125%;
+    color: rgb(var(--black), 0.5);
+  }
+}
+
+/* -------------------------------------- */
+
+.sectionWidth {
+  max-width: 55rem;
+  padding-right: 0rem !important;
+
+  @media (max-width: 850px) {
+    max-width: 100%;
+    padding-right: 3rem !important;
+  }
+}
+
+/* --------------------------------------- */

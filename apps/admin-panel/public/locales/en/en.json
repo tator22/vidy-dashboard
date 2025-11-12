@@ -157,6 +157,27 @@
       "credit_card": "Credit Card",
       "pay": "Pay",
       "includes": "Includes: "
+    },
+    "ACCOUNT": {
+      "heading": "Account",
+      "cancel": "Cancel",
+      "save": "Save",
+      "picture": "Picture",
+      "change": "Change",
+      "remove": "Remove",
+      "storage": "Storage",
+      "add_more": "Add more",
+      "name": "Name",
+      "sub_name_label": "Choose a display name that represents you. Your name will appear on your videos and on your profile page.",
+      "enter_name": "Enter Name",
+      "email": "Email",
+      "enter_email": "Enter email",
+      "sub_email_label": "Your registered email address.",
+      "update_password": "Update Password",
+      "sub_update_password_label": "Update your account password",
+      "old_password": "Old Password",
+      "new_password": "New Password",
+      "confirm_password": "Confirm Password"
     }
   },
   "COMPONENTS": {
@@ -208,6 +229,20 @@
     "ADD_SOCIAL_LINK": {
       "title": "Add Social Links",
       "ctaAdd": "Add"
+    },
+    "ADD_MEDIA_TAB": {
+      "title": "Add Media",
+      "name": "Name",
+      "tags": "Tags",
+      "enter_name": "Enter Name",
+      "add_tag": "Add tag",
+      "save": "Save",
+      "upload": "upload",
+      "select_from_library": "Select from Library",
+      "upload_heading": "Drag an drop Media files to upload",
+      "upload_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "cta": "Select Media",
+      "preview": "Preview"
     }
   }
 }
