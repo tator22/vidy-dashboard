@@ -4,9 +4,16 @@ import {
   QRDataType,
 } from "@/components/CustomQRCode/types";
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Image, Separator, Text } from "@repo/ui";
+import { Button, Image, Input, Separator, Switch, Text } from "@repo/ui";
 import { CONSTANTS } from "@repo/utilities";
-import { Dispatch, ReactNode, SetStateAction, useRef } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useRef,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 
@@ -25,262 +32,9 @@ export interface QRShapeElementType {
   };
 }
 
-// const DummyData: QRDataType[] = [
-//   {
-//     value: "www.first.com",
-//     config: {
-//       body: "body1",
-//       frame: "frame1",
-//       ball: "ball1",
-//       bodyColor: "#000000",
-//       bgColor: "#FFFFFF",
-//       gradientColor1: "",
-//       gradientColor2: "",
-//       gradientType: "linear",
-//       gradientOnEyes: "true",
-//       logo: "",
-//       logoMode: "default",
-//       frameColors: {
-//         topLeft: "#000000",
-//         topRight: "#000000",
-//         bottomLeft: "#000000",
-//       },
-//       ballColors: {
-//         topLeft: "#000000",
-//         topRight: "#000000",
-//         bottomLeft: "#000000",
-//       },
-//       frameFlips: {
-//         topLeft: [],
-//         topRight: [],
-//         bottomLeft: [],
-//       },
-//       ballFlips: {
-//         topLeft: [],
-//         topRight: [],
-//         bottomLeft: [],
-//       },
-//       background: {
-//         type: "none",
-//         qrSizeScale: 1,
-//       },
-//     },
-//   },
-//   {
-//     value: "www.second.com",
-//     config: {
-//       body: "body2",
-//       frame: "frame12",
-//       ball: "ball8",
-//       bodyColor: "#5DFF87",
-//       bgColor: "#010DFF",
-//       gradientColor1: "",
-//       gradientColor2: "",
-//       gradientType: "linear",
-//       gradientOnEyes: "true",
-//       logo: "",
-//       logoMode: "default",
-//       frameColors: {
-//         topLeft: "#5DFF87",
-//         topRight: "#5DFF87",
-//         bottomLeft: "#5DFF87",
-//       },
-//       ballColors: {
-//         topLeft: "#5DFF87",
-//         topRight: "#5DFF87",
-//         bottomLeft: "#5DFF87",
-//       },
-//       frameFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       ballFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       background: {
-//         type: "circleSmoothLineShape",
-//         fill: "#5DFF87",
-//         backgroundColor: "#010DFF",
-//         qrSizeScale: 0.68,
-//       },
-//     },
-//   },
-//   {
-//     value: "www.third.com",
-//     config: {
-//       body: "body4",
-//       frame: "frame2",
-//       ball: "ball2",
-//       bodyColor: "#A26CFE",
-//       bgColor: "#FFFFFF",
-//       gradientColor1: "",
-//       gradientColor2: "",
-//       gradientType: "linear",
-//       gradientOnEyes: "true",
-//       logo: "",
-//       logoMode: "default",
-//       frameColors: {
-//         topLeft: "#A26CFE",
-//         topRight: "#A26CFE",
-//         bottomLeft: "#A26CFE",
-//       },
-//       ballColors: {
-//         topLeft: "#A26CFE",
-//         topRight: "#A26CFE",
-//         bottomLeft: "#A26CFE",
-//       },
-//       frameFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       ballFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       background: {
-//         type: "circleCut",
-//         fill: "#A26CFE",
-//         qrSizeScale: 0.68,
-//       },
-//     },
-//   },
-//   {
-//     value: "www.fourth.com",
-//     config: {
-//       body: "body4",
-//       frame: "frame2",
-//       ball: "ball8",
-//       bodyColor: "#05976A",
-//       bgColor: "#FFFFFF",
-//       gradientColor1: "",
-//       gradientColor2: "",
-//       gradientType: "linear",
-//       gradientOnEyes: "true",
-//       logo: "",
-//       logoMode: "default",
-//       frameColors: {
-//         topLeft: "#05976A",
-//         topRight: "#05976A",
-//         bottomLeft: "#05976A",
-//       },
-//       ballColors: {
-//         topLeft: "#05976A",
-//         topRight: "#05976A",
-//         bottomLeft: "#05976A",
-//       },
-//       frameFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       ballFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       background: {
-//         type: "none",
-//         qrSizeScale: 1,
-//       },
-//       border: {
-//         isBorder: true,
-//         borderColor: "#20614D",
-//         borderWidthMultiplier: 3,
-//       },
-//     },
-//   },
-//   {
-//     value: "www.fifth.com",
-//     config: {
-//       body: "body2",
-//       frame: "frame2",
-//       ball: "ball2",
-//       bodyColor: "#FF6163",
-//       bgColor: "#E6F8FC",
-//       gradientColor1: "",
-//       gradientColor2: "",
-//       gradientType: "linear",
-//       gradientOnEyes: "true",
-//       logo: "",
-//       logoMode: "default",
-//       frameColors: {
-//         topLeft: "#FF6163",
-//         topRight: "#FF6163",
-//         bottomLeft: "#FF6163",
-//       },
-//       ballColors: {
-//         topLeft: "#FF6163",
-//         topRight: "#FF6163",
-//         bottomLeft: "#FF6163",
-//       },
-//       frameFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       ballFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       background: {
-//         type: "circleLineShape",
-//         backgroundColor: "#E6F8FC",
-//         fill: "#FF6163",
-//         qrSizeScale: 0.68,
-//       },
-//     },
-//   },
-//   {
-//     value: "www.sixth.com",
-//     config: {
-//       body: "body2",
-//       frame: "TFrame6",
-//       ball: "ball7",
-//       bodyColor: "#05427F",
-//       bgColor: "#ffffff",
-//       gradientColor1: "",
-//       gradientColor2: "",
-//       gradientType: "linear",
-//       gradientOnEyes: "true",
-//       logo: "",
-//       logoMode: "default",
-//       frameColors: {
-//         topLeft: "#05427F",
-//         topRight: "#05427F",
-//         bottomLeft: "#05427F",
-//       },
-//       ballColors: {
-//         topLeft: "#F4650D",
-//         topRight: "#F4650D",
-//         bottomLeft: "#F4650D",
-//       },
-//       frameFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       ballFlips: {
-//         topLeft: [],
-//         topRight: ["horizontal"],
-//         bottomLeft: ["vertical"],
-//       },
-//       background: {
-//         type: "squareShape",
-//         qrSizeScale: 0.9,
-//       },
-//     },
-//   },
-// ];
-
 const QRCode = ({
   setSelectedQR,
-  // selectedQR,
+  selectedQR,
 }: {
   setSelectedQR: Dispatch<SetStateAction<QRDataType>>;
   selectedQR: QRDataType;
@@ -291,53 +45,83 @@ const QRCode = ({
 
   // Variables
   const translationKey = "PAGES.QR";
+  const borderWidthWithFrame = 55;
+
+  // Local State
+  const [enableAddFrameSection, setEnableAddFrameSection] = useState(false);
+  const [selectedLogo, setSelectedLogo] = useState<File | null>(null);
 
   // Functions
-  // const handleShapeClick = (
-  //   targetElement: "frame" | "ball" | "body",
-  //   element: QRShapeElementType
-  // ) => {
-  //   setSelectedQR((prev) => ({
-  //     ...prev,
-  //     config: {
-  //       ...prev.config,
-  //       [targetElement]: element.name,
-  //       frameFlips:
-  //         targetElement === "frame"
-  //           ? element.frameFlips
-  //           : prev.config.frameFlips,
-  //       ballFlips:
-  //         targetElement === "ball" ? element.ballFlips : prev.config.ballFlips,
-  //     },
-  //   }));
-  // };
+  const handleClearLogo = () => {
+    setSelectedLogo(null);
+    setSelectedQR((prev) => ({
+      ...prev,
+      config: {
+        ...prev.config,
+        logo: "",
+      },
+    }));
+  };
+
+  const handleSelectLogo = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files && event.target.files[0];
+    setSelectedLogo(file);
+    setSelectedQR((prev) => ({
+      ...prev,
+      config: {
+        ...prev.config,
+        logo: URL.createObjectURL(file as File),
+      },
+    }));
+  };
+
+  const handleChooseShape = (type: "circle" | "square") => {
+    setSelectedQR((prev) => ({
+      ...prev,
+      config: {
+        ...prev.config,
+        border: {
+          ...prev.config.border,
+          isBorder: true,
+          frameType: type,
+          borderColor: "#000000",
+          borderWidthMultiplier: borderWidthWithFrame,
+          borderRadius: type === "circle" ? "50%" : "7%",
+        },
+      },
+    }));
+  };
+
+  const handleEnableFrame = (event: ChangeEvent<HTMLInputElement>) => {
+    setEnableAddFrameSection(event.target.checked);
+    setSelectedQR((prev) => ({
+      ...prev,
+      config: {
+        ...prev.config,
+        border: {
+          ...prev.config.border,
+          borderWidthMultiplier: borderWidthWithFrame,
+          isAddFrame: event.target.checked,
+        },
+      },
+    }));
+  };
+
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement>,
+    target: string
+  ) => {
+    setSelectedQR((prev) => ({
+      ...prev,
+      config: {
+        ...prev.config,
+        [target]: event.target.value,
+      },
+    }));
+  };
 
   return (
     <div className={styles.qrSectionRender}>
-      {/* <QrCodeSectionWrapper title={t(`${translationKey}.templates`)}>
-        <div className={styles.renderCodes}>
-          {DummyData.map((el, index) => {
-            return (
-              <div
-                className={clsx(
-                  styles.qrCodeBox,
-                  selectedQR.value === el.value && styles.active
-                )}
-                onClick={() => setSelectedQR(el)}
-              >
-                <CustomQRCode
-                  value={el.value}
-                  config={el.config}
-                  key={index}
-                  size={80}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </QrCodeSectionWrapper>
-      <Separator /> */}
-
       <QrCodeSectionWrapper title={t(`${translationKey}.pick_a_color`)}>
         <div className={styles.renderColors}>
           {CONSTANTS.COLORS.map((item: string, index) => {
@@ -383,124 +167,75 @@ const QRCode = ({
       </QrCodeSectionWrapper>
       <Separator />
 
-      {/* <QrCodeSectionWrapper title={t(`${translationKey}.frame_shapes`)}>
-        <div className={styles.renderBodyShapes}>
-          {CONSTANTS.QR_FRAME_SHAPES.map((el: any, index) => {
-            return (
-              <Image
-                key={`${el.name}-${index}`}
-                containerProps={{
-                  onClick: () => handleShapeClick("frame", el),
-                  className: clsx(
-                    styles.qrShapeContainer,
-                    selectedQR.config.frame === el.name && styles.shapeActive
-                  ),
-                }}
-                imageProps={{
-                  src: el.icon,
-                  alt: el.name,
-                  className: styles.qrShapeIcon,
-                }}
-              />
-            );
-          })}
-        </div>
-      </QrCodeSectionWrapper> 
-      <Separator />
-      */}
-
-      {/* <QrCodeSectionWrapper title={t(`${translationKey}.ball_shapes`)}>
-        <div className={styles.renderBodyShapes}>
-          {CONSTANTS.QR_BALL_SHAPES.map((el: any, index) => {
-            return (
-              <Image
-                key={`${el.name}-${index}`}
-                containerProps={{
-                  onClick: () => handleShapeClick("ball", el),
-                  className: clsx(
-                    styles.qrShapeContainer,
-                    selectedQR.config.ball === el.name && styles.shapeActive
-                  ),
-                }}
-                imageProps={{
-                  src: el.icon,
-                  alt: el.name,
-                  className: styles.qrShapeIcon,
-                }}
-              />
-            );
-          })}
-        </div>
-      </QrCodeSectionWrapper>
-      <Separator /> */}
-
-      {/* <QrCodeSectionWrapper title={t(`${translationKey}.body_shapes`)}>
-        <div className={styles.renderBodyShapes}>
-          {CONSTANTS.QR_BODY_SHAPES.map((el: any, index) => {
-            return (
-              <Image
-                key={`${el.name}-${index}`}
-                containerProps={{
-                  onClick: () => handleShapeClick("body", el),
-                  className: clsx(
-                    styles.qrShapeContainer,
-                    selectedQR.config.body === el.name && styles.shapeActive
-                  ),
-                }}
-                imageProps={{
-                  src: el.icon,
-                  alt: el.name,
-                  className: styles.qrShapeIcon,
-                }}
-              />
-            );
-          })}
-        </div>
-      </QrCodeSectionWrapper>
-      <Separator /> */}
-
       <QrCodeSectionWrapper title={t(`${translationKey}.logo`)}>
-        <div className={styles.inputBox}>
-          <Image
-            imageProps={{
-              src: ASSET_PATHS.SVGS.UPLOAD_QR_LOGO,
-              className: styles.uploadLogo,
-            }}
-          />
-          <input
-            readOnly
-            placeholder={t(`${translationKey}.select_logo_image`)}
-            className={styles.fileInput}
-            onClick={() => uploadInputRef.current?.click()}
-          />
-          <input
-            type="file"
-            style={{ display: "none" }}
-            id="media-file"
-            aria-label="input"
-            accept="image/png, image/jpeg"
-            ref={uploadInputRef}
-            onChange={(event) => {
-              const file = event.target.files && event.target.files[0];
-              setSelectedQR((prev) => ({
-                ...prev,
-                config: {
-                  ...prev.config,
-                  logo: URL.createObjectURL(file as File),
-                },
-              }));
-            }}
-          />
-          <Button
-            size="medium"
-            text={t(`${translationKey}.upload`)}
-            variant="secondary"
-            buttonProps={{
-              className: styles.uploadButton,
-              onClick: () => uploadInputRef.current?.click(),
-            }}
-          />
-        </div>
+        {selectedLogo ? (
+          <div className={styles.renderSelectedLogo}>
+            <div className={styles.iconAndImageName}>
+              <Image
+                containerProps={{
+                  className: styles.imageLogoContainer,
+                }}
+                imageProps={{
+                  src: ASSET_PATHS.SVGS.IMAGE_ICON,
+                  className: styles.imageIcon,
+                }}
+              />
+              <Text
+                maximumNumberOfLines={1}
+                containerProps={{
+                  className: styles.logoNameText,
+                }}
+              >
+                {selectedLogo?.name}
+              </Text>
+            </div>
+
+            <Image
+              containerProps={{
+                className: styles.deleteIconContainer,
+                onClick: handleClearLogo,
+              }}
+              imageProps={{
+                src: ASSET_PATHS.SVGS.LOGO_DELETE_ICON,
+                className: styles.deleteIcon,
+              }}
+            />
+          </div>
+        ) : (
+          <div className={styles.inputBox}>
+            <Image
+              imageProps={{
+                src: ASSET_PATHS.SVGS.UPLOAD_QR_LOGO,
+                className: styles.uploadLogo,
+              }}
+            />
+            <input
+              readOnly
+              placeholder={t(`${translationKey}.select_logo_image`)}
+              className={styles.fileInput}
+              onClick={() => uploadInputRef.current?.click()}
+            />
+            <input
+              type="file"
+              style={{ display: "none" }}
+              id="media-file"
+              aria-label="input"
+              accept="image/png, image/jpeg, image/svg+xml"
+              ref={uploadInputRef}
+              onChange={handleSelectLogo}
+            />
+            <Button
+              size="medium"
+              text={t(`${translationKey}.upload`)}
+              variant="secondary"
+              buttonProps={{
+                className: styles.uploadButton,
+                onClick: () => uploadInputRef.current?.click(),
+              }}
+            />
+          </div>
+        )}
+
         <Text
           containerProps={{
             className: styles.logoNote,
@@ -509,13 +244,98 @@ const QRCode = ({
           {t(`${translationKey}.logo_note`)}
         </Text>
       </QrCodeSectionWrapper>
-      <Separator
-        containerProps={{
-          style: {
-            marginBottom: "2rem",
-          },
-        }}
-      />
+      <Separator />
+
+      <QrCodeSectionWrapper title={t(`${translationKey}.add_frame`)}>
+        <div className={styles.switchBox}>
+          <Text
+            tag="p"
+            containerProps={{
+              className: styles.switchLabel,
+            }}
+          >
+            {enableAddFrameSection ? "On" : "Off"}
+          </Text>
+          <Switch
+            inputProps={{
+              checked: enableAddFrameSection,
+              onChange: handleEnableFrame,
+            }}
+          />
+        </div>
+      </QrCodeSectionWrapper>
+      <Separator />
+
+      {enableAddFrameSection ? (
+        <>
+          <QrCodeSectionWrapper title={t(`${translationKey}.add_text`)}>
+            <div className={styles.inputGroup}>
+              <Input
+                label={t(`${translationKey}.top_text`)}
+                showCounter
+                inputProps={{
+                  value: selectedQR.config.topName,
+                  required: true,
+                  placeholder: t(`${translationKey}.scan_here`),
+                  maxLength: 25,
+                  onChange: (event) => handleChange(event, "topName"),
+                }}
+              />
+              <Input
+                label={t(`${translationKey}.bottom_text`)}
+                showCounter
+                inputProps={{
+                  value: selectedQR.config.bottomName,
+                  required: true,
+                  placeholder: t(`${translationKey}.scan_here`),
+                  maxLength: 25,
+                  onChange: (event) => handleChange(event, "bottomName"),
+                }}
+              />
+            </div>
+          </QrCodeSectionWrapper>
+          <Separator />
+        </>
+      ) : null}
+
+      <QrCodeSectionWrapper title={t(`${translationKey}.choose_shape`)}>
+        <div className={styles.renderShapes}>
+          <Image
+            containerProps={{
+              className: styles.iconBox,
+              onClick: () => handleChooseShape("square"),
+            }}
+            imageProps={{
+              src: ASSET_PATHS.SVGS.SQUARE_SHAPE,
+              className: styles.icon,
+            }}
+          />
+          <Image
+            containerProps={{
+              className: styles.iconBox,
+              onClick: () => handleChooseShape("circle"),
+            }}
+            imageProps={{
+              src: ASSET_PATHS.SVGS.CIRCLE_SHAPE,
+              className: styles.icon,
+            }}
+          />
+        </div>
+      </QrCodeSectionWrapper>
+      <Separator />
+
+      <div className={styles.qrCodeSectionSeparate}>
+        <Text
+          tag="h6"
+          containerProps={{
+            className: styles.qrCodeSectionTitle,
+          }}
+        >
+          {t(`${translationKey}.remove_videocode_branding`)}
+        </Text>
+        <Switch uncheckIcon={ASSET_PATHS.SVGS.SWITCH_LOCK_ICON} />
+      </div>
+      <Separator />
     </div>
   );
 };

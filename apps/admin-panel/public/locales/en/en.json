@@ -40,7 +40,10 @@
       "email": "Email",
       "email_note": "Buyers can email you at sara.cruz@example.com",
       "website": "Website",
-      "website_note": "Visitors will be taken to https://www.url.com"
+      "website_note": "Visitors will be taken to https://www.url.com",
+      "copy": "Copy",
+      "download": "Download",
+      "qr_code_info": "Please check it before using it on print material"
     },
     "QR": {
       "templates": "Templates",
@@ -51,7 +54,14 @@
       "logo": "Add your logo to the center of your code",
       "select_logo_image": "Drag & Drop or click to upload your logo",
       "upload": "Upload",
-      "logo_note": "A high-quality PNG is recommended. Supports PNG, JPG, and SVG up to 5MB."
+      "logo_note": "A high-quality PNG is recommended. Supports PNG, JPG, and SVG up to 5MB.",
+      "add_frame": "Add a frame to your code",
+      "add_text": "Add text to the frame",
+      "top_text": "Top Text",
+      "bottom_text": "Bottom Text",
+      "scan_here": "Scan here",
+      "remove_videocode_branding": "Remove Videocode Branding",
+      "choose_shape": "Choose a Shape"
     },
     "ANALYTICS": {
       "code_scans": "Code Scans"

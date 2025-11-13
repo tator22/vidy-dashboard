@@ -7,7 +7,15 @@ export const Switch: FC<{
   containerProps?: LabelHTMLAttributes<HTMLLabelElement>;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   label?: string;
-}> = ({ containerProps, inputProps, label }): JSX.Element => {
+  uncheckIcon?: string;
+  checkedIcon?: string;
+}> = ({
+  containerProps,
+  inputProps,
+  label,
+  checkedIcon,
+  uncheckIcon,
+}): JSX.Element => {
   // Hooks
   const id = useId();
 
@@ -31,8 +39,8 @@ export const Switch: FC<{
         className="icon"
         src={
           inputProps?.checked
-            ? ASSET_PATHS?.SVGS?.SWITCH_ON
-            : ASSET_PATHS?.SVGS?.SWITCH_OFF
+            ? checkedIcon || ASSET_PATHS?.SVGS?.SWITCH_ON
+            : uncheckIcon || ASSET_PATHS?.SVGS?.SWITCH_OFF
         }
         alt={inputProps?.checked ? "switch on" : "switch off"}
       />

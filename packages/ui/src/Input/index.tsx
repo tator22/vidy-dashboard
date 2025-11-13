@@ -74,7 +74,9 @@ export const Input: FC<{
               text={errorText}
               containerProps={{ className: "errorText" }}
             />
-          ) : null}
+          ) : (
+            <div />
+          )}
 
           {showCounter ? (
             <CounterText
