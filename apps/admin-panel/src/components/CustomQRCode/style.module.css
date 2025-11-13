@@ -4,15 +4,56 @@
   align-items: center;
   justify-content: center;
 
-  .qrCodeContainer {
-    padding: 5%;
-    border-radius: 5%;
+  * {
+    transition: none !important;
   }
 
   .qrContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
+
+    .topName,
+    .bottomName {
+      position: absolute;
+      color: rgb(var(--white));
+      font-size: 1.6rem;
+      line-height: 125%;
+      font-weight: 600;
+    }
+
+    .topName {
+      top: 0.4rem;
+    }
+
+    .bottomName {
+      bottom: 0.4rem;
+    }
   }
+
+  .borderBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainQrCodeContainer {
+    padding: 5%;
+    border-radius: 5%;
+  }
+}
+
+.bandSvg {
+  width: 30rem;
+  height: 30rem;
+  position: absolute;
+}
+
+.topNameSvg,
+.bottomNameSvg {
+  fill: #ffffff;
+  font-size: 2.75rem !important;
+  font-weight: 600;
+  letter-spacing: 3px;
 }

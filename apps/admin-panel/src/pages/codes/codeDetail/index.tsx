@@ -3,7 +3,14 @@ import { QRDataType, QRMonkeyConfig } from "@/components/CustomQRCode/types";
 import Header from "@/components/Header";
 import AddMediaModal from "@/components/Modals/AddMedia";
 import { ASSET_PATHS } from "@repo/assets";
-import { Image, RenderTab, renderTabProps } from "@repo/ui";
+import {
+  Button,
+  HelperText,
+  Image,
+  RenderTab,
+  renderTabProps,
+  Text,
+} from "@repo/ui";
 import { Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
@@ -41,19 +48,22 @@ const CodeDetail = () => {
     },
   ];
   const config: QRDataType = {
-    value: "www.first.com",
+    value: "www.videcode.link/codename",
+
     config: {
+      topName: "",
+      bottomName: "",
       body: "body1",
       frame: "frame1",
       ball: "ball1",
       bodyColor: "#000000",
-      bgColor: "#FFFFFF",
+      bgColor: "#ffffff",
       gradientColor1: "",
       gradientColor2: "",
       gradientType: "linear",
       gradientOnEyes: "true",
       logo: "",
-      logoMode: "default",
+      logoMode: "clean",
       frameColors: {
         topLeft: "#000000",
         topRight: "#000000",
@@ -66,16 +76,18 @@ const CodeDetail = () => {
       },
       frameFlips: {
         topLeft: [],
-        topRight: [],
-        bottomLeft: [],
+        topRight: ["horizontal"],
+        bottomLeft: ["vertical"],
       },
       ballFlips: {
         topLeft: [],
-        topRight: [],
-        bottomLeft: [],
+        topRight: ["horizontal"],
+        bottomLeft: ["vertical"],
       },
       background: {
         type: "none",
+        fill: "#000000",
+        backgroundColor: "#ffffff",
         qrSizeScale: 1,
       },
     },
@@ -169,11 +181,63 @@ const CodeDetail = () => {
               <CustomQRCode
                 value={selectedQR.value}
                 config={selectedQR.config}
-                size={200}
+                size={180}
               />
             </div>
           ) : null}
         </div>
+
+        {activeTab.key === "qr" ? (
+          <div className={styles.qrCodeActions}>
+            <Text
+              tag="p"
+              containerProps={{
+                className: styles.value,
+              }}
+              maximumNumberOfLines={1}
+            >
+              {selectedQR.value}
+            </Text>
+
+            <div className={styles.buttonGroup}>
+              <Button
+                text={t(`${translationKey}.copy`)}
+                variant="secondary"
+                size="medium"
+                buttonProps={{
+                  className: styles.actionButton,
+                }}
+                leftNode={
+                  <Image
+                    imageProps={{
+                      src: ASSET_PATHS.SVGS.COPY,
+                    }}
+                  />
+                }
+              />
+              <Button
+                text={t(`${translationKey}.download`)}
+                variant="secondary"
+                size="medium"
+                leftNode={
+                  <Image
+                    imageProps={{
+                      src: ASSET_PATHS.SVGS.DOWNLOAD,
+                    }}
+                  />
+                }
+                buttonProps={{
+                  className: styles.actionButton,
+                }}
+              />
+            </div>
+            <HelperText
+              icon={ASSET_PATHS.SVGS.INFO}
+              text={t(`${translationKey}.qr_code_info`)}
+              containerProps={{ className: styles.helperText }}
+            />
+          </div>
+        ) : null}
       </div>
 
       {/* Modals */}

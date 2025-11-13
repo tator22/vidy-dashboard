@@ -1,7 +1,8 @@
+import Account from "@/pages/account/index.js";
 import Authentication from "@/pages/authentication/index.js";
 import Billing from "@/pages/billing/index.js";
-import { Codes } from "@/pages/codes/index.js";
 import CodeDetail from "@/pages/codes/codeDetail/index.js";
+import { Codes } from "@/pages/codes/index.js";
 import Defaults from "@/pages/defaults/index.js";
 import Media from "@/pages/media/index.js";
 import Support from "@/pages/support/index.js";
@@ -58,6 +59,10 @@ const Router = () => {
         {
           path: CONSTANTS.PATHS.SUPPORT,
           element: <Support />,
+        },
+        {
+          path: CONSTANTS.PATHS.ACCOUNT,
+          element: <Account />,
         },
         // {
         //   path: CONSTANTS.PATHS.INSPIRATION,

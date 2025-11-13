@@ -5,11 +5,14 @@ import { ProfilePhoto } from "@repo/ui";
 import { useTranslation } from "react-i18next";
 import { Searchbar } from "../searchbar";
 import styles from "./style.module.css";
+import { useNavigate } from "react-router";
+import { CONSTANTS } from "@repo/utilities";
 
 const TopBar = () => {
   // Hooks
   const { t } = useTranslation("layout");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className={styles.topBarContainer}>
@@ -43,7 +46,10 @@ const TopBar = () => {
           className={styles.notification}
         />
 
-        <ProfilePhoto size={"4rem"} />
+        <ProfilePhoto
+          size={"4rem"}
+          onClick={() => navigate(CONSTANTS.PATHS.ACCOUNT)}
+        />
       </div>
     </div>
   );

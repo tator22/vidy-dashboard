@@ -40,7 +40,10 @@
       "email": "Email",
       "email_note": "Buyers can email you at sara.cruz@example.com",
       "website": "Website",
-      "website_note": "Visitors will be taken to https://www.url.com"
+      "website_note": "Visitors will be taken to https://www.url.com",
+      "copy": "Copy",
+      "download": "Download",
+      "qr_code_info": "Please check it before using it on print material"
     },
     "QR": {
       "templates": "Templates",
@@ -51,7 +54,14 @@
       "logo": "Add your logo to the center of your code",
       "select_logo_image": "Drag & Drop or click to upload your logo",
       "upload": "Upload",
-      "logo_note": "A high-quality PNG is recommended. Supports PNG, JPG, and SVG up to 5MB."
+      "logo_note": "A high-quality PNG is recommended. Supports PNG, JPG, and SVG up to 5MB.",
+      "add_frame": "Add a frame to your code",
+      "add_text": "Add text to the frame",
+      "top_text": "Top Text",
+      "bottom_text": "Bottom Text",
+      "scan_here": "Scan here",
+      "remove_videocode_branding": "Remove Videocode Branding",
+      "choose_shape": "Choose a Shape"
     },
     "ANALYTICS": {
       "code_scans": "Code Scans"
@@ -157,6 +167,27 @@
       "credit_card": "Credit Card",
       "pay": "Pay",
       "includes": "Includes: "
+    },
+    "ACCOUNT": {
+      "heading": "Account",
+      "cancel": "Cancel",
+      "save": "Save",
+      "picture": "Picture",
+      "change": "Change",
+      "remove": "Remove",
+      "storage": "Storage",
+      "add_more": "Add more",
+      "name": "Name",
+      "sub_name_label": "Choose a display name that represents you. Your name will appear on your videos and on your profile page.",
+      "enter_name": "Enter Name",
+      "email": "Email",
+      "enter_email": "Enter email",
+      "sub_email_label": "Your registered email address.",
+      "update_password": "Update Password",
+      "sub_update_password_label": "Update your account password",
+      "old_password": "Old Password",
+      "new_password": "New Password",
+      "confirm_password": "Confirm Password"
     }
   },
   "COMPONENTS": {
@@ -208,6 +239,20 @@
     "ADD_SOCIAL_LINK": {
       "title": "Add Social Links",
       "ctaAdd": "Add"
+    },
+    "ADD_MEDIA_TAB": {
+      "title": "Add Media",
+      "name": "Name",
+      "tags": "Tags",
+      "enter_name": "Enter Name",
+      "add_tag": "Add tag",
+      "save": "Save",
+      "upload": "upload",
+      "select_from_library": "Select from Library",
+      "upload_heading": "Drag an drop Media files to upload",
+      "upload_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "cta": "Select Media",
+      "preview": "Preview"
     }
   }
 }

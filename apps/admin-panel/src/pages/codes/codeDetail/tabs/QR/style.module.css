@@ -72,7 +72,6 @@
     border-radius: 1rem;
     padding-right: 0.35rem;
     padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
 
     .uploadLogo {
       width: 1.5rem;
@@ -102,41 +101,112 @@
     }
   }
 
-  .logoNote {
-    color: rgb(var(--black), 0.3);
-  }
-}
-
-/* ------------------------------------ */
-.renderBodyShapes {
-  gap: 1rem;
-
-  .qrShapeContainer {
-    width: 6rem;
-    height: 6rem;
+  .renderSelectedLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.4rem;
     border-radius: 1rem;
-    padding: 0.75rem;
-    background-color: rgb(var(--white));
-    border: 0.25rem solid rgb(var(--black), 0.1);
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    background-color: rgba(var(--primary), 0.01);
+    border: 0.1rem solid rgba(var(--primary), 0.1);
 
-    .qrShapeIcon {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .iconAndImageName {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .imageLogoContainer {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .imageLogo {
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+
+      .logoNameText {
+        font-size: 1.3rem;
+        line-height: 125%;
+        font-weight: 400;
+        color: rgb(var(--black));
+      }
+    }
+
+    .deleteIconContainer {
+      width: 1.8rem;
+      height: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .deleteIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 
-  .shapeActive {
-    border: 0.25rem solid rgb(var(--primary));
+  .logoNote {
+    color: rgb(var(--black), 0.3);
+    margin-top: 1.5rem;
+  }
+
+  .switchBox {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .switchLabel {
+      font-size: 1.8rem;
+      line-height: 125%;
+      color: rgb(var(--black));
+      font-weight: 500;
+    }
+  }
+
+  .inputGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .renderShapes {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .iconBox {
+      width: 6rem;
+      height: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(var(--black), 0.03);
+      border: 0.1rem solid rgb(var(--black), 0.08);
+      border-radius: 1rem;
+      cursor: pointer;
+      padding: 1.2rem;
+
+      .icon {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  .qrCodeSectionSeparate {
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
   }
 }
 
-/* ------------------------------------ */
 .qrCodeSection {
   padding: 2rem 3rem;
 

@@ -27,11 +27,51 @@
       }
 
       .qrCodePreview {
-        border: 2px solid green;
-        padding: 4rem;
+        width: 80%;
+        height: 30rem;
         border-radius: 3rem;
         border: 0.5rem solid rgba(var(--black), 0.1);
         box-shadow: 0px 5px 20px 0px rgba(var(--black), 0.2);
+        background-color: rgba(var(--black), 0.03);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .qrCodeActions {
+      margin-top: 3rem;
+      padding: 0rem 4.5rem;
+
+      .value {
+        text-align: center;
+        font-size: 1.4rem;
+        color: rgba(var(--black), 0.3);
+        font-weight: 400;
+      }
+
+      .buttonGroup {
+        margin-top: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .actionButton {
+          width: 100%;
+          border-radius: 1rem;
+          border: 0.1rem solid rgba(var(--black), 0.03);
+        }
+      }
+
+      .helperText {
+        margin-top: 1.5rem;
+        align-items: center;
+
+        p {
+          font-size: 1.3rem;
+          line-height: 125%;
+          font-weight: 400;
+        }
       }
     }
   }

@@ -20,6 +20,7 @@ export const CONSTANTS = {
     SETTINGS: "/app/settings",
     SUPPORT: "/app/support",
     INSPIRATION: "/app/inspiration",
+    ACCOUNT: "/app/account",
     AUTHENTICATION: "/",
   },
   ROLE: {

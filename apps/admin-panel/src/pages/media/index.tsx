@@ -4,6 +4,8 @@ import MediaCard from "@/components/Cards/mediaCard";
 import Header from "@/components/Header";
 import { useTranslation } from "react-i18next";
 import { Searchbar } from "@/layout/searchbar";
+import { useState } from "react";
+import AddMediaModal from "./AddMedia";
 
 const Media = () => {
   // Hooks
@@ -11,12 +13,17 @@ const Media = () => {
 
   // Variables
   const translationKey = "PAGES.MEDIA";
+
+  // Local State
+  const [enableAddMediaModal, setEnableAddMediaModal] = useState(false);
+
   return (
     <div className={styles.mediaSection}>
       <Header
         isButton
         heading={t(`${translationKey}.heading`)}
         buttonTitle={t(`${translationKey}.new_cta`)}
+        onButtonClick={() => setEnableAddMediaModal(true)}
         rightChildren={
           <Searchbar
             containerClassName={styles.searchInputContainer}
@@ -34,6 +41,15 @@ const Media = () => {
           </div>
         ))}
       </div>
+
+      {enableAddMediaModal && (
+        <AddMediaModal
+          isOpen={enableAddMediaModal}
+          onClose={() => {
+            setEnableAddMediaModal(false);
+          }}
+        />
+      )}
     </div>
   );
 };

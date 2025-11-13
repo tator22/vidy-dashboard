@@ -1,53 +1,7 @@
-export type BodyShapeType =
-  | "body1"
-  | "body2"
-  | "body3"
-  | "body4"
-  | "body5"
-  | "body6"
-  | "body7";
-export type FrameShapeType =
-  | "frame1"
-  | "TFrame6"
-  | "frame2"
-  | "frame3"
-  | "frame4"
-  | "frame5"
-  | "frame6"
-  | "frame7"
-  | "frame8"
-  | "frame9"
-  | "frame10"
-  | "frame11"
-  | "frame12"
-  | "frame13"
-  | "frame14";
-export type BallShapeType =
-  | "ball1"
-  | "CPball5"
-  | "ball2"
-  | "ball2"
-  | "ball3"
-  | "ball4"
-  | "ball5"
-  | "ball6"
-  | "ball7"
-  | "ball8"
-  | "ball9"
-  | "ball10"
-  | "ball11"
-  | "ball12"
-  | "ball13"
-  | "ball14"
-  | "ball15"
-  | "ball16"
-  | "ball17";
-export type BackgroundType =
-  | "circleCut"
-  | "circleLineShape"
-  | "circleSmoothLineShape"
-  | "squareShape"
-  | "none";
+export type BodyShapeType = "body1";
+export type FrameShapeType = "frame1";
+export type BallShapeType = "ball1";
+export type BackgroundType = "none";
 export type FlipDirection = "horizontal" | "vertical";
 export type PositionType = "topLeft" | "topRight" | "bottomLeft";
 
@@ -80,6 +34,8 @@ export type BackgroundFunctionArgumentType = (
 ) => JSX.Element;
 
 export interface QRMonkeyConfig {
+  topName?: string;
+  bottomName?: string;
   body: BodyShapeType;
   frame: FrameShapeType;
   ball: BallShapeType;
@@ -102,9 +58,12 @@ export interface QRMonkeyConfig {
     backgroundColor?: string;
   };
   border?: {
-    isBorder: boolean;
-    borderColor: string;
+    isBorder?: boolean;
+    borderColor?: string;
     borderWidthMultiplier: number;
+    borderRadius?: string;
+    isAddFrame?: boolean;
+    frameType?: "circle" | "square";
   };
 }
 
