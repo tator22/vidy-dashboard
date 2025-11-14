@@ -5,6 +5,7 @@ import ScrollToTop from "./scrollToTop/scrollToTop";
 import { SideBar } from "./sideBar";
 import "./style.css";
 import TopBar from "./topBar";
+import { Toaster } from "react-hot-toast";
 
 // export const SIDEBAR_BREAKPOINT: number = 900;
 
@@ -113,6 +114,15 @@ const Layout = () => {
         <TopBar />
         <Outlet />
       </div>
+
+      <Toaster
+        position="bottom-right"
+        reverseOrder={true}
+        containerStyle={{
+          fontSize: "2rem",
+          lineHeight: "125%",
+        }}
+      />
     </div>
   );
 };

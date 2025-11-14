@@ -43,7 +43,8 @@
       "website_note": "Visitors will be taken to https://www.url.com",
       "copy": "Copy",
       "download": "Download",
-      "qr_code_info": "Please check it before using it on print material"
+      "qr_code_info": "Please check it before using it on print material",
+      "copied": "Copied"
     },
     "QR": {
       "templates": "Templates",

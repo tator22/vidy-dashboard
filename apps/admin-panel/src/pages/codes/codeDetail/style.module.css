@@ -30,9 +30,9 @@
         width: 80%;
         height: 30rem;
         border-radius: 3rem;
-        border: 0.5rem solid rgba(var(--black), 0.1);
+        border: 0.5rem solid #e5e5e5;
         box-shadow: 0px 5px 20px 0px rgba(var(--black), 0.2);
-        background-color: rgba(var(--black), 0.03);
+        background-color: #f7f7f7;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -60,6 +60,11 @@
           width: 100%;
           border-radius: 1rem;
           border: 0.1rem solid rgba(var(--black), 0.03);
+
+          .copyIcon {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
         }
       }
 

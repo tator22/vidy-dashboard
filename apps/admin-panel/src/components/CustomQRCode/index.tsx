@@ -69,7 +69,7 @@ export const CustomQRCode: React.FC<CustomQRCodeProps> = ({
   };
 
   return (
-    <div className={styles.renderQrCodeBody}>
+    <div className={styles.renderQrCodeBody} id="my-qr-code">
       {/* Render Background */}
       {qrSizeScale === 1
         ? null
