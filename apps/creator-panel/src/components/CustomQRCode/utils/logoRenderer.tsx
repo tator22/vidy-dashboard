@@ -11,10 +11,6 @@ const convertToBase64 = async (fileUrl: string) => {
   });
 };
 
-/**
- * Renders a centered logo over the QR code.
- * In "clean" mode, it draws a white background behind the logo (circle).
- */
 export const LogoRenderer: React.FC<LogoRendererProps> = ({
   logo,
   size,
@@ -28,6 +24,9 @@ export const LogoRenderer: React.FC<LogoRendererProps> = ({
   const x = (size - logoSize) / 2;
   const y = (size - logoSize) / 2;
 
+  const padding = 6; // adjust as needed
+  const circleRadius = logoSize / 2 + padding;
+
   const [base64Logo, setBase64Logo] = useState<string | null>(null);
 
   useEffect(() => {
@@ -39,9 +38,9 @@ export const LogoRenderer: React.FC<LogoRendererProps> = ({
   }, [logo]);
 
   return (
-    <>
+    <g>
       {mode === "clean" && (
-        <circle cx={size / 2} cy={size / 2} r={logoSize / 1.1} fill="#ffffff" />
+        <circle cx={size / 2} cy={size / 2} r={circleRadius} fill="white" />
       )}
       <image
         href={base64Logo as string}
@@ -51,6 +50,6 @@ export const LogoRenderer: React.FC<LogoRendererProps> = ({
         height={logoSize}
         preserveAspectRatio="xMidYMid meet"
       />
-    </>
+    </g>
   );
 };

@@ -64,7 +64,7 @@ const CodeDetail = () => {
       gradientColor2: "",
       gradientType: "linear",
       gradientOnEyes: "true",
-      logo: "",
+      logo: ASSET_PATHS.SVGS.DEFAULT_QR_CODE_ICON,
       logoMode: "clean",
       frameColors: {
         topLeft: "#000000",
