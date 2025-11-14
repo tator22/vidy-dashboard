@@ -45,9 +45,9 @@ export const ADMIN_SIDEBAR_TABS = [
     active_icon: ASSET_PATHS.SVGS.SUPPORT_FILLED,
   },
   {
-    key: "inspiration",
-    label: "inspiration",
-    link: CONSTANTS.PATHS.INSPIRATION,
+    key: "video-help",
+    label: "Video Help",
+    link: CONSTANTS.PATHS.VIDEO_HELP,
     icon: ASSET_PATHS.SVGS.INSPIRATION_OUTLINE,
     active_icon: ASSET_PATHS.SVGS.INSPIRATION_FILLED,
   },

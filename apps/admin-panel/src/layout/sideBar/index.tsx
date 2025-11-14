@@ -98,7 +98,8 @@ export const SideBar = () => {
 
       <ul className={styles.bottomSection} ref={tabGroupRef}>
         {ADMIN_SIDEBAR_TABS?.slice(4)?.map((item, index) => {
-          const isActive = item?.link === `/${pageName[1]}`;
+          const link = item.link.split("/");
+          const isActive = `/${link[2]}` === `/${pageName[2]}`;
 
           return (
             <li key={index} onClick={toggleSideBarDrawer}>

@@ -4,9 +4,11 @@ import Billing from "@/pages/billing/index.js";
 import CodeDetail from "@/pages/codes/codeDetail/index.js";
 import { Codes } from "@/pages/codes/index.js";
 import Defaults from "@/pages/defaults/index.js";
+import LandingScreen from "@/pages/landingScreen/index.js";
 import Media from "@/pages/media/index.js";
 import Support from "@/pages/support/index.js";
 import { TeamMembers } from "@/pages/teamMembers/index.js";
+import VideoHelp from "@/pages/videoHelp/index.js";
 import { CONSTANTS } from "@repo/utilities";
 import { lazy } from "react";
 import {
@@ -15,7 +17,6 @@ import {
   useRouteError,
 } from "react-router";
 import "./i18n.js";
-import LandingScreen from "@/pages/landingScreen/index.js";
 
 const Error = lazy(() => import("./src/pages/error"));
 const Layout = lazy(() => import("./src/layout"));
@@ -69,10 +70,10 @@ const Router = () => {
           path: CONSTANTS.PATHS.ACCOUNT,
           element: <Account />,
         },
-        // {
-        //   path: CONSTANTS.PATHS.INSPIRATION,
-        //   element: <INSPIRATION />,
-        // },
+        {
+          path: CONSTANTS.PATHS.VIDEO_HELP,
+          element: <VideoHelp />,
+        },
       ],
     },
     {

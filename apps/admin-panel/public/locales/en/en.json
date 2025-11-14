@@ -189,6 +189,10 @@
       "old_password": "Old Password",
       "new_password": "New Password",
       "confirm_password": "Confirm Password"
+    },
+    "VIDEO_HELP": {
+      "heading": "Video Help",
+      "search_topics": "Search Topics"
     }
   },
   "COMPONENTS": {

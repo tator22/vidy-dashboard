@@ -19,9 +19,9 @@ export const CONSTANTS = {
     BILLING: "/app/billing",
     SETTINGS: "/app/settings",
     SUPPORT: "/app/support",
-    INSPIRATION: "/app/inspiration",
     ACCOUNT: "/app/account",
     AUTHENTICATION: "/",
+    VIDEO_HELP: "/app/video-help",
   },
   ROLE: {
     ADMIN: "admin",
