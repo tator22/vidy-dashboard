@@ -2,7 +2,7 @@ import { ASSET_PATHS } from "@repo/assets";
 
 export const CONSTANTS = {
   CURRENCY_SYMBOL: "$",
-  APP_NAME: "Listing Hype",
+  APP_NAME: "Videocode",
   PRODUCTS: {
     ADMIN_PANEL: "Admin Panel",
     CREATOR_PANEL: "Creator Panel",
@@ -19,9 +19,9 @@ export const CONSTANTS = {
     BILLING: "/app/billing",
     SETTINGS: "/app/settings",
     SUPPORT: "/app/support",
-    INSPIRATION: "/app/inspiration",
     ACCOUNT: "/app/account",
     AUTHENTICATION: "/",
+    VIDEO_HELP: "/app/video-help",
   },
   ROLE: {
     ADMIN: "admin",

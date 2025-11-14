@@ -16,7 +16,7 @@ interface RenderCellsUiProps {
 const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   // Table Columns
   // ID
-  if (el === "listing") {
+  if (el === "name") {
     return (
       <td>
         <div className={styles.infoContainer}>

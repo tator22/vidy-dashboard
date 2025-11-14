@@ -143,6 +143,7 @@ import UPLOAD_QR_LOGO from "./svgs/upload_qr.svg";
 import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
+import COPIED from "./svgs/copied.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -295,5 +296,6 @@ export const ASSET_PATHS = {
     LOGO_DELETE_ICON,
     COPY,
     DOWNLOAD,
+    COPIED,
   },
 };

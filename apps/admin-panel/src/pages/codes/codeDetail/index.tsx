@@ -2,6 +2,7 @@ import { CustomQRCode } from "@/components/CustomQRCode";
 import { QRDataType, QRMonkeyConfig } from "@/components/CustomQRCode/types";
 import Header from "@/components/Header";
 import AddMediaModal from "@/components/Modals/AddMedia";
+import { successToast } from "@/toast";
 import { ASSET_PATHS } from "@repo/assets";
 import {
   Button,
@@ -11,7 +12,8 @@ import {
   renderTabProps,
   Text,
 } from "@repo/ui";
-import { Suspense, useState } from "react";
+import * as htmlToImage from "html-to-image";
+import { Suspense, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 import Analytics from "./tabs/analytics";
@@ -99,6 +101,7 @@ const CodeDetail = () => {
     key: "media",
   });
   const [enableAddMediaModal, setEnableAddMediaModal] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [selectedQR, setSelectedQR] = useState<{
     config: QRMonkeyConfig;
     value: string;
@@ -132,6 +135,55 @@ const CodeDetail = () => {
   const handleEnableAddMediaModal = () => {
     setEnableAddMediaModal(!enableAddMediaModal);
   };
+
+  const handleQRAction = async (mode: "download" | "copy" | "both") => {
+    try {
+      const node = document.getElementById("qr-wrapper");
+      if (!node) return;
+
+      const dataUrl = await htmlToImage.toPng(node, {
+        cacheBust: true,
+        pixelRatio: 200,
+        canvasHeight: 300,
+        canvasWidth: 300,
+      });
+
+      if (mode === "download" || mode === "both") {
+        const link = document.createElement("a");
+        link.download = "videocode-qr.png";
+        link.href = dataUrl;
+        link.click();
+      }
+
+      if (mode === "copy" || mode === "both") {
+        const blob = await (await fetch(dataUrl)).blob();
+
+        if (navigator.clipboard && navigator.clipboard.write) {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              "image/png": blob,
+            }),
+          ]);
+          setCopied(true);
+          successToast("QR copied to clipboard!");
+        } else {
+          console.warn("Clipboard API not supported.");
+        }
+      }
+    } catch (error) {
+      console.log("Error in QR action:", error);
+    }
+  };
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (copied) {
+        setCopied(false);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timeoutId);
+  }, [copied]);
 
   return (
     <div className={styles.listingDetail}>
@@ -177,7 +229,7 @@ const CodeDetail = () => {
             />
           ) : null}
           {["qr", "analytics", "settings"].includes(activeTab.key) ? (
-            <div className={styles.qrCodePreview}>
+            <div className={styles.qrCodePreview} id="qr-wrapper">
               <CustomQRCode
                 value={selectedQR.value}
                 config={selectedQR.config}
@@ -201,16 +253,25 @@ const CodeDetail = () => {
 
             <div className={styles.buttonGroup}>
               <Button
-                text={t(`${translationKey}.copy`)}
+                text={
+                  copied
+                    ? t(`${translationKey}.copied`)
+                    : t(`${translationKey}.copy`)
+                }
                 variant="secondary"
                 size="medium"
                 buttonProps={{
                   className: styles.actionButton,
+                  onClick: () => handleQRAction("copy"),
                 }}
                 leftNode={
                   <Image
                     imageProps={{
-                      src: ASSET_PATHS.SVGS.COPY,
+                      src: copied
+                        ? ASSET_PATHS.SVGS.COPIED
+                        : ASSET_PATHS.SVGS.COPY,
+
+                      className: styles.copyIcon,
                     }}
                   />
                 }
@@ -228,6 +289,7 @@ const CodeDetail = () => {
                 }
                 buttonProps={{
                   className: styles.actionButton,
+                  onClick: () => handleQRAction("download"),
                 }}
               />
             </div>
