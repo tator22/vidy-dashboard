@@ -118,7 +118,7 @@
         "email_input_placeholder": "Email",
         "password_input_placeholder": "Password",
         "confirm_password_input_placeholder": "Confirm Password",
-        "checkbox_label": "I agree to Listing Hype's <0>Terms of service</0> and <1>Privacy policy</1>",
+        "checkbox_label": "I agree to Video Code's <0>Terms of service</0> and <1>Privacy policy</1>",
         "cta": "Create my account"
       },
       "ENTER_VERIFICATION_CODE": {

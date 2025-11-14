@@ -144,6 +144,7 @@ import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
 import COPIED from "./svgs/copied.svg";
+import DEFAULT_QR_CODE_ICON from "./svgs/default_qr_code_icon.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -297,5 +298,6 @@ export const ASSET_PATHS = {
     COPY,
     DOWNLOAD,
     COPIED,
+    DEFAULT_QR_CODE_ICON,
   },
 };
