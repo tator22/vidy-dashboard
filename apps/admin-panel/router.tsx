@@ -15,6 +15,7 @@ import {
   useRouteError,
 } from "react-router";
 import "./i18n.js";
+import LandingScreen from "@/pages/landingScreen/index.js";
 
 const Error = lazy(() => import("./src/pages/error"));
 const Layout = lazy(() => import("./src/layout"));
@@ -32,6 +33,10 @@ const Router = () => {
       element: <Layout />,
       errorElement: <ErrorBoundary />,
       children: [
+        {
+          path: CONSTANTS.PATHS.ROOT,
+          element: <LandingScreen />,
+        },
         {
           path: CONSTANTS.PATHS.LISTING,
           element: <Codes />,

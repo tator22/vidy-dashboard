@@ -9,6 +9,7 @@ import { closeDrawer } from "../../redux/slice/otherSlices/drawerSlice";
 import styles from "./style.module.css";
 import { Tab } from "./tab";
 import { ADMIN_SIDEBAR_TABS } from "./tabsLinks";
+import { CONSTANTS } from "@repo/utilities";
 
 export const SideBar = () => {
   // Hooks
@@ -65,11 +66,12 @@ export const SideBar = () => {
         />
         <Text
           tag="h1"
-          children="Listing Hype"
           containerProps={{
             className: styles.appTitle,
           }}
-        />
+        >
+          {CONSTANTS.APP_NAME}
+        </Text>
       </div>
 
       <ul className={styles.sectionsContainer} ref={tabGroupRef}>

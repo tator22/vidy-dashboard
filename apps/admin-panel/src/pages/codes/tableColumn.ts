@@ -1,7 +1,7 @@
 export const TableColumn = [
   {
-    id: "listing",
-    label: "listing",
+    id: "name",
+    label: "name",
   },
   {
     id: "created",
