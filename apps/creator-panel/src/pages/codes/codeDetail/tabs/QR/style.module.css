@@ -197,6 +197,10 @@
         height: 4rem;
       }
     }
+
+    .active {
+      border: 0.2rem solid #009eff;
+    }
   }
 
   .qrCodeSectionSeparate {

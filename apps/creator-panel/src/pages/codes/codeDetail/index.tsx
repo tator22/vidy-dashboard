@@ -49,15 +49,59 @@ const CodeDetail = () => {
       key: "settings",
     },
   ];
+  // const config: QRDataType = {
+  //   value: "www.videcode.link/codename",
+  //   config: {
+  //     // topName: "",
+  //     // bottomName: "",
+  //     body: "body1",
+  //     frame: "frame1",
+  //     ball: "ball1",
+  //     bodyColor: "#000000",
+  //     bgColor: "#ffffff",
+  //     gradientColor1: "",
+  //     gradientColor2: "",
+  //     gradientType: "linear",
+  //     gradientOnEyes: "true",
+  //     logo: ASSET_PATHS.SVGS.DEFAULT_QR_CODE_ICON,
+  //     logoMode: "clean",
+  //     frameColors: {
+  //       topLeft: "#000000",
+  //       topRight: "#000000",
+  //       bottomLeft: "#000000",
+  //     },
+  //     ballColors: {
+  //       topLeft: "#000000",
+  //       topRight: "#000000",
+  //       bottomLeft: "#000000",
+  //     },
+  //     frameFlips: {
+  //       topLeft: [],
+  //       topRight: ["horizontal"],
+  //       bottomLeft: ["vertical"],
+  //     },
+  //     ballFlips: {
+  //       topLeft: [],
+  //       topRight: ["horizontal"],
+  //       bottomLeft: ["vertical"],
+  //     },
+  //     background: {
+  //       type: "none",
+  //       fill: "#000000",
+  //       backgroundColor: "#ffffff",
+  //       qrSizeScale: 1,
+  //     },
+  //   },
+  // };
+
   const config: QRDataType = {
     value: "www.videcode.link/codename",
-
     config: {
-      topName: "",
-      bottomName: "",
-      body: "body1",
-      frame: "frame1",
-      ball: "ball1",
+      // topName: "",
+      // bottomName: "",
+      body: "body4",
+      frame: "RoundedSquareFrame",
+      ball: "RoundedSquareBall",
       bodyColor: "#000000",
       bgColor: "#ffffff",
       gradientColor1: "",
@@ -230,14 +274,30 @@ const CodeDetail = () => {
           ) : null}
           {["qr", "analytics", "settings"].includes(activeTab.key) ? (
             <div className={styles.qrCodePreview} id="qr-wrapper">
-              <CustomQRCode
+              {/* <CustomQRCode
                 value={selectedQR.value}
                 config={selectedQR.config}
                 size={180}
+              /> */}
+
+              <CustomQRCode
+                value={selectedQR.value}
+                config={selectedQR.config}
+                size={200}
               />
             </div>
           ) : null}
         </div>
+
+        {/* {["qr", "analytics", "settings"].includes(activeTab.key) ? (
+          <div className={styles.qrCodePreview} id="qr-wrapper">
+            <CustomQRCodeExperimental
+              value={experimentalConfig.value}
+              config={experimentalConfig.config}
+              size={200}
+            />
+          </div>
+        ) : null} */}
 
         {activeTab.key === "qr" ? (
           <div className={styles.qrCodeActions}>
