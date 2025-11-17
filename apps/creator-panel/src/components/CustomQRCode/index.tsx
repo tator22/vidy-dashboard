@@ -54,46 +54,8 @@ export const CustomQRCode: React.FC<CustomQRCodeProps> = ({
     { row: count - finderSize, col: 0, position: "bottomLeft" },
   ];
 
-  // Variables
-  // const shapeType = config.border?.frameType;
-  // const borderWidth = config.border?.isAddFrame
-  //   ? size + (config.border?.borderWidthMultiplier || 0)
-  //   : size + 10;
-  // const sizeObject = {
-  //   width: shapeType === "circle" ? borderWidth + 50 : borderWidth,
-  //   minWidth: shapeType === "circle" ? borderWidth + 50 : borderWidth,
-  //   maxWidth: shapeType === "circle" ? borderWidth + 50 : borderWidth,
-  //   height: shapeType === "circle" ? borderWidth + 50 : borderWidth,
-  //   minHeight: shapeType === "circle" ? borderWidth + 50 : borderWidth,
-  //   maxHeight: shapeType === "circle" ? borderWidth + 50 : borderWidth,
-  // };
-
   return (
-    <div
-      className={styles.renderQrCodeBody}
-      style={
-        {
-          // width: size + 160,
-          // minWidth: size + 160,
-          // maxWidth: size + 160,
-          // height: size + 160,
-          // minHeight: size + 160,
-          // maxHeight: size + 160,
-          // width: size,
-          // minWidth: size,
-          // maxWidth: size,
-          // height: size,
-          // minHeight: size,
-          // maxHeight: size,
-          // backgroundColor: config.bgColor,
-          // borderColor: config.border?.borderColor,
-          // borderWidth: config?.border?.borderWidthMultiplier
-          //   ? `${config?.border?.borderWidthMultiplier}px`
-          //   : "0.25rem",
-          // borderStyle: config.border?.isBorder ? "solid" : "none",
-        }
-      }
-    >
+    <div className={styles.renderQrCodeBody}>
       {/* Render Background */}
       {qrSizeScale === 1
         ? null
@@ -163,11 +125,6 @@ export const CustomQRCode: React.FC<CustomQRCodeProps> = ({
             backgroundColor: ["borderCircle"].includes(config.background.type)
               ? "transparent"
               : config.bgColor,
-            //   borderColor: config.border?.borderColor,
-            //   borderWidth: config?.border?.borderWidthMultiplier
-            //     ? `${size * (config?.border?.borderWidthMultiplier / 100)}px`
-            //     : "0.25rem",
-            //   borderStyle: config.border?.isBorder ? "solid" : "none",
           }}
           className={styles.mainQrCodeContainer}
         >
@@ -242,28 +199,6 @@ export const CustomQRCode: React.FC<CustomQRCodeProps> = ({
                   return null;
                 }
 
-                // if (zoneType === "ball") {
-                //   const ballColor = getColor({
-                //     finderIndex,
-                //     config,
-                //     target: "ballColors",
-                //     defaultColor: "#000000",
-                //   });
-                //   const flipArray = getFlipDirections({
-                //     finderIndex,
-                //     config,
-                //     target: "ballFlips",
-                //   });
-
-                //   return ballShapes[config.eyeBall](
-                //     r,
-                //     c,
-                //     cellSize,
-                //     ballFill(ballColor),
-                //     flipArray
-                //   );
-                // }
-
                 if (zoneType === "ball") {
                   if (r === pos.row + 2 && c === pos.col + 2) {
                     // Center of 3x3 ball zone
@@ -313,6 +248,8 @@ export const CustomQRCode: React.FC<CustomQRCodeProps> = ({
               size={qrSize}
               logoSizeRatio={0.2}
               mode={config.logoMode}
+              color={config.ballColors.bottomLeft as string}
+              isDefaultLogo={config.isDefaultLogo}
             />
           )}
         </svg>

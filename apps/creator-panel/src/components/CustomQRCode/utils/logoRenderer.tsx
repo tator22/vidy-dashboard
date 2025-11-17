@@ -1,14 +1,12 @@
 import { LogoRendererProps } from "../types";
 
-/**
- * Renders a centered logo over the QR code.
- * In "clean" mode, it draws a white background behind the logo (circle).
- */
 export const LogoRenderer: React.FC<LogoRendererProps> = ({
   logo,
   size,
   logoSizeRatio = 0.2,
   mode = "default",
+  color,
+  isDefaultLogo,
 }) => {
   if (!logo) return null;
 
@@ -26,14 +24,31 @@ export const LogoRenderer: React.FC<LogoRendererProps> = ({
           fill="#ffffff"
         />
       )}
-      <image
-        href={logo}
-        x={x}
-        y={y}
-        width={logoSize}
-        height={logoSize}
-        preserveAspectRatio="xMidYMid meet"
-      />
+      {isDefaultLogo ? (
+        <svg
+          width={logoSize}
+          height={logoSize}
+          viewBox="0 0 46 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          x={x}
+          y={y}
+        >
+          <path
+            d="M8.16241 1.10246C3.65462 -1.48327 0 0.634993 0 5.82994V44.1664C0 49.3665 3.65462 51.4821 8.16241 48.8988L41.6704 29.6822C46.1797 27.0955 46.1797 22.9048 41.6704 20.3187L8.16241 1.10246Z"
+            fill={color}
+          />
+        </svg>
+      ) : (
+        <image
+          href={logo}
+          x={x}
+          y={y}
+          width={logoSize}
+          height={logoSize}
+          preserveAspectRatio="xMidYMid meet"
+        />
+      )}
     </>
   );
 };

@@ -7,6 +7,7 @@ import {
 import { ASSET_PATHS } from "@repo/assets";
 import { Button, Image, Input, Separator, Switch, Text } from "@repo/ui";
 import { CONSTANTS } from "@repo/utilities";
+import clsx from "clsx";
 import {
   ChangeEvent,
   Dispatch,
@@ -17,7 +18,6 @@ import {
 } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import clsx from "clsx";
 
 export interface QRShapeElementType {
   name: FrameShapeType;
@@ -60,7 +60,8 @@ const QRCode = ({
       ...prev,
       config: {
         ...prev.config,
-        logo: "",
+        logo: ASSET_PATHS.SVGS.DEFAULT_QR_CODE_ICON,
+        isDefaultLogo: true,
       },
     }));
   };
@@ -73,6 +74,7 @@ const QRCode = ({
       config: {
         ...prev.config,
         logo: URL.createObjectURL(file as File),
+        isDefaultLogo: false,
       },
     }));
   };

@@ -68,6 +68,8 @@ export interface LogoRendererProps {
   size: number;
   logoSizeRatio?: number;
   mode?: "default" | "clean";
+  isDefaultLogo?: boolean;
+  color: string;
 }
 
 export type FunctionArgumentType = (
@@ -99,6 +101,7 @@ export interface QRMonkeyConfig {
   gradientOnEyes: "true" | "false";
   logo: string;
   logoMode: "default" | "clean";
+  isDefaultLogo?: boolean;
   frameFlips: Record<PositionType, FlipDirection[]>;
   ballFlips: Record<PositionType, FlipDirection[]>;
   frameColors: Record<PositionType, string>;

@@ -97,8 +97,6 @@ const CodeDetail = () => {
   const config: QRDataType = {
     value: "www.videcode.link/codename",
     config: {
-      // topName: "",
-      // bottomName: "",
       body: "body4",
       frame: "RoundedSquareFrame",
       ball: "RoundedSquareBall",
@@ -110,6 +108,7 @@ const CodeDetail = () => {
       gradientOnEyes: "true",
       logo: ASSET_PATHS.SVGS.DEFAULT_QR_CODE_ICON,
       logoMode: "clean",
+      isDefaultLogo: true,
       frameColors: {
         topLeft: "#000000",
         topRight: "#000000",
