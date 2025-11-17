@@ -3,6 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* border: 2px solid green !important; */
+  /* border-radius: 50%; */
+  /* background-color: black; */
+  /* border: 2px solid green; */
+  height: fit-content;
 
   * {
     transition: none !important;
@@ -12,30 +17,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-
-    .topName,
-    .bottomName {
-      position: absolute;
-      color: rgb(var(--white));
-      font-size: 1.6rem;
-      line-height: 125%;
-      font-weight: 600;
-    }
-
-    .topName {
-      top: 0.4rem;
-    }
-
-    .bottomName {
-      bottom: 0.4rem;
-    }
+    position: absolute;
   }
 
-  .borderBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .topName,
+  .bottomName {
+    position: absolute;
+    color: rgb(var(--white));
+    font-size: 1.6rem;
+    line-height: 125%;
+    font-weight: 600;
+  }
+
+  .topName {
+    top: 0.5rem;
+  }
+
+  .bottomName {
+    bottom: 0.5rem;
   }
 
   .mainQrCodeContainer {
@@ -46,14 +45,6 @@
 
 .bandSvg {
   width: 30rem;
-  height: 30rem;
+  height: 27.5rem;
   position: absolute;
-}
-
-.topNameSvg,
-.bottomNameSvg {
-  fill: #ffffff;
-  font-size: 2.75rem !important;
-  font-weight: 600;
-  letter-spacing: 3px;
 }

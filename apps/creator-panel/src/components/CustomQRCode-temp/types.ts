@@ -1,58 +1,7 @@
-export type BodyShapeType =
-  | "body1"
-  | "body2"
-  | "body3"
-  | "body4"
-  | "body5"
-  | "body6"
-  | "body7";
-export type FrameShapeType =
-  | "frame1"
-  | "TFrame6"
-  | "frame2"
-  | "frame3"
-  | "frame4"
-  | "frame5"
-  | "frame6"
-  | "frame7"
-  | "frame8"
-  | "frame9"
-  | "frame10"
-  | "frame11"
-  | "frame12"
-  | "frame13"
-  | "frame14"
-  | "RoundedSquareFrame";
-export type BallShapeType =
-  | "ball1"
-  | "CPball5"
-  | "ball2"
-  | "ball2"
-  | "ball3"
-  | "ball4"
-  | "ball5"
-  | "ball6"
-  | "ball7"
-  | "ball8"
-  | "ball9"
-  | "ball10"
-  | "ball11"
-  | "ball12"
-  | "ball13"
-  | "ball14"
-  | "ball15"
-  | "ball16"
-  | "ball17"
-  | "RoundedSquareBall";
-export type BackgroundType =
-  | "circleCut"
-  | "circleLineShape"
-  | "circleSmoothLineShape"
-  | "squareShape"
-  | "circleDotShape"
-  | "borderCircle"
-  | "borderSquare"
-  | "none";
+export type BodyShapeType = "body1";
+export type FrameShapeType = "frame1";
+export type BallShapeType = "ball1";
+export type BackgroundType = "none";
 export type FlipDirection = "horizontal" | "vertical";
 export type PositionType = "topLeft" | "topRight" | "bottomLeft";
 
@@ -68,8 +17,6 @@ export interface LogoRendererProps {
   size: number;
   logoSizeRatio?: number;
   mode?: "default" | "clean";
-  isDefaultLogo?: boolean;
-  color: string;
 }
 
 export type FunctionArgumentType = (
@@ -83,8 +30,7 @@ export type FunctionArgumentType = (
 
 export type BackgroundFunctionArgumentType = (
   fill: string,
-  backgroundColor?: string,
-  isAddFrame?: boolean
+  backgroundColor?: string
 ) => JSX.Element;
 
 export interface QRMonkeyConfig {
@@ -101,7 +47,6 @@ export interface QRMonkeyConfig {
   gradientOnEyes: "true" | "false";
   logo: string;
   logoMode: "default" | "clean";
-  isDefaultLogo?: boolean;
   frameFlips: Record<PositionType, FlipDirection[]>;
   ballFlips: Record<PositionType, FlipDirection[]>;
   frameColors: Record<PositionType, string>;
@@ -111,7 +56,6 @@ export interface QRMonkeyConfig {
     fill?: string;
     qrSizeScale: number;
     backgroundColor?: string;
-    isAddFrame?: boolean;
   };
   border?: {
     isBorder?: boolean;

@@ -1,4 +1,5 @@
 import {
+  BackgroundType,
   FlipDirection,
   FrameShapeType,
   QRDataType,
@@ -6,6 +7,7 @@ import {
 import { ASSET_PATHS } from "@repo/assets";
 import { Button, Image, Input, Separator, Switch, Text } from "@repo/ui";
 import { CONSTANTS } from "@repo/utilities";
+import clsx from "clsx";
 import {
   ChangeEvent,
   Dispatch,
@@ -45,7 +47,7 @@ const QRCode = ({
 
   // Variables
   const translationKey = "PAGES.QR";
-  const borderWidthWithFrame = 55;
+  const backgroundType = selectedQR.config.background.type;
 
   // Local State
   const [enableAddFrameSection, setEnableAddFrameSection] = useState(false);
@@ -58,7 +60,8 @@ const QRCode = ({
       ...prev,
       config: {
         ...prev.config,
-        logo: "",
+        logo: ASSET_PATHS.SVGS.DEFAULT_QR_CODE_ICON,
+        isDefaultLogo: true,
       },
     }));
   };
@@ -71,22 +74,20 @@ const QRCode = ({
       config: {
         ...prev.config,
         logo: URL.createObjectURL(file as File),
+        isDefaultLogo: false,
       },
     }));
   };
 
-  const handleChooseShape = (type: "circle" | "square") => {
+  const handleChooseShape = (type: BackgroundType) => {
     setSelectedQR((prev) => ({
       ...prev,
       config: {
         ...prev.config,
-        border: {
-          ...prev.config.border,
-          isBorder: true,
-          frameType: type,
-          borderColor: "#000000",
-          borderWidthMultiplier: borderWidthWithFrame,
-          borderRadius: type === "circle" ? "50%" : "7%",
+        background: {
+          ...prev.config.background,
+          type,
+          qrSizeScale: type === "borderSquare" ? 0.99 : 0.75,
         },
       },
     }));
@@ -98,9 +99,8 @@ const QRCode = ({
       ...prev,
       config: {
         ...prev.config,
-        border: {
-          ...prev.config.border,
-          borderWidthMultiplier: borderWidthWithFrame,
+        background: {
+          ...prev.config.background,
           isAddFrame: event.target.checked,
         },
       },
@@ -147,6 +147,10 @@ const QRCode = ({
                         bottomLeft: item,
                         topLeft: item,
                         topRight: item,
+                      },
+                      background: {
+                        ...prev.config.background,
+                        fill: item,
                       },
                     },
                   }))
@@ -302,8 +306,11 @@ const QRCode = ({
         <div className={styles.renderShapes}>
           <Image
             containerProps={{
-              className: styles.iconBox,
-              onClick: () => handleChooseShape("square"),
+              className: clsx(
+                styles.iconBox,
+                backgroundType === "borderSquare" && styles.active
+              ),
+              onClick: () => handleChooseShape("borderSquare"),
             }}
             imageProps={{
               src: ASSET_PATHS.SVGS.SQUARE_SHAPE,
@@ -312,8 +319,11 @@ const QRCode = ({
           />
           <Image
             containerProps={{
-              className: styles.iconBox,
-              onClick: () => handleChooseShape("circle"),
+              className: clsx(
+                styles.iconBox,
+                backgroundType === "borderCircle" && styles.active
+              ),
+              onClick: () => handleChooseShape("borderCircle"),
             }}
             imageProps={{
               src: ASSET_PATHS.SVGS.CIRCLE_SHAPE,
