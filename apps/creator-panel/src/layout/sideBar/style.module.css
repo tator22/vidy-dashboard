@@ -9,23 +9,46 @@
   z-index: 99999;
   padding: 2rem;
 
-  .iconContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+  .logoAndMenuIcon {
     padding: 0rem 1rem;
     margin-bottom: 5rem;
 
-    .appLogo {
-      height: 3.2rem;
+    .iconContainer {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+
+      .appLogo {
+        height: 3.2rem;
+      }
+
+      .appTitle {
+        font-size: 2.2rem;
+        line-height: 125%;
+        font-weight: 900;
+        white-space: nowrap;
+      }
     }
 
-    .appTitle {
-      font-size: 2.2rem;
-      line-height: 125%;
-      font-weight: 900;
-      white-space: nowrap;
+    .menuIconContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      cursor: pointer;
     }
+
+    .menuIcon {
+      width: 75%;
+      height: 75%;
+    }
+  }
+
+  .logoWithMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .expanded {
@@ -69,4 +92,12 @@
 
 .sidebar ::-webkit-scrollbar-thumb&:hover {
   background-color: rgba(var(--primary));
+}
+/* -------------------------------------- */
+.expanded_sidebar {
+  @media (max-width: 768px) {
+    box-shadow:
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
 }

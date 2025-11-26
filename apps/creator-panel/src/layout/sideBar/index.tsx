@@ -1,23 +1,26 @@
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { ASSET_PATHS } from "@repo/assets";
 import { Text } from "@repo/ui";
+import { CONSTANTS } from "@repo/utilities";
+import clsx from "clsx";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { shallowEqual } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
-import { closeDrawer } from "../../redux/slice/otherSlices/drawerSlice";
 import styles from "./style.module.css";
 import { Tab } from "./tab";
 import { ADMIN_SIDEBAR_TABS } from "./tabsLinks";
-import { CONSTANTS } from "@repo/utilities";
+import { toggleSideBarMode } from "@/redux/slice/otherSlices/sideBarModeSlice";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 export const SideBar = () => {
   // Hooks
   const { t } = useTranslation("sideBar");
   const tabGroupRef = useRef<HTMLUListElement>(null);
   const location = useLocation();
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { width } = useWindowSize();
 
   // Global States
   const { sideBarMode } = useAppSelector(
@@ -29,11 +32,13 @@ export const SideBar = () => {
 
   // Variables
   const pageName = location?.pathname?.split("/");
+  const isMobile = width && width <= 768;
+  const isForMenuWithLogo = isMobile && sideBarMode === "expanded";
 
   // Functions
-  const toggleSideBarDrawer = () => {
-    dispatch(closeDrawer());
-  };
+  // const toggleSideBarDrawer = () => {
+  //   dispatch(closeDrawer());
+  // };
 
   const handleSideBarScroll = (tabId: string) => {
     const tab = document?.getElementById(tabId);
@@ -47,7 +52,7 @@ export const SideBar = () => {
 
   return (
     <div
-      className={styles.sidebar}
+      className={clsx(styles.sidebar, styles[`${sideBarMode}_sidebar`])}
       style={{
         width:
           sideBarMode === "expanded"
@@ -57,21 +62,39 @@ export const SideBar = () => {
       }}
     >
       <div
-        className={`${styles.iconContainer} ${sideBarMode === "expanded" ? "" : styles.expanded}`}
+        className={clsx(
+          styles.logoAndMenuIcon,
+          isForMenuWithLogo && styles.logoWithMenu
+        )}
       >
-        <img
-          src={ASSET_PATHS.ICONS.LOGO}
-          alt="app logo"
-          className={styles.appLogo}
-        />
-        <Text
-          tag="h1"
-          containerProps={{
-            className: styles.appTitle,
-          }}
+        <div
+          className={`${styles.iconContainer} ${sideBarMode === "expanded" ? "" : styles.expanded}`}
         >
-          {CONSTANTS.APP_NAME}
-        </Text>
+          <img
+            src={ASSET_PATHS.ICONS.LOGO}
+            alt="app logo"
+            className={styles.appLogo}
+          />
+          <Text
+            tag="h1"
+            containerProps={{
+              className: styles.appTitle,
+            }}
+          >
+            {CONSTANTS.APP_NAME}
+          </Text>
+        </div>
+
+        {isForMenuWithLogo ? (
+          <div className={styles.menuIconContainer}>
+            <img
+              src={ASSET_PATHS.SVGS.MENU}
+              alt="menu icon"
+              className={styles.menuIcon}
+              onClick={() => dispatch(toggleSideBarMode())}
+            />
+          </div>
+        ) : null}
       </div>
 
       <ul className={styles.sectionsContainer} ref={tabGroupRef}>
@@ -80,7 +103,7 @@ export const SideBar = () => {
           const isActive = `/${link[2]}` === `/${pageName[2]}`;
 
           return (
-            <li key={index} onClick={toggleSideBarDrawer}>
+            <li key={index}>
               <Tab
                 icon={isActive ? item?.active_icon : item?.icon}
                 label={t(item?.label)}
@@ -102,7 +125,7 @@ export const SideBar = () => {
           const isActive = `/${link[2]}` === `/${pageName[2]}`;
 
           return (
-            <li key={index} onClick={toggleSideBarDrawer}>
+            <li key={index}>
               <Tab
                 icon={isActive ? item?.active_icon : item?.icon}
                 label={t(item?.label)}

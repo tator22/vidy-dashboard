@@ -6,12 +6,13 @@ import { SideBar } from "./sideBar";
 import "./style.css";
 import TopBar from "./topBar";
 import { Toaster } from "react-hot-toast";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 // export const SIDEBAR_BREAKPOINT: number = 900;
 
 const Layout = () => {
   // Hooks
-  // const { width } = useWindowSize();
+  const { width } = useWindowSize();
   // const dispatch = useDispatch<AppDispatch>();
 
   // Redux States
@@ -21,6 +22,9 @@ const Layout = () => {
     }),
     shallowEqual
   );
+
+  // Variables
+  const isMobile = width && width <= 768;
 
   // const sideBarRef = useRef<HTMLDivElement | null>(null);
 
@@ -98,17 +102,12 @@ const Layout = () => {
       <div
         className={"layoutSubMainContainer"}
         style={{
-          // width:
-          //   (width ?? 0) < SIDEBAR_BREAKPOINT
-          //     ? "100%"
-          //     : sideBarMode === "expanded"
-          //       ? "calc(100% - var(--side-bar-expanded-width))"
-          //       : "calc(100% - var(--side-bar-collapsed-width))",
-
           width:
-            sideBarMode === "expanded"
-              ? "calc(100% - var(--side-bar-expanded-width))"
-              : "calc(100% - var(--side-bar-collapsed-width))",
+            isMobile && sideBarMode === "expanded"
+              ? "100%"
+              : sideBarMode === "expanded"
+                ? "calc(100% - var(--side-bar-expanded-width))"
+                : "calc(100% - var(--side-bar-collapsed-width))",
         }}
       >
         <TopBar />

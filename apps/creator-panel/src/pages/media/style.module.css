@@ -24,4 +24,8 @@
 
 .searchInputContainer {
   min-width: 35rem;
+
+  @media (max-width: 550px) {
+    min-width: 100%;
+  }
 }

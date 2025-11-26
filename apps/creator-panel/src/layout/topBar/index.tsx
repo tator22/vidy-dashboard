@@ -1,18 +1,38 @@
-import { toggleSideBarMode } from "@/redux/slice/otherSlices/sideBarModeSlice";
+import {
+  resetSideBarMode,
+  toggleSideBarMode,
+} from "@/redux/slice/otherSlices/sideBarModeSlice";
 import { useAppDispatch } from "@/redux/store";
 import { ASSET_PATHS } from "@repo/assets";
 import { ProfilePhoto } from "@repo/ui";
+import { CONSTANTS } from "@repo/utilities";
+import { useWindowSize } from "@uidotdev/usehooks";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import { Searchbar } from "../searchbar";
 import styles from "./style.module.css";
-import { useNavigate } from "react-router";
-import { CONSTANTS } from "@repo/utilities";
 
 const TopBar = () => {
   // Hooks
   const { t } = useTranslation("layout");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { width } = useWindowSize();
+
+  // Variables
+  const forSearchBar = width && width <= 1250;
+  const isMobile = width && width <= 768;
+
+  // Effects
+  // Effects
+  useEffect(() => {
+    if (isMobile) {
+      dispatch(resetSideBarMode());
+    } else {
+      dispatch(toggleSideBarMode());
+    }
+  }, [isMobile]);
 
   return (
     <div className={styles.topBarContainer}>
@@ -26,6 +46,7 @@ const TopBar = () => {
       </div>
 
       <Searchbar
+        containerClassName={styles.searchbarClassName}
         inputProps={{
           placeholder: t("search"),
         }}
@@ -40,6 +61,13 @@ const TopBar = () => {
           <div className={styles.storageSlider} />
         </div>
 
+        {forSearchBar ? (
+          <img
+            src={ASSET_PATHS.SVGS.SEARCH}
+            alt="notification icon"
+            className={styles.notification}
+          />
+        ) : null}
         <img
           src={ASSET_PATHS.SVGS.NOTIFICATION}
           alt="notification icon"

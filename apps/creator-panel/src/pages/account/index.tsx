@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { ASSET_PATHS } from "@repo/assets";
 import {
   Button,
   Image,
@@ -8,18 +9,20 @@ import {
   Separator,
   Text,
 } from "@repo/ui";
+import clsx from "clsx";
+import { CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import clsx from "clsx";
-import { ASSET_PATHS } from "@repo/assets";
-import { CSSProperties } from "react";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const Account = () => {
   // Hooks
   const { t } = useTranslation();
+  const { width } = useWindowSize();
 
   // Variables
   const translationKey = "PAGES.ACCOUNT";
+  const isMobile = width && width <= 550;
 
   return (
     <div className={styles.account}>
@@ -81,7 +84,7 @@ const Account = () => {
       <section className={clsx(styles.profileWrapper, styles.sectionWidth)}>
         <AccountLabel text={t(`${translationKey}.picture`)} />
         <div className={styles.profileSection}>
-          <ProfilePhoto size={"11rem"} />
+          <ProfilePhoto size={isMobile ? "8rem" : "11rem"} />
           <div className={styles.info}>
             <Text
               tag="p"

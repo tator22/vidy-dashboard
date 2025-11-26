@@ -9,9 +9,9 @@
   background-color: rgb(var(--black), 0.01);
   border: var(--border-width) solid rgb(var(--black), 0.1);
 
-  @media (max-width: 970px) {
+  /* @media (max-width: 970px) {
     width: 100%;
-  }
+  } */
 
   .searchInput {
     font-size: 1.3rem;

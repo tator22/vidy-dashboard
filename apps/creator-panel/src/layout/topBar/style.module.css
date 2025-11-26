@@ -28,7 +28,14 @@
 .storageAndOtherIcons {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 3rem;
+}
+
+.storageCounter {
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .storageCount {
@@ -64,4 +71,10 @@
 .notification {
   width: 2rem;
   height: 2rem;
+}
+
+.searchbarClassName {
+  @media (max-width: 1250px) {
+    display: none;
+  }
 }
