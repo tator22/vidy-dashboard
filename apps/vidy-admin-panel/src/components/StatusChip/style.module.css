@@ -1,5 +1,5 @@
 .statusChip {
-  width: 9rem;
+  width: fit-content;
   font-size: 1.5rem;
   font-weight: 500;
   padding: 0.45rem 1.5rem;

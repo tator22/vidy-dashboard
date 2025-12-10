@@ -50,6 +50,13 @@
         "cta_forgot_password": "Forgot Password?",
         "cta": "Login"
       }
+    },
+    "USERS_AND_ACCOUNTS": {
+      "heading": "Users & Accounts",
+      "new_cta": "Create Account"
+    },
+    "CAMPAIGNS": {
+      "heading": "Campaigns"
     }
   },
   "MODALS": {}

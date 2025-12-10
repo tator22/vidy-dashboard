@@ -8,20 +8,18 @@ import { ProfilePhoto } from "@repo/ui";
 import { CONSTANTS } from "@repo/utilities";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
-import { Searchbar } from "../searchbar";
 import styles from "./style.module.css";
 
 const TopBar = () => {
   // Hooks
-  const { t } = useTranslation("layout");
+  // const { t } = useTranslation("layout");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { width } = useWindowSize();
 
   // Variables
-  const forSearchBar = width && width <= 1250;
+  // const forSearchBar = width && width <= 1250;
   const isMobile = width && width <= 768;
 
   // Effects
@@ -45,15 +43,15 @@ const TopBar = () => {
         />
       </div>
 
-      <Searchbar
+      {/* <Searchbar
         containerClassName={styles.searchbarClassName}
         inputProps={{
           placeholder: t("search"),
         }}
-      />
+      /> */}
 
       <div className={styles.storageAndOtherIcons}>
-        <div className={styles.storageCounter}>
+        {/* <div className={styles.storageCounter}>
           <div className={styles.storageCount}>
             <span className={styles.storage}>{t("storage")}</span>
             <span className={styles.storage}>2.3GB/5GB</span>
@@ -72,7 +70,7 @@ const TopBar = () => {
           src={ASSET_PATHS.SVGS.NOTIFICATION}
           alt="notification icon"
           className={styles.notification}
-        />
+        /> */}
 
         <ProfilePhoto
           size={"4rem"}

@@ -29,6 +29,13 @@ export const CONSTANTS = {
     ROOT: "/",
     DASHBOARD: "/dashboard",
     USERS_AND_ACCOUNTS: "/users-and-accounts",
+    CAMPAIGNS: "/campaigns",
+    USAGE_AND_LIMITS: "/usage-and-limits",
+    PLANS_AND_BILLING: "/plans-and-billing",
+    STORAGE_AND_ASSETS: "/storage-and-assets",
+    FLAGS_AND_ABUSE: "/flags-and-abuse",
+    SYSTEM_SETTINGS: "/system-settings",
+    SUPPORT_TOOLS_OR_NOTES: "/support-tools-or-notes",
   },
   ROLE: {
     ADMIN: "admin",
@@ -37,6 +44,9 @@ export const CONSTANTS = {
   STATUS: {
     ACTIVE: "active",
     INACTIVE: "inactive",
+    SUSPENDED: "suspended",
+    ARCHIVED: "archived",
+    DISABLED: "disabled",
   },
   SIDEBAR_MODE: "sidebarMode",
   QR_BODY_SHAPES: [

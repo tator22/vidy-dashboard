@@ -3,7 +3,7 @@ import { Input, Modal, Textarea } from "@repo/ui";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 
-const AddNewCode = ({
+const AddNewAccount = ({
   isOpen,
   onClose,
 }: {
@@ -14,7 +14,7 @@ const AddNewCode = ({
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.CODES";
+  const translationKey = "PAGES.USERS_AND_ACCOUNTS";
 
   return (
     <Modal
@@ -71,4 +71,4 @@ const AddNewCode = ({
   );
 };
 
-export default AddNewCode;
+export default AddNewAccount;

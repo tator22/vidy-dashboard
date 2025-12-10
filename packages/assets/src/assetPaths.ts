@@ -61,6 +61,8 @@ import ASK_A_QUESTION_FILLED from "./svgs/ask-a-question-filled.svg";
 import ASK_A_QUESTION_OUTLINED from "./svgs/ask-a-question-outlined.svg";
 import BILLING_FILLED from "./svgs/billing-filled.svg";
 import BILLING_OUTLINED from "./svgs/billing-outlined.svg";
+import CAMPAIGNS_FILLED from "./svgs/campaigns-filled.svg";
+import CAMPAIGNS_OUTLINE from "./svgs/campaigns-outline.svg";
 import CHECKED_ICON from "./svgs/check.svg";
 import CHECKBOX_CHECKED from "./svgs/checkbox-checked.svg";
 import CHECKBOX_UNCHECKED from "./svgs/checkbox-unchecked.svg";
@@ -68,10 +70,14 @@ import CIRCLE_SHAPE from "./svgs/circle.svg";
 import CLOSE_ICON from "./svgs/close_icon.svg";
 import COMMENT from "./svgs/comment.svg";
 import COMPANY from "./svgs/company.svg";
+import COPIED from "./svgs/copied.svg";
 import COPY from "./svgs/copy.svg";
 import CREDIT_CARD from "./svgs/credit_card.svg";
+import DASHBOARD_FILLED from "./svgs/dashboard-filled.svg";
+import DASHBOARD_OUTLINE from "./svgs/dashboard-outline.svg";
 import DEFAULT_FILLED from "./svgs/default_filled.svg";
 import DEFAULT_OUTLINE from "./svgs/default_outline.svg";
+import DEFAULT_QR_CODE_ICON from "./svgs/default_qr_code_icon.svg";
 import DOWNLOAD from "./svgs/download.svg";
 import EMPTY_ICON from "./svgs/empty-icon.svg";
 import EYE_ICON from "./svgs/eye-icon.svg";
@@ -140,11 +146,11 @@ import TEAM_MEMBERS_OUTLINE from "./svgs/team_members_outline.svg";
 import TIKTOK from "./svgs/TIKTOK.svg";
 import UPLOAD from "./svgs/upload.svg";
 import UPLOAD_QR_LOGO from "./svgs/upload_qr.svg";
+import USERS_AND_ACCOUNTS_FILLED from "./svgs/users-and-accounts-filled.svg";
+import USERS_AND_ACCOUNTS_OUTLINE from "./svgs/users-and-accounts-outline.svg";
 import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
-import COPIED from "./svgs/copied.svg";
-import DEFAULT_QR_CODE_ICON from "./svgs/default_qr_code_icon.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -299,5 +305,11 @@ export const ASSET_PATHS = {
     DOWNLOAD,
     COPIED,
     DEFAULT_QR_CODE_ICON,
+    USERS_AND_ACCOUNTS_FILLED,
+    USERS_AND_ACCOUNTS_OUTLINE,
+    DASHBOARD_OUTLINE,
+    DASHBOARD_FILLED,
+    CAMPAIGNS_OUTLINE,
+    CAMPAIGNS_FILLED,
   },
 };

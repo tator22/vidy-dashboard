@@ -18,6 +18,7 @@
   --information: 47, 128, 237;
   --warning: 251, 138, 8;
   --under-process: 251, 189, 8;
+  --archived: 148, 163, 184;
 
   /* Theme Filters */
   --primary-filter: brightness(0) saturate(100%) invert(30%) sepia(74%)

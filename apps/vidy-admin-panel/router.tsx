@@ -1,6 +1,8 @@
 import Authentication from "@/pages/authentication/index.js";
+import { Campaigns } from "@/pages/campaings/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
+import { UsersAndAccounts } from "@/pages/usersAndAccounts/index.js";
 import { CONSTANTS } from "@repo/utilities";
 import { lazy } from "react";
 import {
@@ -32,6 +34,14 @@ export const router = createBrowserRouter([
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.DASHBOARD,
         element: <Dashboard />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.USERS_AND_ACCOUNTS,
+        element: <UsersAndAccounts />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.CAMPAIGNS,
+        element: <Campaigns />,
       },
     ],
   },
