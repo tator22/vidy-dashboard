@@ -3,6 +3,7 @@ import { ASSET_PATHS } from "@repo/assets";
 export const CONSTANTS = {
   CURRENCY_SYMBOL: "$",
   APP_NAME: "Videocode",
+  ADMIN_PANEL_NAME: "Vidy Admin Panel",
   PRODUCTS: {
     ADMIN_PANEL: "Admin Panel",
     CREATOR_PANEL: "Creator Panel",
@@ -22,6 +23,12 @@ export const CONSTANTS = {
     ACCOUNT: "/app/account",
     AUTHENTICATION: "/",
     VIDEO_HELP: "/app/video-help",
+  },
+
+  VIDY_ADMIN_PATHS: {
+    ROOT: "/",
+    DASHBOARD: "/dashboard",
+    USERS_AND_ACCOUNTS: "/users-and-accounts",
   },
   ROLE: {
     ADMIN: "admin",

@@ -1,0 +1,53 @@
+import Authentication from "@/pages/authentication/index.js";
+import Dashboard from "@/pages/dashboard/index.js";
+import LandingScreen from "@/pages/landingScreen/index.js";
+import { CONSTANTS } from "@repo/utilities";
+import { lazy } from "react";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  useRouteError,
+} from "react-router";
+import "./i18n.js";
+
+const Error = lazy(() => import("./src/pages/error"));
+const Layout = lazy(() => import("./src/layout"));
+
+function ErrorBoundary() {
+  const error = useRouteError();
+  console.error("Route Error = ", error);
+  return <Error />;
+}
+
+export const router = createBrowserRouter([
+  {
+    path: CONSTANTS.VIDY_ADMIN_PATHS.ROOT,
+    element: <Layout />,
+    errorElement: <ErrorBoundary />,
+    children: [
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.ROOT,
+        element: <LandingScreen />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.DASHBOARD,
+        element: <Dashboard />,
+      },
+    ],
+  },
+  {
+    path: CONSTANTS?.PATHS?.AUTHENTICATION,
+    element: <Authentication />,
+  },
+
+  {
+    path: "*",
+    element: <Error />,
+  },
+]);
+
+const Router = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default Router;

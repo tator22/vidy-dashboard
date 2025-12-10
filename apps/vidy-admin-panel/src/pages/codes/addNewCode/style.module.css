@@ -1,0 +1,27 @@
+.primaryButton {
+  border-radius: 1rem !important;
+  padding-inline: 5rem !important;
+}
+
+.addListing {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .prefix {
+    font-size: inherit;
+    line-height: inherit;
+    color: rgb(var(--black), 0.3);
+  }
+}
+
+.renderCheckbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}

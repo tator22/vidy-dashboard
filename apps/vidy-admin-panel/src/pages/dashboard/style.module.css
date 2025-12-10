@@ -1,0 +1,9 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc((100dvh - 3rem) - var(--top-bar-height));
+  background-color: rgb(var(--primary), 0.05);
+  border-radius: 1.5rem;
+  margin: 1.5rem;
+}

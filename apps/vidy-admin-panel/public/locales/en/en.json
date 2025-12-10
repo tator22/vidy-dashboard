@@ -1,0 +1,56 @@
+{
+  "PAGES": {
+    "ERROR": {
+      "heading": "Oops! Page not found",
+      "description": "Sorry, we couldn't find this page.",
+      "error": "Error:",
+      "cta": "Back to Home"
+    },
+    "AUTHENTICATION": {
+      "log_in_label": "Already have an account?",
+      "cta_log_in": "Log in",
+      "sign_up_label": "Don't have an account?",
+      "cta_sign_up": "Sign Up",
+      "ENTER_USERNAME": {
+        "heading": "Enter your Username",
+        "sub_heading": "What would you like your account name to be?",
+        "username_input_placeholder": "Username",
+        "cta": "Continue"
+      },
+      "ENTER_ACCOUNT_DETAILS": {
+        "heading": "Create your account",
+        "email_input_placeholder": "Email",
+        "password_input_placeholder": "Password",
+        "confirm_password_input_placeholder": "Confirm Password",
+        "checkbox_label": "I agree to Video Code's <0>Terms of service</0> and <1>Privacy policy</1>",
+        "cta": "Create my account"
+      },
+      "ENTER_VERIFICATION_CODE": {
+        "heading": "You've got mail",
+        "sub_heading": "An email was sent to you at {{email}} Enter the code to confirm your account.",
+        "code_input_placeholder": "Enter code",
+        "cta": "Continue",
+        "cta_resend_code": "Resend Code"
+      },
+      "ENTER_NAME": {
+        "heading": "Enter your name",
+        "sub_heading": "What would you like your account name to be?",
+        "name_input_placeholder": "Full name",
+        "cta": "Continue"
+      },
+      "CHOOSE_ACCOUNT_TYPE": {
+        "heading": "Choose your account type",
+        "cta_individual": "Individual",
+        "cta_company": "Company"
+      },
+      "LOG_IN": {
+        "heading": "Log in to your account",
+        "email_input_placeholder": "Email",
+        "password_input_placeholder": "Password",
+        "cta_forgot_password": "Forgot Password?",
+        "cta": "Login"
+      }
+    }
+  },
+  "MODALS": {}
+}
