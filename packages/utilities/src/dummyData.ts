@@ -741,3 +741,97 @@ export const ACCOUNT_BILLING_SNAPSHOT = [
     action: "View",
   },
 ];
+
+export const STORAGE_BY_ACCOUNT = [
+  {
+    account_name: "Acme Corp",
+    plan: "Pro Annual",
+    total_storage_used: "120 GB",
+    number_of_media_files: 4800,
+    average_file_size: "25 MB",
+    oldest_media_date: "2021-03-15",
+  },
+  {
+    account_name: "BlueSky Media",
+    plan: "Starter Monthly",
+    total_storage_used: "18 GB",
+    number_of_media_files: 950,
+    average_file_size: "19 MB",
+    oldest_media_date: "2022-11-02",
+  },
+  {
+    account_name: "NextGen Studios",
+    plan: "Enterprise Annual",
+    total_storage_used: "680 GB",
+    number_of_media_files: 15200,
+    average_file_size: "45 MB",
+    oldest_media_date: "2020-07-08",
+  },
+  {
+    account_name: "PixelWorks",
+    plan: "Free Trial",
+    total_storage_used: "2.5 GB",
+    number_of_media_files: 120,
+    average_file_size: "21 MB",
+    oldest_media_date: "2024-04-22",
+  },
+  {
+    account_name: "GreenTech Solutions",
+    plan: "Business Monthly",
+    total_storage_used: "72 GB",
+    number_of_media_files: 3600,
+    average_file_size: "20 MB",
+    oldest_media_date: "2021-12-19",
+  },
+];
+
+export const STORAGE_BY_CAMPAIGN = [
+  {
+    campaign_id: "CMP-10234",
+    account: "Acme Marketing",
+    storage_used: "24.8 GB",
+    number_of_media_assets: 3560,
+  },
+  {
+    campaign_id: "CMP-20489",
+    account: "Zenith Studios",
+    storage_used: "145.6 GB",
+    number_of_media_assets: 18230,
+  },
+  {
+    campaign_id: "CMP-30512",
+    account: "PixelCraft Designs",
+    storage_used: "8.9 GB",
+    number_of_media_assets: 1260,
+  },
+  {
+    campaign_id: "CMP-40876",
+    account: "NextWave Agency",
+    storage_used: "33.4 GB",
+    number_of_media_assets: 5420,
+  },
+  {
+    campaign_id: "CMP-50934",
+    account: "BrightLine Media",
+    storage_used: "120.1 GB",
+    number_of_media_assets: 15210,
+  },
+  {
+    campaign_id: "CMP-60127",
+    account: "UrbanClicks",
+    storage_used: "3.7 GB",
+    number_of_media_assets: 530,
+  },
+  {
+    campaign_id: "CMP-70945",
+    account: "SkyBound Productions",
+    storage_used: "58.2 GB",
+    number_of_media_assets: 8740,
+  },
+  {
+    campaign_id: "CMP-81063",
+    account: "OmniReach Digital",
+    storage_used: "208.4 GB",
+    number_of_media_assets: 24560,
+  },
+];

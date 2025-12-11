@@ -39,10 +39,10 @@ export const ADMIN_SIDEBAR_TABS = [
   },
   {
     key: "storage_and_assets",
-    label: "Storage & Billing",
+    label: "Storage & Assets",
     link: CONSTANTS.VIDY_ADMIN_PATHS.STORAGE_AND_ASSETS,
-    icon: ASSET_PATHS.SVGS.HOME_OUTLINE,
-    active_icon: ASSET_PATHS.SVGS.HOME_FILLED,
+    icon: ASSET_PATHS.SVGS.STORAGE_AND_ASSET_OUTLINE,
+    active_icon: ASSET_PATHS.SVGS.STORAGE_AND_ASSET_FILLED,
   },
   {
     key: "flags_and_abuse",

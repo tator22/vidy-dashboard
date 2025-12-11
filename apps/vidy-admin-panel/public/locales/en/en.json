@@ -67,6 +67,11 @@
       "heading": "Plans & Billing",
       "plans_overview": "Plans Overview",
       "account_billing_snapshot": "Account Billing Snapshot"
+    },
+    "STORAGE_AND_ASSETS": {
+      "heading": "Storage & Assets",
+      "storage_by_account": "Storage by account",
+      "storage_by_campaign": "Storage by campaign"
     }
   },
   "MODALS": {}

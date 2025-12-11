@@ -137,6 +137,8 @@ import WHATS_APP from "./svgs/socialIcons/whats_app.svg";
 import X from "./svgs/socialIcons/x.svg";
 import YOUTUBE from "./svgs/socialIcons/youtube.svg";
 import SQUARE_SHAPE from "./svgs/square.svg";
+import STORAGE_AND_ASSET_FILLED from "./svgs/storage-and-asset-filled.svg";
+import STORAGE_AND_ASSET_OUTLINE from "./svgs/storage-and-asset-outline.svg";
 import STORAGE from "./svgs/storage.svg";
 import STORIES from "./svgs/STORIES.svg";
 import SUPPORT_FILLED from "./svgs/support_filled.svg";
@@ -319,5 +321,7 @@ export const ASSET_PATHS = {
     USAGE_AND_LIMIT_OUTLINE,
     PLANS_AND_BILLING_FILLED,
     PLANS_AND_BILLING_OUTLINE,
+    STORAGE_AND_ASSET_FILLED,
+    STORAGE_AND_ASSET_OUTLINE,
   },
 };
