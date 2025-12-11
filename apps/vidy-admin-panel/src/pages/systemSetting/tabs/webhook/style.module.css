@@ -1,0 +1,26 @@
+.webhook {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0rem 3rem;
+
+  .inputGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    > button {
+      padding-inline: 4rem !important;
+    }
+  }
+}

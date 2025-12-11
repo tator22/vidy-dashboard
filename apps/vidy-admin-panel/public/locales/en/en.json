@@ -72,6 +72,28 @@
       "heading": "Storage & Assets",
       "storage_by_account": "Storage by account",
       "storage_by_campaign": "Storage by campaign"
+    },
+    "FLAGS_AND_ABUSE": {
+      "heading": "Flags & Abuse"
+    },
+    "SYSTEM_SETTING": {
+      "heading": "System Setting",
+      "plans": "Plans",
+      "global_feature": "Global Feature",
+      "webhook": "Webhook",
+      "edit_plan": "Edit Plan",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "storage": "Storage",
+      "campaign_limit": "Campaign Limit",
+      "hit_limit": "Hit Limit",
+      "enter_hit_limit": "Enter hit limit",
+      "enter_storage": "Enter storage",
+      "enter_campaign_limit": "Enter campaign limit",
+      "label_1": "Apple App Store receipt validation endpoint",
+      "label_2": "Google Play receipt validation endpoint",
+      "placeholder": "Enter URI (https://www.example.com)",
+      "save": "Save"
     }
   },
   "MODALS": {}

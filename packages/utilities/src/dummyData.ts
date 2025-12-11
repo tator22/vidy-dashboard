@@ -835,3 +835,159 @@ export const STORAGE_BY_CAMPAIGN = [
     number_of_media_assets: 24560,
   },
 ];
+
+export const FLAGS_AND_ABUSE = [
+  {
+    account: "Acme Marketing",
+    campaign: "CMP-10234",
+    flag_type: "Hit spike anomaly",
+    reason: "auto",
+    status: "Under Review",
+    created_at: "2025-12-10 14:22:30",
+    last_updated: "2025-12-11 09:45:10",
+  },
+  {
+    account: "Zenith Studios",
+    campaign: "CMP-20489",
+    flag_type: "Storage abuse",
+    reason: "auto",
+    status: "Open",
+    created_at: "2025-12-08 10:05:44",
+    last_updated: "2025-12-09 16:32:20",
+  },
+  {
+    account: "PixelCraft Designs",
+    campaign: "",
+    flag_type: "DMCA / content complaint",
+    reason: "manual",
+    status: "Resolved",
+    created_at: "2025-11-29 12:40:05",
+    last_updated: "2025-12-01 08:10:22",
+  },
+  {
+    account: "NextWave Agency",
+    campaign: "CMP-40876",
+    flag_type: "Suspicious traffic",
+    reason: "auto",
+    status: "Under Review",
+    created_at: "2025-12-09 07:58:33",
+    last_updated: "2025-12-11 08:20:14",
+  },
+  {
+    account: "BrightLine Media",
+    campaign: "CMP-50934",
+    flag_type: "App Store complaint",
+    reason: "manual",
+    status: "Open",
+    created_at: "2025-12-07 09:10:00",
+    last_updated: "2025-12-10 13:30:45",
+  },
+  {
+    account: "UrbanClicks",
+    campaign: "CMP-60127",
+    flag_type: "Storage abuse",
+    reason: "auto",
+    status: "Resolved",
+    created_at: "2025-11-20 15:25:18",
+    last_updated: "2025-12-05 11:14:29",
+  },
+];
+
+export const PRICING_PLANS = [
+  {
+    id: "personal",
+    name: "Personal",
+    price_per_month: 3,
+    price_per_year: 36,
+    billing_cycle: "Annually",
+    description:
+      "One campaign, unlimited potential. The simplest way to launch your first video QR.",
+    benefits: {
+      campaigns: 1,
+      storage: "100MB",
+      scans_per_month: 500,
+      branding: "#PoweredbyVidCode Branding",
+    },
+    recommended: false,
+  },
+  {
+    id: "starter",
+    name: "Starter",
+    price_per_month: 6,
+    price_per_year: 72,
+    billing_cycle: "Annually",
+    description:
+      "More campaigns, same simplicity. Great for creators getting serious.",
+    benefits: {
+      campaigns: 10,
+      storage: "250MB",
+      scans_per_month: 1000,
+      branding: "#PoweredbyVidCode Branding",
+    },
+    recommended: false,
+  },
+  {
+    id: "essential",
+    name: "Essential",
+    price_per_month: 12,
+    price_per_year: 144,
+    billing_cycle: "Annually",
+    description:
+      "Enough campaigns and storage to run real marketing, not just experiments.",
+    benefits: {
+      campaigns: 25,
+      storage: "1GB",
+      hits_per_month: 5000,
+      branding: "#PoweredbyVidCode Branding",
+    },
+    recommended: false,
+  },
+  {
+    id: "growth",
+    name: "Growth",
+    price_per_month: 20,
+    price_per_year: 240,
+    billing_cycle: "Annually",
+    description:
+      "Built for real businesses. Manage dozens of campaigns and scale your video QR strategy.",
+    benefits: {
+      campaigns: 75,
+      storage: "5GB",
+      hits_per_month: 15000,
+      branding: "No #PoweredbyVidCode Branding",
+    },
+    recommended: true,
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    price_per_month: 35,
+    price_per_year: 420,
+    billing_cycle: "Annually",
+    description:
+      "Run more campaigns, capture more conversions. Built for growing brands pushing video at scale.",
+    benefits: {
+      campaigns: 150,
+      storage: "10GB",
+      hits_per_month: 50000,
+      branding: "No #PoweredbyVidCode Branding",
+    },
+    recommended: false,
+  },
+  {
+    id: "pro_plus",
+    name: "Pro Plus",
+    price_per_month: 65,
+    price_per_year: 780,
+    billing_cycle: "Annually",
+    description:
+      "Big volume, real performance. The go-to plan for agencies, teams, and multi-campaign power users.",
+    benefits: {
+      campaigns: 300,
+      storage: "25GB",
+      hits_per_month: 150000,
+      branding: "No #PoweredbyVidCode Branding",
+    },
+    recommended: false,
+  },
+];

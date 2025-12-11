@@ -1,9 +1,11 @@
 import Authentication from "@/pages/authentication/index.js";
 import { Campaigns } from "@/pages/campaings/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
+import { FlagsAndAbuse } from "@/pages/flagsAndAbuse/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
 import { PlanAndBilling } from "@/pages/plansAndBilling/index.js";
 import { StorageAndAsset } from "@/pages/storageAndAsset/index.js";
+import { SystemSetting } from "@/pages/systemSetting/index.js";
 import { UsageAndLimit } from "@/pages/usageAndLimits/index.js";
 import { UsersAndAccounts } from "@/pages/usersAndAccounts/index.js";
 import { CONSTANTS } from "@repo/utilities";
@@ -57,6 +59,14 @@ export const router = createBrowserRouter([
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.STORAGE_AND_ASSETS,
         element: <StorageAndAsset />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.FLAGS_AND_ABUSE,
+        element: <FlagsAndAbuse />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.SYSTEM_SETTINGS,
+        element: <SystemSetting />,
       },
     ],
   },
