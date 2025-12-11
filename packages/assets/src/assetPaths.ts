@@ -146,6 +146,8 @@ import TEAM_MEMBERS_OUTLINE from "./svgs/team_members_outline.svg";
 import TIKTOK from "./svgs/TIKTOK.svg";
 import UPLOAD from "./svgs/upload.svg";
 import UPLOAD_QR_LOGO from "./svgs/upload_qr.svg";
+import USAGE_AND_LIMIT_FILLED from "./svgs/usage-and-limit-filled.svg";
+import USAGE_AND_LIMIT_OUTLINE from "./svgs/usage-and-limit-outline.svg";
 import USERS_AND_ACCOUNTS_FILLED from "./svgs/users-and-accounts-filled.svg";
 import USERS_AND_ACCOUNTS_OUTLINE from "./svgs/users-and-accounts-outline.svg";
 import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
@@ -311,5 +313,7 @@ export const ASSET_PATHS = {
     DASHBOARD_FILLED,
     CAMPAIGNS_OUTLINE,
     CAMPAIGNS_FILLED,
+    USAGE_AND_LIMIT_FILLED,
+    USAGE_AND_LIMIT_OUTLINE,
   },
 };

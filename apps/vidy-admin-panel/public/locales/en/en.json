@@ -55,6 +55,11 @@
       "heading": "Users & Accounts",
       "new_cta": "Create Account"
     },
+    "USAGE_AND_LIMIT": {
+      "heading": "Usage & Limits",
+      "high_usage": "High Usage Account",
+      "capacity_overview": "Capacity Overview"
+    },
     "CAMPAIGNS": {
       "heading": "Campaigns"
     }

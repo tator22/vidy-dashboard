@@ -27,8 +27,8 @@ export const ADMIN_SIDEBAR_TABS = [
     key: "usage_and_limits",
     label: "Usage & Limits",
     link: CONSTANTS.VIDY_ADMIN_PATHS.USAGE_AND_LIMITS,
-    icon: ASSET_PATHS.SVGS.HOME_OUTLINE,
-    active_icon: ASSET_PATHS.SVGS.HOME_FILLED,
+    icon: ASSET_PATHS.SVGS.USAGE_AND_LIMIT_OUTLINE,
+    active_icon: ASSET_PATHS.SVGS.USAGE_AND_LIMIT_FILLED,
   },
   {
     key: "plans_and_billing",

@@ -509,3 +509,119 @@ export const CAMPAIGNS = [
     status: "active",
   },
 ];
+
+export const HIGH_USAGE_ACCOUNTS = [
+  {
+    account_name: "Alpha Marketing Solutions",
+    plan: "pro",
+    hits_used: 15230,
+    hit_limit: 20000,
+    storage_used: "8.2 GB",
+    storage_limit: "10 GB",
+    number_of_campaigns: 12,
+    flag_status: "none",
+  },
+  {
+    account_name: "NextGen Digital Agency",
+    plan: "basic",
+    hits_used: 4890,
+    hit_limit: 10000,
+    storage_used: "2.5 GB",
+    storage_limit: "5 GB",
+    number_of_campaigns: 5,
+    flag_status: "warning_near_hit_limit",
+  },
+  {
+    account_name: "Creative Pulse Media",
+    plan: "enterprise",
+    hits_used: 35300,
+    hit_limit: 50000,
+    storage_used: "18 GB",
+    storage_limit: "25 GB",
+    number_of_campaigns: 24,
+    flag_status: "none",
+  },
+  {
+    account_name: "Visionary Ads Pvt Ltd",
+    plan: "free",
+    hits_used: 950,
+    hit_limit: 1000,
+    storage_used: "480 MB",
+    storage_limit: "1 GB",
+    number_of_campaigns: 1,
+    flag_status: "exceeded_hit_limit",
+  },
+  {
+    account_name: "BlueSky Promotions",
+    plan: "pro",
+    hits_used: 17300,
+    hit_limit: 20000,
+    storage_used: "7.4 GB",
+    storage_limit: "10 GB",
+    number_of_campaigns: 10,
+    flag_status: "warning_near_storage_limit",
+  },
+];
+
+export const CAPACITY_OVERVIEW = [
+  {
+    total_hits_across_platforms: {
+      per_day: 1240,
+      per_month: 37200,
+    },
+    total_storage_used: "52 GB",
+    storage_distribution_by_plan: {
+      free: "10 GB",
+      pro: "25 GB",
+      enterprise: "17 GB",
+    },
+  },
+  {
+    total_hits_across_platforms: {
+      per_day: 870,
+      per_month: 26100,
+    },
+    total_storage_used: "39 GB",
+    storage_distribution_by_plan: {
+      free: "7 GB",
+      pro: "20 GB",
+      enterprise: "12 GB",
+    },
+  },
+  {
+    total_hits_across_platforms: {
+      per_day: 1580,
+      per_month: 47400,
+    },
+    total_storage_used: "65 GB",
+    storage_distribution_by_plan: {
+      free: "12 GB",
+      pro: "30 GB",
+      enterprise: "23 GB",
+    },
+  },
+  {
+    total_hits_across_platforms: {
+      per_day: 640,
+      per_month: 19200,
+    },
+    total_storage_used: "27 GB",
+    storage_distribution_by_plan: {
+      free: "5 GB",
+      pro: "14 GB",
+      enterprise: "8 GB",
+    },
+  },
+  {
+    total_hits_across_platforms: {
+      per_day: 2110,
+      per_month: 63300,
+    },
+    total_storage_used: "82 GB",
+    storage_distribution_by_plan: {
+      free: "15 GB",
+      pro: "40 GB",
+      enterprise: "27 GB",
+    },
+  },
+];
