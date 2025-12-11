@@ -34,8 +34,8 @@ export const ADMIN_SIDEBAR_TABS = [
     key: "plans_and_billing",
     label: "Plans & Billing",
     link: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING,
-    icon: ASSET_PATHS.SVGS.HOME_OUTLINE,
-    active_icon: ASSET_PATHS.SVGS.HOME_FILLED,
+    icon: ASSET_PATHS.SVGS.PLANS_AND_BILLING_OUTLINE,
+    active_icon: ASSET_PATHS.SVGS.PLANS_AND_BILLING_FILLED,
   },
   {
     key: "storage_and_assets",

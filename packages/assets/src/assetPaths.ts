@@ -100,6 +100,8 @@ import MESSAGE_SEND from "./svgs/message_send.svg";
 import MOVE from "./svgs/move.svg";
 import NOTIFICATION from "./svgs/notification.svg";
 import PAY_PAL from "./svgs/paypal.svg";
+import PLANS_AND_BILLING_FILLED from "./svgs/plan-and-billing-filled.svg";
+import PLANS_AND_BILLING_OUTLINE from "./svgs/plan-and-billing-outline.svg";
 import PLAY from "./svgs/play_icon.svg";
 import PLUS from "./svgs/plus.svg";
 import PROFILE_EDIT_ICON from "./svgs/profile_edit_icon.svg";
@@ -315,5 +317,7 @@ export const ASSET_PATHS = {
     CAMPAIGNS_FILLED,
     USAGE_AND_LIMIT_FILLED,
     USAGE_AND_LIMIT_OUTLINE,
+    PLANS_AND_BILLING_FILLED,
+    PLANS_AND_BILLING_OUTLINE,
   },
 };

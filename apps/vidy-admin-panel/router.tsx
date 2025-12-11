@@ -2,6 +2,7 @@ import Authentication from "@/pages/authentication/index.js";
 import { Campaigns } from "@/pages/campaings/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
+import { PlanAndBilling } from "@/pages/plansAndBilling/index.js";
 import { UsageAndLimit } from "@/pages/usageAndLimits/index.js";
 import { UsersAndAccounts } from "@/pages/usersAndAccounts/index.js";
 import { CONSTANTS } from "@repo/utilities";
@@ -41,12 +42,16 @@ export const router = createBrowserRouter([
         element: <UsersAndAccounts />,
       },
       {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.CAMPAIGNS,
+        element: <Campaigns />,
+      },
+      {
         path: CONSTANTS.VIDY_ADMIN_PATHS.USAGE_AND_LIMITS,
         element: <UsageAndLimit />,
       },
       {
-        path: CONSTANTS.VIDY_ADMIN_PATHS.CAMPAIGNS,
-        element: <Campaigns />,
+        path: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING,
+        element: <PlanAndBilling />,
       },
     ],
   },

@@ -62,6 +62,11 @@
     },
     "CAMPAIGNS": {
       "heading": "Campaigns"
+    },
+    "PLANS_AND_BILLING": {
+      "heading": "Plans & Billing",
+      "plans_overview": "Plans Overview",
+      "account_billing_snapshot": "Account Billing Snapshot"
     }
   },
   "MODALS": {}
