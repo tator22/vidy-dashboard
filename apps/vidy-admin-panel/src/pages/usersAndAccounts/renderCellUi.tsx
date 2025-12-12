@@ -1,6 +1,5 @@
 import StatusChip from "@/components/StatusChip";
 import TableAction from "@/components/TableAction";
-import moment from "moment";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
 
@@ -14,26 +13,31 @@ interface RenderCellsUiProps {
 const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   // Table Columns
 
-  if (el === "created_at") {
-    return (
-      <td style={{ whiteSpace: "nowrap" }}>
-        {moment(row?.created_at).format("DD, MMMM YYYY")}
-      </td>
-    );
-  }
+  // if (el === "created_at") {
+  //   return (
+  //     <td style={{ whiteSpace: "nowrap" }}>
+  //       {moment(row?.created_at).format("DD, MMMM YYYY")}
+  //     </td>
+  //   );
+  // }
 
   // Last Active At
-  else if (el === "last_active_at") {
-    return (
-      <td style={{ whiteSpace: "nowrap" }}>
-        {moment(row?.last_active_at).format("DD, MMMM YYYY")}
-      </td>
-    );
-  }
+  // else if (el === "last_active_at") {
+  //   return (
+  //     <td style={{ whiteSpace: "nowrap" }}>
+  //       {moment(row?.last_active_at).format("DD, MMMM YYYY")}
+  //     </td>
+  //   );
+  // }
 
   // Name
-  else if (el === "account_name") {
+  if (el === "account_name") {
     return <td style={{ whiteSpace: "nowrap" }}>{row?.account_name}</td>;
+  }
+
+  // Branding
+  else if (el === "branding") {
+    return <td>{row?.branding ? "On" : "Off"}</td>;
   }
 
   // Status

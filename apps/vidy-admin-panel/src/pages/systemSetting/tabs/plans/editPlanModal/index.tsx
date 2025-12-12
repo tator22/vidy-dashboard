@@ -1,4 +1,4 @@
-import { Button, Input, Modal } from "@repo/ui";
+import { Button, Input, Modal, Switch } from "@repo/ui";
 import { useTranslation } from "react-i18next";
 import classes from "./style.module.css";
 
@@ -45,6 +45,12 @@ const EditPlanModal = ({
               placeholder: t(`${translationKey}.enter_campaign_limit`),
             }}
           />
+          <Switch
+            label={t(`${translationKey}.branding`)}
+            inputProps={{
+              required: true,
+            }}
+          />
         </div>
 
         <div className={classes.buttonGroup}>
@@ -52,6 +58,10 @@ const EditPlanModal = ({
             text={t(`${translationKey}.cancel`)}
             size="medium"
             variant="secondary"
+            buttonProps={{
+              type: "button",
+              onClick: onClose,
+            }}
           />
           <Button text={t(`${translationKey}.submit`)} size="medium" />
         </div>

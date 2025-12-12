@@ -93,7 +93,8 @@
       "label_1": "Apple App Store receipt validation endpoint",
       "label_2": "Google Play receipt validation endpoint",
       "placeholder": "Enter URI (https://www.example.com)",
-      "save": "Save"
+      "save": "Save",
+      "branding": "Branding"
     }
   },
   "MODALS": {}
