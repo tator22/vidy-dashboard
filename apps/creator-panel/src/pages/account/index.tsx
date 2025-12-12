@@ -8,7 +8,7 @@ import {
   ProfilePhoto,
   Separator,
   Text,
-} from "@repo/ui";
+} from "@repo/UI";
 import clsx from "clsx";
 import { CSSProperties } from "react";
 import { useTranslation } from "react-i18next";

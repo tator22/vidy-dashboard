@@ -1,4 +1,4 @@
-import { Text } from "@repo/ui";
+import { Text } from "@repo/UI";
 import classes from "./style.module.css";
 
 const Dashboard = () => {

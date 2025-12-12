@@ -1,5 +1,5 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { Input, Modal, Textarea } from "@repo/ui";
+import { Input, Modal, Textarea } from "@repo/UI";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 

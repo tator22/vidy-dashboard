@@ -1,7 +1,7 @@
 import TableAction from "@/components/TableAction";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
-import { Text } from "@repo/ui";
+import { Text } from "@repo/UI";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;

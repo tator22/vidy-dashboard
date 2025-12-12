@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { DataTable } from "@repo/ui";
+import { DataTable } from "@repo/UI";
 import { CAMPAIGNS } from "@repo/utilities";
 import { FC, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";

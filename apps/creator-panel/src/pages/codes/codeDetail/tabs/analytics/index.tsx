@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import { Text } from "@repo/ui";
+import { Text } from "@repo/UI";
 import { scanData } from "@repo/utilities";
 
 const Analytics = () => {

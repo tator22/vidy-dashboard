@@ -4,7 +4,7 @@ import {
 } from "@/redux/slice/otherSlices/sideBarModeSlice";
 import { useAppDispatch } from "@/redux/store";
 import { ASSET_PATHS } from "@repo/assets";
-import { ProfilePhoto } from "@repo/ui";
+import { ProfilePhoto } from "@repo/UI";
 import { CONSTANTS } from "@repo/utilities";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useEffect } from "react";

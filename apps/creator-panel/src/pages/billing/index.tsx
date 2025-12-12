@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Image, Input, Radio, Separator, Text } from "@repo/ui";
+import { Button, Image, Input, Radio, Separator, Text } from "@repo/UI";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";

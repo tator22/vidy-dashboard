@@ -5,7 +5,7 @@ import {
   QRDataType,
 } from "@/components/CustomQRCode/types";
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Image, Input, Separator, Switch, Text } from "@repo/ui";
+import { Button, Image, Input, Separator, Switch, Text } from "@repo/UI";
 import { CONSTANTS } from "@repo/utilities";
 import clsx from "clsx";
 import {

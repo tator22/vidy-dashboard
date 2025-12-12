@@ -1,4 +1,4 @@
-import { Button, Input } from "@repo/ui";
+import { Button, Input } from "@repo/UI";
 import { FC } from "react";
 import classes from "./style.module.css";
 import { useTranslation } from "react-i18next";

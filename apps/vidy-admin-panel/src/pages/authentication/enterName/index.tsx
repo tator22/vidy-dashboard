@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import { Input } from "@repo/ui";
+import { Input } from "@repo/UI";
 
 const EnterName: FC = (): JSX.Element => {
   // Hooks

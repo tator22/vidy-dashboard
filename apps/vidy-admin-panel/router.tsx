@@ -1,5 +1,5 @@
 import Authentication from "@/pages/authentication/index.js";
-import { Campaigns } from "@/pages/campaings/index.js";
+import { Campaigns } from "@/pages/campaigns/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
 import { FlagsAndAbuse } from "@/pages/flagsAndAbuse/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
@@ -8,6 +8,7 @@ import { StorageAndAsset } from "@/pages/storageAndAsset/index.js";
 import { SystemSetting } from "@/pages/systemSetting/index.js";
 import { UsageAndLimit } from "@/pages/usageAndLimits/index.js";
 import { UsersAndAccounts } from "@/pages/usersAndAccounts/index.js";
+import UserAndAccountDetail from "@/pages/usersAndAccounts/userAndAccountDetail/index.js";
 import { CONSTANTS } from "@repo/utilities";
 import { lazy } from "react";
 import {
@@ -40,9 +41,14 @@ export const router = createBrowserRouter([
         path: CONSTANTS.VIDY_ADMIN_PATHS.DASHBOARD,
         element: <Dashboard />,
       },
+      // User and Accounts --
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.USERS_AND_ACCOUNTS,
         element: <UsersAndAccounts />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.USERS_AND_ACCOUNTS_DETAIL,
+        element: <UserAndAccountDetail />,
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.CAMPAIGNS,

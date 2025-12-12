@@ -1,4 +1,4 @@
-import { Button, Text } from "@repo/ui";
+import { Button, Text } from "@repo/UI";
 import { PRICING_PLANS } from "@repo/utilities";
 import { FC, MouseEventHandler, useState } from "react";
 import EditPlanModal from "./editPlanModal";

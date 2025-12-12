@@ -1,4 +1,4 @@
-import { Button, Input, Modal, Switch } from "@repo/ui";
+import { Button, Input, Modal, Switch } from "@repo/UI";
 import { useTranslation } from "react-i18next";
 import classes from "./style.module.css";
 

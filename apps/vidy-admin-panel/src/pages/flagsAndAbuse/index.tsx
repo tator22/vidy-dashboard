@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { DataTable } from "@repo/ui";
+import { DataTable } from "@repo/UI";
 import { FLAGS_AND_ABUSE } from "@repo/utilities";
 import { FC, ReactNode } from "react";
 import { useTranslation } from "react-i18next";

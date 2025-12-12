@@ -1,5 +1,5 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Image, ProfilePhoto, Text } from "@repo/ui";
+import { Button, Image, ProfilePhoto, Text } from "@repo/UI";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import AddSocialLinkModal from "./addSocialLinkModal";

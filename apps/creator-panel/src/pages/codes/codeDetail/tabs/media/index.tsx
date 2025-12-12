@@ -1,6 +1,6 @@
 import RenderEngagement from "@/components/RenderEngagement";
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Image, Text } from "@repo/ui";
+import { Button, Image, Text } from "@repo/UI";
 import { mediaCards } from "@repo/utilities";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";

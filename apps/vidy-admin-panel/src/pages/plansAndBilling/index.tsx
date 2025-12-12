@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { RenderTab, renderTabProps } from "@repo/ui";
+import { RenderTab, renderTabProps } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";

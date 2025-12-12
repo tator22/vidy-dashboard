@@ -1,4 +1,4 @@
-import { Modal, RenderTab, renderTabProps } from "@repo/ui";
+import { Modal, RenderTab, renderTabProps } from "@repo/UI";
 import { Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";

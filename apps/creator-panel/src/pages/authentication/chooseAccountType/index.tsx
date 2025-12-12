@@ -1,7 +1,7 @@
 import { FC, MouseEventHandler } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import { Image, Text } from "@repo/ui";
+import { Image, Text } from "@repo/UI";
 import { ASSET_PATHS } from "@repo/assets";
 
 const ChooseAccountType: FC<{

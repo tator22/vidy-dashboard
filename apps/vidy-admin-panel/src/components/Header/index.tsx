@@ -1,5 +1,5 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Text } from "@repo/ui";
+import { Button, Text } from "@repo/UI";
 import clsx from "clsx";
 import { CSSProperties, FC, MouseEventHandler, ReactNode } from "react";
 import { useNavigate } from "react-router";

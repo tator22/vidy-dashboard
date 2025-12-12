@@ -1,4 +1,4 @@
-import { Button, Input, ProfilePhoto, Text, Textarea } from "@repo/ui";
+import { Button, Input, ProfilePhoto, Text, Textarea } from "@repo/UI";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 import { useWindowSize } from "@uidotdev/usehooks";

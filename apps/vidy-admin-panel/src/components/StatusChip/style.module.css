@@ -8,4 +8,7 @@
   background-color: rgb(var(--white));
   color: rgb(var(--black));
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

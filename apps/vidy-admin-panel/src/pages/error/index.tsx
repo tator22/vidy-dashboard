@@ -3,7 +3,7 @@ import type { FC, JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import styles from "./style.module.css";
-import { Text, Image, Button } from "@repo/ui";
+import { Text, Image, Button } from "@repo/UI";
 import { ASSET_PATHS } from "@repo/assets";
 import { CONSTANTS } from "@repo/utilities";
 

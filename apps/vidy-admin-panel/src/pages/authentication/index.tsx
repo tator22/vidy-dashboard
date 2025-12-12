@@ -1,5 +1,5 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Image, Text } from "@repo/ui";
+import { Button, Image, Text } from "@repo/UI";
 import { CONSTANTS } from "@repo/utilities";
 import clsx from "clsx";
 import { FC, MouseEventHandler, ReactNode, useState } from "react";

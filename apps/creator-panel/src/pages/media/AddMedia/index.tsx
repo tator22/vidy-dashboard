@@ -1,5 +1,5 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { Button, Image, Input, Label, Modal, Separator, Text } from "@repo/ui";
+import { Button, Image, Input, Label, Modal, Separator, Text } from "@repo/UI";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";

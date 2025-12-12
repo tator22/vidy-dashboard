@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { ASSET_PATHS } from "@repo/assets";
-import { Text } from "@repo/ui";
+import { Text } from "@repo/UI";
 import { CONSTANTS } from "@repo/utilities";
 import clsx from "clsx";
 import { useRef } from "react";

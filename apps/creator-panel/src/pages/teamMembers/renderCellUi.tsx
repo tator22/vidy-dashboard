@@ -1,6 +1,6 @@
 import RoleChip from "@/components/RoleChip";
 import TableAction from "@/components/TableAction";
-import { Text } from "@repo/ui";
+import { Text } from "@repo/UI";
 import { FC } from "react";
 import styles from "./style.module.css";
 import { TableColumnId } from "./tableColumn";

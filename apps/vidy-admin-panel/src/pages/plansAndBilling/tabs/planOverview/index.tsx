@@ -1,4 +1,4 @@
-import { DataTable } from "@repo/ui";
+import { DataTable } from "@repo/UI";
 import { PLAN_OVERVIEW } from "@repo/utilities";
 import { FC, ReactNode } from "react";
 import RenderCellsUi from "./renderCellUi";

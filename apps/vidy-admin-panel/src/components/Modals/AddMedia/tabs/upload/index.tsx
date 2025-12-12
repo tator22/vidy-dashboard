@@ -8,7 +8,7 @@ import {
   Separator,
   Text,
   Textarea,
-} from "@repo/ui";
+} from "@repo/UI";
 import {
   HTMLAttributes,
   useCallback,

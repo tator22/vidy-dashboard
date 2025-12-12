@@ -1,4 +1,4 @@
-import { Switch, Text } from "@repo/ui";
+import { Switch, Text } from "@repo/UI";
 import { FC } from "react";
 import classes from "./style.module.css";
 

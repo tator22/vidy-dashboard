@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import WalkthroughVideoButton from "@/components/WalkthroughVideoButton";
-import { DataTable } from "@repo/ui";
+import { DataTable } from "@repo/UI";
 import {
   CONSTANTS,
   generateRoutePath,

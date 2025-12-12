@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import { CheckBox, Input, Link, Text } from "@repo/ui";
+import { CheckBox, Input, Link, Text } from "@repo/UI";
 
 const EnterAccountDetails: FC = (): JSX.Element => {
   // Hooks

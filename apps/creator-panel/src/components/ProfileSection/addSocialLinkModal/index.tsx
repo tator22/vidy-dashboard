@@ -4,7 +4,7 @@ import { CONSTANTS } from "@repo/utilities";
 import { ASSET_PATHS } from "@repo/assets";
 import { Searchbar } from "@/layout/searchbar";
 import { useState } from "react";
-import { Image, Input, Modal, Separator, Text } from "@repo/ui";
+import { Image, Input, Modal, Separator, Text } from "@repo/UI";
 
 const AddSocialLinkModal = ({
   isOpen,

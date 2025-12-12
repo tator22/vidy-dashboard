@@ -5,6 +5,12 @@
     "sourceMap": true,
     "types": ["node"]
   },
-  "include": ["src", ".", "../../types/global.d.ts"],
+  "include": [
+    "src",
+    "",
+    "../../types/global.d.ts",
+    "../../apps/vidy-admin-panel/src/components/InfoWrapper",
+    "../../apps/vidy-admin-panel/src/components/InfoWrapper"
+  ],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,4 +1,4 @@
-import { Button, Image } from "@repo/ui";
+import { Button, Image } from "@repo/UI";
 import { ASSET_PATHS } from "@repo/assets";
 import styles from "./style.module.css";
 

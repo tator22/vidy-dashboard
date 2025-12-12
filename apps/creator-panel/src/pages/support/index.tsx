@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { ASSET_PATHS } from "@repo/assets";
-import { Image, Text } from "@repo/ui";
+import { Image, Text } from "@repo/UI";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 import clsx from "clsx";

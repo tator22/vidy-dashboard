@@ -53,7 +53,25 @@
     },
     "USERS_AND_ACCOUNTS": {
       "heading": "Users & Accounts",
-      "new_cta": "Create Account"
+      "new_cta": "Create Account",
+      "DETAIL": {
+        "heading": "User & Accounts Detail",
+        "account_name": "Account name",
+        "email": "Email",
+        "platform": "Platform(s)",
+        "current_plan": "current Plan (monthly/yearly)",
+        "plan_start_date": "Plan Start Date",
+        "next_renewal_date": "Next Renewal Date",
+        "status": "status",
+        "total_campaigns": "Total campaigns",
+        "storage_used": "Storage Used",
+        "hits_used_plan_limit": "Usage vs Plan Limit",
+        "last_login_and_usage": "Last Login & Usage",
+        "user_detail": "User Details",
+        "plan_details": "Plan Details",
+        "suspended": "Suspended",
+        "add_note": "Add Note"
+      }
     },
     "USAGE_AND_LIMIT": {
       "heading": "Usage & Limits",

@@ -29,6 +29,7 @@ export const CONSTANTS = {
     ROOT: "/",
     DASHBOARD: "/dashboard",
     USERS_AND_ACCOUNTS: "/users-and-accounts",
+    USERS_AND_ACCOUNTS_DETAIL: "/users-and-accounts/:id",
     CAMPAIGNS: "/campaigns",
     USAGE_AND_LIMITS: "/usage-and-limits",
     PLANS_AND_BILLING: "/plans-and-billing",

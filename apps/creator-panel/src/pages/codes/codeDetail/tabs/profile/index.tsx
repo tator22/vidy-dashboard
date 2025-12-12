@@ -1,5 +1,5 @@
 import ProfileSection from "@/components/ProfileSection";
-import { Input, Separator } from "@repo/ui";
+import { Input, Separator } from "@repo/UI";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 
