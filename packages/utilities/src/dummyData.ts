@@ -991,3 +991,36 @@ export const PRICING_PLANS = [
     recommended: false,
   },
 ];
+
+export const CHANGE_LOGS = [
+  {
+    action: "User upgraded plan from Basic → Pro",
+    changedBy: "user@gmail.com",
+    time: "2025-12-15T09:45:00Z",
+  },
+  {
+    action: "Admin manually matched plan to Pro (manual override)",
+    changedBy: "admin@company.com",
+    time: "2025-12-15T10:00:00Z",
+  },
+  {
+    action: "System suspended account due to failed payment",
+    changedBy: "system",
+    time: "2025-12-15T10:10:00Z",
+  },
+  {
+    action: "User downgraded plan from Pro → Basic",
+    changedBy: "user",
+    time: "2025-12-15T10:25:00Z",
+  },
+  {
+    action: "Admin reactivated suspended account",
+    changedBy: "admin@company.com",
+    time: "2025-12-15T10:40:00Z",
+  },
+  {
+    action: "System synced plan status from webhook (Pro active)",
+    changedBy: "system",
+    time: "2025-12-15T11:00:00Z",
+  },
+];

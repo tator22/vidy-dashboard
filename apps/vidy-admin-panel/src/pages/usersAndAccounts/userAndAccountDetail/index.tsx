@@ -1,34 +1,74 @@
 import Header from "@/components/Header";
-import { InfoWrapper } from "@/components/InfoWrapper";
 import StatusChip from "@/components/StatusChip";
-import { Button, InfoCard, Separator } from "@repo/UI";
-import { USERS_AND_ACCOUNTS } from "@repo/utilities";
-import moment from "moment";
-import { useEffect, useState } from "react";
+import { Button, RenderTab, renderTabProps, Separator } from "@repo/UI";
+import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
-import classes from "./style.module.css";
+import AddNoteModal from "../addNoteModal";
+import styles from "./style.module.css";
+import { ChangeLogs } from "./tabs/changeLogs";
+import Details from "./tabs/detail";
 
-const UserAndAccountDetail = () => {
+export const UserAndAccountDetail: FC = () => {
   // Hooks
   const { t } = useTranslation();
 
   // Variables
   const translationKey = "PAGES.USERS_AND_ACCOUNTS.DETAIL";
-  const data = USERS_AND_ACCOUNTS[0];
+  const tabs: renderTabProps[] = [
+    {
+      label: t(`${translationKey}.details`),
+      key: "details",
+    },
+    {
+      label: t(`${translationKey}.change_logs`),
+      key: "change_logs",
+    },
+  ];
 
-  // States
-  const [firstUser, setFirstUser] = useState(data);
+  //  Local State
+  const [activeTab, setActiveTab] = useState({
+    label: "",
+    key: "details",
+  });
+  const [enableAddNoteModal, setEnableAddNoteModal] = useState(false);
 
-  useEffect(() => {
-    setFirstUser(data);
-  }, []);
+  // Functions
+  const renderTabItem = () => {
+    if (activeTab) {
+      switch (activeTab.key) {
+        case "details":
+          return <Details />;
+        case "change_logs":
+          return <ChangeLogs />;
+        default:
+          return <p>No component found</p>;
+      }
+    }
+  };
+
+  const handleEnableAddNoteModal = () => {
+    setEnableAddNoteModal((prev) => !prev);
+  };
 
   return (
-    <div className={classes.userAndAccountDetail}>
+    <div className={styles.userAndAccountDetail}>
       <Header
         heading={t(`${translationKey}.heading`)}
         rightChildren={
           <>
+            <Button
+              text={t(`${translationKey}.change_plan`)}
+              size="medium"
+              variant="secondary"
+            />
+            <Button
+              text={t(`${translationKey}.add_note`)}
+              size="medium"
+              variant="secondary"
+              buttonProps={{
+                onClick: handleEnableAddNoteModal,
+              }}
+            />
             <Button
               text={t(`${translationKey}.suspended`)}
               size="medium"
@@ -40,68 +80,28 @@ const UserAndAccountDetail = () => {
                 },
               }}
             />
-            <Button
-              text={t(`${translationKey}.add_note`)}
-              size="medium"
-              variant="secondary"
-            />
             <Separator direction="vertical" />
-            <StatusChip status={firstUser.status} />
+            <StatusChip status={"active"} />
           </>
         }
       />
 
-      <InfoWrapper title={t(`${translationKey}.user_detail`)}>
-        <InfoCard
-          title={t(`${translationKey}.account_name`)}
-          value={firstUser.account_name}
+      <div className={styles.addMedia}>
+        <RenderTab
+          tabs={tabs}
+          activeTab={activeTab.key}
+          onClick={setActiveTab}
         />
-        <InfoCard
-          title={t(`${translationKey}.email`)}
-          value={firstUser.email}
-        />
-        <InfoCard
-          title={t(`${translationKey}.platform`)}
-          value={firstUser.platforms.map((i) => i).join(", ")}
-        />
-        <InfoCard
-          title={t(`${translationKey}.last_login_and_usage`)}
-          value={moment().format("DD, MMMM YYYY")}
-        />
-      </InfoWrapper>
 
-      <Separator />
+        <Suspense fallback="loading...">{renderTabItem()}</Suspense>
+      </div>
 
-      <InfoWrapper title={t(`${translationKey}.plan_details`)}>
-        <InfoCard
-          title={t(`${translationKey}.current_plan`)}
-          value={firstUser.current_plan}
+      {enableAddNoteModal && (
+        <AddNoteModal
+          onClose={handleEnableAddNoteModal}
+          isOpen={enableAddNoteModal}
         />
-        <InfoCard
-          title={t(`${translationKey}.plan_start_date`)}
-          value={moment().format("DD, MMMM YYYY")}
-        />
-        <InfoCard
-          title={t(`${translationKey}.next_renewal_date`)}
-          value={moment().format("DD, MMMM YYYY")}
-        />
-        <InfoCard
-          title={t(`${translationKey}.total_campaigns`)}
-          value={String(firstUser.total_campaigns)}
-        />
-        <InfoCard
-          title={t(`${translationKey}.storage_used`)}
-          value={String(firstUser.storage_used)}
-        />
-        <InfoCard
-          title={t(`${translationKey}.hits_used_plan_limit`)}
-          value={String(firstUser.hits_this_month)}
-        />
-      </InfoWrapper>
-
-      {/* <Separator /> */}
+      )}
     </div>
   );
 };
-
-export default UserAndAccountDetail;

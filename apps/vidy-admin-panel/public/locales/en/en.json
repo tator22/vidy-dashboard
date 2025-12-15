@@ -70,7 +70,16 @@
         "user_detail": "User Details",
         "plan_details": "Plan Details",
         "suspended": "Suspended",
-        "add_note": "Add Note"
+        "add_note": "Add Note",
+        "change_plan": "Change Plan",
+        "change_logs": "Change Logs",
+        "details": "Details"
+      },
+      "ADD_NOTES_MODAL": {
+        "admin_note": "Admin Note",
+        "submit": "Submit",
+        "add_note": "Add note",
+        "placeholder": "Enter you note."
       }
     },
     "USAGE_AND_LIMIT": {
