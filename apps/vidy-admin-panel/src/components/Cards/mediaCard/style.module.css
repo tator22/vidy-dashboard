@@ -30,8 +30,8 @@
       background-color: rgb(var(--black), 0.2);
 
       .playIcon {
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
         filter: var(--white-filter);
       }
     }
@@ -43,22 +43,5 @@
     font-weight: 600;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-  }
-
-  .renderTags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    justify-content: center;
-
-    .tag {
-      font-size: 1.1rem;
-      line-height: 125%;
-      font-weight: 400;
-      padding: 0.4rem 0.8rem;
-      border-radius: 0.6rem;
-      background-color: rgb(var(--black), 0.06);
-      width: fit-content;
-    }
   }
 }

@@ -88,7 +88,19 @@
       "capacity_overview": "Capacity Overview"
     },
     "CAMPAIGNS": {
-      "heading": "Campaigns"
+      "heading": "Campaigns",
+      "DETAIL": {
+        "heading": "Campaign Detail",
+        "details": "Details",
+        "media": "Media",
+        "campaign_details": "Campaign Details",
+        "campaign_name": "Campaign Name",
+        "plan": "Plan",
+        "account": "Account",
+        "branding_status": "Branding status",
+        "stats": "Stats",
+        "storage_used": "Storage Used"
+      }
     },
     "PLANS_AND_BILLING": {
       "heading": "Plans & Billing",

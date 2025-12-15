@@ -28,10 +28,13 @@
 }
 
 .boolean {
-  color: rgb(var(--black), 0.5);
+  font-size: 1.5rem;
+  color: rgba(var(--black));
 }
 
 .link {
-  color: rgb(var(--primary));
-  text-decoration: underline;
+  font-size: 1.5rem;
+  text-decoration: underline !important;
+  transform: scale(1) !important;
+  color: rgba(var(--black), 0.5) !important;
 }

@@ -1,15 +1,20 @@
 import { ASSET_PATHS } from "@repo/assets";
 import { Image, Text } from "@repo/UI";
 import styles from "./style.module.css";
+import moment from "moment";
 
-const MediaCardWithTag = ({
+const MediaCard = ({
   thumbnail,
-  tags,
-  title,
+  mediaId,
+  type,
+  fileSize,
+  uploadedAt,
 }: {
   thumbnail: string;
-  tags: string[];
-  title: string;
+  mediaId: string;
+  type: string;
+  fileSize?: string;
+  uploadedAt?: string;
 }) => {
   return (
     <div className={styles.mediaCard}>
@@ -26,7 +31,10 @@ const MediaCardWithTag = ({
             className: styles.playIconContainer,
           }}
           imageProps={{
-            src: ASSET_PATHS.SVGS.PLAY,
+            src:
+              type === "image"
+                ? ASSET_PATHS.SVGS.IMAGE_ICON
+                : ASSET_PATHS.SVGS.PLAY,
             className: styles.playIcon,
           }}
         />
@@ -34,24 +42,13 @@ const MediaCardWithTag = ({
 
       <Text
         tag="h6"
-        children={title}
+        children={mediaId}
         containerProps={{ className: styles.title }}
       />
 
-      <div className={styles.renderTags}>
-        {tags.map((item, index) => (
-          <Text
-            tag="p"
-            children={item}
-            key={index}
-            containerProps={{
-              className: styles.tag,
-            }}
-          />
-        ))}
-      </div>
+      <Text>{`${fileSize} • ${moment(uploadedAt).format("DD, MMMM YYYY")}`}</Text>
     </div>
   );
 };
 
-export default MediaCardWithTag;
+export default MediaCard;

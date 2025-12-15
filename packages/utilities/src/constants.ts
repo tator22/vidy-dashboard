@@ -29,8 +29,13 @@ export const CONSTANTS = {
     ROOT: "/",
     DASHBOARD: "/dashboard",
     USERS_AND_ACCOUNTS: "/users-and-accounts",
-    USERS_AND_ACCOUNTS_DETAIL: "/users-and-accounts/:id",
+    get USERS_AND_ACCOUNTS_DETAIL() {
+      return `${this.USERS_AND_ACCOUNTS}/:id`;
+    },
     CAMPAIGNS: "/campaigns",
+    get CAMPAIGN_DETAIL() {
+      return `${this.CAMPAIGNS}/:id`;
+    },
     USAGE_AND_LIMITS: "/usage-and-limits",
     PLANS_AND_BILLING: "/plans-and-billing",
     STORAGE_AND_ASSETS: "/storage-and-assets",

@@ -1024,3 +1024,78 @@ export const CHANGE_LOGS = [
     time: "2025-12-15T11:00:00Z",
   },
 ];
+
+export const MEDIA_FILES = [
+  {
+    mediaId: "MED-1001",
+    type: "image",
+    fileSize: "2.4 MB",
+    uploadedAt: "2025-12-10T09:15:00Z",
+    thumbnail:
+      "https://plus.unsplash.com/premium_photo-1669278728736-7e8cec06c3e0?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+  {
+    mediaId: "MED-1002",
+    type: "video",
+    fileSize: "45.2 MB",
+    uploadedAt: "2025-12-10T11:32:00Z",
+    thumbnail:
+      "https://images.unsplash.com/photo-1551999158-75d41e4860a5?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+  {
+    mediaId: "MED-1003",
+    type: "image",
+    fileSize: "1.8 MB",
+    uploadedAt: "2025-12-11T14:05:00Z",
+    thumbnail:
+      "https://images.unsplash.com/photo-1744424945597-d695380d092a?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+  {
+    mediaId: "MED-1004",
+    type: "video",
+    fileSize: "58.9 MB",
+    uploadedAt: "2025-12-12T08:47:00Z",
+    thumbnail:
+      "https://images.unsplash.com/photo-1747573285214-b6a4246ee727?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+  {
+    mediaId: "MED-1005",
+    type: "image",
+    fileSize: "3.1 MB",
+    uploadedAt: "2025-12-12T10:21:00Z",
+    thumbnail:
+      "https://images.unsplash.com/photo-1746950862850-bf965eaa7aaa?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+  {
+    mediaId: "MED-1006",
+    type: "video",
+    fileSize: "72.4 MB",
+    uploadedAt: "2025-12-13T12:58:00Z",
+    thumbnail:
+      "https://plus.unsplash.com/premium_photo-1746253496816-4079a5880786?q=80&w=1658&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+  {
+    mediaId: "MED-1007",
+    type: "image",
+    fileSize: "2.9 MB",
+    uploadedAt: "2025-12-14T09:40:00Z",
+    thumbnail:
+      "https://images.unsplash.com/photo-1745136028303-7c01bae7eb6a?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+  {
+    mediaId: "MED-1008",
+    type: "video",
+    fileSize: "65.1 MB",
+    uploadedAt: "2025-12-15T08:10:00Z",
+    thumbnail:
+      "https://images.unsplash.com/photo-1522743791393-522312deeebf?q=80&w=916&auto=format&fit=crop&ixlib=rb-4.1.0",
+    videoUrl: "#",
+  },
+];
