@@ -79,6 +79,7 @@ import DEFAULT_FILLED from "./svgs/default_filled.svg";
 import DEFAULT_OUTLINE from "./svgs/default_outline.svg";
 import DEFAULT_QR_CODE_ICON from "./svgs/default_qr_code_icon.svg";
 import DOWNLOAD from "./svgs/download.svg";
+import DROPDOWN_ICON from "./svgs/dropdown-icon.svg";
 import EMPTY_ICON from "./svgs/empty-icon.svg";
 import EYE_ICON from "./svgs/eye-icon.svg";
 import FLAGS_AND_ABUSE_FILLED from "./svgs/flags-and-abuse-filled.svg";
@@ -331,5 +332,6 @@ export const ASSET_PATHS = {
     FLAGS_AND_ABUSE_OUTLINE,
     SYSTEM_SETTING_FILLED,
     SYSTEM_SETTING_OUTLINE,
+    DROPDOWN_ICON,
   },
 };

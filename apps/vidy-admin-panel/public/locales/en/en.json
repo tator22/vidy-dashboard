@@ -89,6 +89,17 @@
     },
     "CAMPAIGNS": {
       "heading": "Campaigns",
+      "filters": "Filters",
+      "filter": "Filter",
+      "apply": "Apply Filter",
+      "cancel": "Cancel",
+      "by_account": "Accounts",
+      "by_plan": "Plans",
+      "calender_date": "Calender Date",
+      "hight_hits": "Hight Hits",
+      "storage_heavy_campaigns": "Storage heavy Campaigns",
+      "enter_hight_hits": "Enter hit threshold (e.g., 100000)",
+      "enter_storage_in_numbers": "Enter storage threshold (e.g., 50 GB)",
       "DETAIL": {
         "heading": "Campaign Detail",
         "details": "Details",

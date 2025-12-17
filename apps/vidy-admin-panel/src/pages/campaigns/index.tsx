@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
-import { DataTable } from "@repo/UI";
+import { Button, DataTable } from "@repo/UI";
 import { CAMPAIGNS, CONSTANTS, generateRoutePath } from "@repo/utilities";
 import { FC, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import FilterModal from "./filterModal";
 import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
@@ -18,11 +19,12 @@ export const Campaigns: FC = () => {
   const showData = TableColumn.map((el) => el.id);
 
   // Local State
-  const [enableAddCodeModal, setEnableAddCodeModal] = useState(false);
+  const [enableFilterModal, setEnableFilterModal] = useState(false);
 
   // Functions
-  const handleEnableAddCodeModal = () => {
-    setEnableAddCodeModal(!enableAddCodeModal);
+
+  const handleEnableFilterModal = () => {
+    setEnableFilterModal((prev) => !prev);
   };
 
   const handleRowClick = () => {
@@ -40,7 +42,16 @@ export const Campaigns: FC = () => {
     <div className={styles.code}>
       <Header
         heading={t(`${translationKey}.heading`)}
-        onButtonClick={handleEnableAddCodeModal}
+        rightChildren={
+          <Button
+            text={t(`${translationKey}.filter`)}
+            size="medium"
+            variant="secondary"
+            buttonProps={{
+              onClick: handleEnableFilterModal,
+            }}
+          />
+        }
       />
 
       <DataTable
@@ -53,6 +64,13 @@ export const Campaigns: FC = () => {
           ))
         }
       />
+
+      {enableFilterModal ? (
+        <FilterModal
+          isOpen={enableFilterModal}
+          onClose={handleEnableFilterModal}
+        />
+      ) : null}
     </div>
   );
 };
