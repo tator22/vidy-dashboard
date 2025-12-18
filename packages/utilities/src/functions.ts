@@ -24,6 +24,12 @@ export const getStatusColor = (status: string) => {
       return "--active";
     case CONSTANTS.STATUS.INACTIVE:
       return "--inactive";
+    case CONSTANTS.STATUS.SUSPENDED:
+      return "--error";
+    case CONSTANTS.STATUS.ARCHIVED:
+      return "--archived";
+    case CONSTANTS.STATUS.DISABLED:
+      return "--error";
   }
 };
 

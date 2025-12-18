@@ -1,0 +1,115 @@
+.tableActionMainContainer {
+  .TableAction {
+    position: relative;
+    display: block;
+
+    .tableActionIconMenuIcon {
+      background: none;
+      outline: none;
+      border: none;
+      min-height: 3.6rem;
+      min-width: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      .tableActionMainIcon {
+        width: 1.6rem;
+        height: 1.6rem;
+        filter: var(--primary-color-filter);
+      }
+    }
+  }
+}
+
+.tableActionMenu {
+  background-color: rgb(var(--white));
+  z-index: 99999;
+  min-width: 20.5rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 0.15rem solid rgb(var(--primary), 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  .tableActionMenuHeading {
+    font-size: 1.5rem;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .tableActionItem {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    padding-right: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(var(--primary), 0.05);
+    }
+
+    .tableActionItemIconContainer {
+      background: none;
+      outline: none;
+      border: none;
+      width: 2.75rem;
+      min-width: 2.75rem;
+      max-width: 2.75rem;
+      height: 2.75rem;
+      min-height: 2.75rem;
+      max-height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      .tableActionItemIcon {
+        width: 100%;
+        height: 100%;
+        filter: var(--table-action-icon-filter);
+        /* border: 2px solid green; */
+      }
+    }
+
+    .tableActonItemText {
+      font-size: 1.5rem;
+      line-height: 125%;
+      font-weight: 400;
+      color: rgb(var(--black));
+      text-transform: capitalize;
+    }
+  }
+
+  .deleteHover {
+    > .tableActonItemText {
+      color: rgba(var(--error));
+    }
+
+    > .tableActionItemIconContainer .tableActionItemIcon {
+      filter: var(--error-filter);
+    }
+
+    &:hover {
+      background-color: rgba(var(--error));
+
+      > .tableActionItemIconContainer .tableActionItemIcon {
+        filter: var(--white-filter);
+      }
+
+      > .tableActonItemText {
+        color: rgba(var(--white));
+      }
+    }
+  }
+}

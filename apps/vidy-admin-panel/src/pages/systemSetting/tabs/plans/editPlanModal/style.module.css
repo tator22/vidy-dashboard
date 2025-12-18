@@ -1,0 +1,28 @@
+.editPlanForm {
+  .inputGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      > button {
+        width: 100%;
+      }
+    }
+  }
+}

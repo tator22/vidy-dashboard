@@ -11,7 +11,7 @@ import {
   RenderTab,
   renderTabProps,
   Text,
-} from "@repo/ui";
+} from "@repo/UI";
 import * as htmlToImage from "html-to-image";
 import { Suspense, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";

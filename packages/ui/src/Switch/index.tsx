@@ -26,7 +26,15 @@ export const Switch: FC<{
       className={`Switch  ${containerProps?.className || ""}`}
       aria-disabled={inputProps?.disabled}
     >
-      {label && <Label text={label} isOptional={!inputProps?.required} />}
+      {label && (
+        <Label
+          text={label}
+          isOptional={!inputProps?.required}
+          containerProps={{
+            className: "label",
+          }}
+        />
+      )}
 
       <input
         {...inputProps}

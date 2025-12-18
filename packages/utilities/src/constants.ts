@@ -3,6 +3,7 @@ import { ASSET_PATHS } from "@repo/assets";
 export const CONSTANTS = {
   CURRENCY_SYMBOL: "$",
   APP_NAME: "Videocode",
+  ADMIN_PANEL_NAME: "Vidy Admin Panel",
   PRODUCTS: {
     ADMIN_PANEL: "Admin Panel",
     CREATOR_PANEL: "Creator Panel",
@@ -23,6 +24,25 @@ export const CONSTANTS = {
     AUTHENTICATION: "/",
     VIDEO_HELP: "/app/video-help",
   },
+
+  VIDY_ADMIN_PATHS: {
+    ROOT: "/",
+    DASHBOARD: "/dashboard",
+    USERS_AND_ACCOUNTS: "/users-and-accounts",
+    get USERS_AND_ACCOUNTS_DETAIL() {
+      return `${this.USERS_AND_ACCOUNTS}/:id`;
+    },
+    CAMPAIGNS: "/campaigns",
+    get CAMPAIGN_DETAIL() {
+      return `${this.CAMPAIGNS}/:id`;
+    },
+    USAGE_AND_LIMITS: "/usage-and-limits",
+    PLANS_AND_BILLING: "/plans-and-billing",
+    STORAGE_AND_ASSETS: "/storage-and-assets",
+    FLAGS_AND_ABUSE: "/flags-and-abuse",
+    SYSTEM_SETTINGS: "/system-settings",
+    SUPPORT_TOOLS_OR_NOTES: "/support-tools-or-notes",
+  },
   ROLE: {
     ADMIN: "admin",
     EDITOR: "editor",
@@ -30,6 +50,9 @@ export const CONSTANTS = {
   STATUS: {
     ACTIVE: "active",
     INACTIVE: "inactive",
+    SUSPENDED: "suspended",
+    ARCHIVED: "archived",
+    DISABLED: "disabled",
   },
   SIDEBAR_MODE: "sidebarMode",
   QR_BODY_SHAPES: [

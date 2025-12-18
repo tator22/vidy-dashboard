@@ -15,6 +15,7 @@
     height: calc(100dvh - var(--top-bar-height));
     position: sticky;
     top: var(--top-bar-height);
+    padding-bottom: 5rem;
 
     .previewContainer {
       display: flex;

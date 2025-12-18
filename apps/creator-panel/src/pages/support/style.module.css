@@ -8,6 +8,11 @@
     margin-block: 3rem;
     height: calc(100% - var(--top-bar-height) - 7rem);
 
+    @media (max-width: 650px) {
+      margin-block: 0rem;
+      height: calc(100% - var(--top-bar-height) - 3rem);
+    }
+
     .chatBox {
       width: 50rem;
       border: 0.15rem solid rgb(var(--black), 0.08);
@@ -20,6 +25,8 @@
 
       @media (max-width: 650px) {
         width: 100%;
+        border-radius: 0rem;
+        border: none;
       }
 
       &::-webkit-scrollbar {

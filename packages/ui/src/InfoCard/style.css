@@ -1,0 +1,40 @@
+/* detailCard */
+.detailCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: rgb(var(--primary), 0.04);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+@media (max-width: 450px) {
+  .detailCard {
+    width: 100%;
+  }
+}
+
+.detailCardTitle {
+  color: rgb(var(--black));
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-size: 1.5rem;
+}
+
+.detailCardValue {
+  color: rgba(var(--black), 0.5);
+  font-size: 1.5rem;
+}
+
+.boolean {
+  font-size: 1.5rem;
+  color: rgba(var(--black));
+}
+
+.link {
+  font-size: 1.5rem;
+  text-decoration: underline !important;
+  transform: scale(1) !important;
+  color: rgba(var(--black), 0.5) !important;
+}

@@ -61,6 +61,8 @@ import ASK_A_QUESTION_FILLED from "./svgs/ask-a-question-filled.svg";
 import ASK_A_QUESTION_OUTLINED from "./svgs/ask-a-question-outlined.svg";
 import BILLING_FILLED from "./svgs/billing-filled.svg";
 import BILLING_OUTLINED from "./svgs/billing-outlined.svg";
+import CAMPAIGNS_FILLED from "./svgs/campaigns-filled.svg";
+import CAMPAIGNS_OUTLINE from "./svgs/campaigns-outline.svg";
 import CHECKED_ICON from "./svgs/check.svg";
 import CHECKBOX_CHECKED from "./svgs/checkbox-checked.svg";
 import CHECKBOX_UNCHECKED from "./svgs/checkbox-unchecked.svg";
@@ -68,13 +70,20 @@ import CIRCLE_SHAPE from "./svgs/circle.svg";
 import CLOSE_ICON from "./svgs/close_icon.svg";
 import COMMENT from "./svgs/comment.svg";
 import COMPANY from "./svgs/company.svg";
+import COPIED from "./svgs/copied.svg";
 import COPY from "./svgs/copy.svg";
 import CREDIT_CARD from "./svgs/credit_card.svg";
+import DASHBOARD_FILLED from "./svgs/dashboard-filled.svg";
+import DASHBOARD_OUTLINE from "./svgs/dashboard-outline.svg";
 import DEFAULT_FILLED from "./svgs/default_filled.svg";
 import DEFAULT_OUTLINE from "./svgs/default_outline.svg";
+import DEFAULT_QR_CODE_ICON from "./svgs/default_qr_code_icon.svg";
 import DOWNLOAD from "./svgs/download.svg";
+import DROPDOWN_ICON from "./svgs/dropdown-icon.svg";
 import EMPTY_ICON from "./svgs/empty-icon.svg";
 import EYE_ICON from "./svgs/eye-icon.svg";
+import FLAGS_AND_ABUSE_FILLED from "./svgs/flags-and-abuse-filled.svg";
+import FLAGS_AND_ABUSE_OUTLINE from "./svgs/flags-and-abuse-outline.svg";
 import GOOGLE_PAY from "./svgs/google.svg";
 import HOME_FILLED from "./svgs/home_filled.svg";
 import HOME_OUTLINE from "./svgs/home_outline.svg";
@@ -94,6 +103,8 @@ import MESSAGE_SEND from "./svgs/message_send.svg";
 import MOVE from "./svgs/move.svg";
 import NOTIFICATION from "./svgs/notification.svg";
 import PAY_PAL from "./svgs/paypal.svg";
+import PLANS_AND_BILLING_FILLED from "./svgs/plan-and-billing-filled.svg";
+import PLANS_AND_BILLING_OUTLINE from "./svgs/plan-and-billing-outline.svg";
 import PLAY from "./svgs/play_icon.svg";
 import PLUS from "./svgs/plus.svg";
 import PROFILE_EDIT_ICON from "./svgs/profile_edit_icon.svg";
@@ -129,22 +140,36 @@ import WHATS_APP from "./svgs/socialIcons/whats_app.svg";
 import X from "./svgs/socialIcons/x.svg";
 import YOUTUBE from "./svgs/socialIcons/youtube.svg";
 import SQUARE_SHAPE from "./svgs/square.svg";
+import STORAGE_AND_ASSET_FILLED from "./svgs/storage-and-asset-filled.svg";
+import STORAGE_AND_ASSET_OUTLINE from "./svgs/storage-and-asset-outline.svg";
 import STORAGE from "./svgs/storage.svg";
 import STORIES from "./svgs/STORIES.svg";
+import SUPPORT_ICON_FILLED from "./svgs/support-icon-filled.svg";
+import SUPPORT_ICON_OUTLINE from "./svgs/support-icon-outline.svg";
 import SUPPORT_FILLED from "./svgs/support_filled.svg";
 import SUPPORT_OUTLINE from "./svgs/support_outline.svg";
 import SWITCH_OFF from "./svgs/switch-off.svg";
 import SWITCH_ON from "./svgs/switch-on.svg";
+import SYSTEM_SETTING_FILLED from "./svgs/system-setting-filled.svg";
+import SYSTEM_SETTING_OUTLINE from "./svgs/system-setting-outline.svg";
+import DELETE from "./svgs/table-action-delete.svg";
 import TEAM_MEMBERS_FILLED from "./svgs/team_members_filled.svg";
 import TEAM_MEMBERS_OUTLINE from "./svgs/team_members_outline.svg";
 import TIKTOK from "./svgs/TIKTOK.svg";
 import UPLOAD from "./svgs/upload.svg";
 import UPLOAD_QR_LOGO from "./svgs/upload_qr.svg";
+import USAGE_AND_LIMIT_FILLED from "./svgs/usage-and-limit-filled.svg";
+import USAGE_AND_LIMIT_OUTLINE from "./svgs/usage-and-limit-outline.svg";
+import USERS_AND_ACCOUNTS_FILLED from "./svgs/users-and-accounts-filled.svg";
+import USERS_AND_ACCOUNTS_OUTLINE from "./svgs/users-and-accounts-outline.svg";
 import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
-import COPIED from "./svgs/copied.svg";
-import DEFAULT_QR_CODE_ICON from "./svgs/default_qr_code_icon.svg";
+import ARCHIVE from "./svgs/archive.svg";
+import CLEAN_UP from "./svgs/clean-up.svg";
+import PURGE from "./svgs/purge.svg";
+import DISABLE from "./svgs/disable.svg";
+import SUSPEND_ACCOUNT from "./svgs/suspend_account.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -299,5 +324,30 @@ export const ASSET_PATHS = {
     DOWNLOAD,
     COPIED,
     DEFAULT_QR_CODE_ICON,
+    USERS_AND_ACCOUNTS_FILLED,
+    USERS_AND_ACCOUNTS_OUTLINE,
+    DASHBOARD_OUTLINE,
+    DASHBOARD_FILLED,
+    CAMPAIGNS_OUTLINE,
+    CAMPAIGNS_FILLED,
+    USAGE_AND_LIMIT_FILLED,
+    USAGE_AND_LIMIT_OUTLINE,
+    PLANS_AND_BILLING_FILLED,
+    PLANS_AND_BILLING_OUTLINE,
+    STORAGE_AND_ASSET_FILLED,
+    STORAGE_AND_ASSET_OUTLINE,
+    FLAGS_AND_ABUSE_FILLED,
+    FLAGS_AND_ABUSE_OUTLINE,
+    SYSTEM_SETTING_FILLED,
+    SYSTEM_SETTING_OUTLINE,
+    SUPPORT_ICON_FILLED,
+    SUPPORT_ICON_OUTLINE,
+    DROPDOWN_ICON,
+    DELETE,
+    ARCHIVE,
+    CLEAN_UP,
+    PURGE,
+    DISABLE,
+    SUSPEND_ACCOUNT,
   },
 };

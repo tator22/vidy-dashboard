@@ -1,13 +1,16 @@
-import { Button, Input, ProfilePhoto, Text, Textarea } from "@repo/ui";
+import { Button, Input, ProfilePhoto, Text, Textarea } from "@repo/UI";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const Settings = () => {
   // Hooks
   const { t } = useTranslation();
+  const { width } = useWindowSize();
 
   // Variables
   const translationKey = "PAGES.SETTINGS";
+  const isMobile = width && width <= 550;
 
   return (
     <div className={styles.settings}>
@@ -21,7 +24,7 @@ const Settings = () => {
       </Text>
 
       <div className={styles.profileSection}>
-        <ProfilePhoto size={"11rem"} />
+        <ProfilePhoto size={isMobile ? "8rem" : "11rem"} />
         <div className={styles.info}>
           <Text
             tag="p"

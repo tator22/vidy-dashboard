@@ -1,0 +1,158 @@
+{
+  "PAGES": {
+    "ERROR": {
+      "heading": "Oops! Page not found",
+      "description": "Sorry, we couldn't find this page.",
+      "error": "Error:",
+      "cta": "Back to Home"
+    },
+    "AUTHENTICATION": {
+      "log_in_label": "Already have an account?",
+      "cta_log_in": "Log in",
+      "sign_up_label": "Don't have an account?",
+      "cta_sign_up": "Sign Up",
+      "ENTER_USERNAME": {
+        "heading": "Enter your Username",
+        "sub_heading": "What would you like your account name to be?",
+        "username_input_placeholder": "Username",
+        "cta": "Continue"
+      },
+      "ENTER_ACCOUNT_DETAILS": {
+        "heading": "Create your account",
+        "email_input_placeholder": "Email",
+        "password_input_placeholder": "Password",
+        "confirm_password_input_placeholder": "Confirm Password",
+        "checkbox_label": "I agree to Video Code's <0>Terms of service</0> and <1>Privacy policy</1>",
+        "cta": "Create my account"
+      },
+      "ENTER_VERIFICATION_CODE": {
+        "heading": "You've got mail",
+        "sub_heading": "An email was sent to you at {{email}} Enter the code to confirm your account.",
+        "code_input_placeholder": "Enter code",
+        "cta": "Continue",
+        "cta_resend_code": "Resend Code"
+      },
+      "ENTER_NAME": {
+        "heading": "Enter your name",
+        "sub_heading": "What would you like your account name to be?",
+        "name_input_placeholder": "Full name",
+        "cta": "Continue"
+      },
+      "CHOOSE_ACCOUNT_TYPE": {
+        "heading": "Choose your account type",
+        "cta_individual": "Individual",
+        "cta_company": "Company"
+      },
+      "LOG_IN": {
+        "heading": "Log in to your account",
+        "email_input_placeholder": "Email",
+        "password_input_placeholder": "Password",
+        "cta_forgot_password": "Forgot Password?",
+        "cta": "Login"
+      }
+    },
+    "USERS_AND_ACCOUNTS": {
+      "heading": "Users & Accounts",
+      "new_cta": "Create Account",
+      "DETAIL": {
+        "heading": "User & Accounts Detail",
+        "account_name": "Account name",
+        "email": "Email",
+        "platform": "Platform(s)",
+        "current_plan": "current Plan (monthly/yearly)",
+        "plan_start_date": "Plan Start Date",
+        "next_renewal_date": "Next Renewal Date",
+        "status": "status",
+        "total_campaigns": "Total campaigns",
+        "storage_used": "Storage Used",
+        "hits_used_plan_limit": "Usage vs Plan Limit",
+        "last_login_and_usage": "Last Login & Usage",
+        "user_detail": "User Details",
+        "plan_details": "Plan Details",
+        "suspended": "Suspended",
+        "add_note": "Add Note",
+        "change_plan": "Change Plan",
+        "change_logs": "Change Logs",
+        "details": "Details"
+      },
+      "ADD_NOTES_MODAL": {
+        "admin_note": "Admin Note",
+        "submit": "Submit",
+        "add_note": "Add note",
+        "placeholder": "Enter you note."
+      }
+    },
+    "USAGE_AND_LIMIT": {
+      "heading": "Usage & Limits",
+      "high_usage": "High Usage Account",
+      "capacity_overview": "Capacity Overview"
+    },
+    "CAMPAIGNS": {
+      "heading": "Campaigns",
+      "filters": "Filters",
+      "filter": "Filter",
+      "apply": "Apply Filter",
+      "cancel": "Cancel",
+      "by_account": "Accounts",
+      "by_plan": "Plans",
+      "calender_date": "Calender Date",
+      "hight_hits": "Hight Hits",
+      "storage_heavy_campaigns": "Storage heavy Campaigns",
+      "enter_hight_hits": "Enter hit threshold (e.g., 100000)",
+      "enter_storage_in_numbers": "Enter storage threshold (e.g., 50 GB)",
+      "soft_delete": "Soft Delete",
+      "archive": "Archive",
+      "DETAIL": {
+        "heading": "Campaign Detail",
+        "details": "Details",
+        "media": "Media",
+        "campaign_details": "Campaign Details",
+        "campaign_name": "Campaign Name",
+        "plan": "Plan",
+        "account": "Account",
+        "branding_status": "Branding status",
+        "stats": "Stats",
+        "storage_used": "Storage Used"
+      }
+    },
+    "PLANS_AND_BILLING": {
+      "heading": "Plans & Billing",
+      "plans_overview": "Plans Overview",
+      "account_billing_snapshot": "Account Billing Snapshot"
+    },
+    "STORAGE_AND_ASSETS": {
+      "heading": "Storage & Assets",
+      "storage_by_account": "Storage by account",
+      "storage_by_campaign": "Storage by campaign",
+      "purge_old_media": "Purge Old Media",
+      "enable_automated_cleanup": "Enable Automated Cleanup"
+    },
+    "FLAGS_AND_ABUSE": {
+      "heading": "Flags & Abuse",
+      "suspend_account": "Suspend Account",
+      "disable_specific_campaign": "Disable Specific Campaign",
+      "add_admin_note": "Add Admin Note"
+    },
+    "SYSTEM_SETTING": {
+      "heading": "System Setting",
+      "plans": "Plans",
+      "global_feature": "Global Feature",
+      "webhook": "Webhook",
+      "edit_plan": "Edit Plan",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "storage": "Storage",
+      "campaign_limit": "Campaign Limit",
+      "hit_limit": "Hit Limit",
+      "enter_hit_limit": "Enter hit limit",
+      "enter_storage": "Enter storage",
+      "enter_campaign_limit": "Enter campaign limit",
+      "label_1": "Apple App Store receipt validation endpoint",
+      "label_2": "Google Play receipt validation endpoint",
+      "placeholder": "Enter URI (https://www.example.com)",
+      "save": "Save",
+      "branding": "Branding"
+    }
+  },
+  "MODALS": {}
+}

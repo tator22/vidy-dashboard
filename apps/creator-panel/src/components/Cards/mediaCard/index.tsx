@@ -1,5 +1,5 @@
 import { ASSET_PATHS } from "@repo/assets";
-import { Image, Text } from "@repo/ui";
+import { Image, Text } from "@repo/UI";
 import styles from "./style.module.css";
 
 const MediaCardWithTag = ({

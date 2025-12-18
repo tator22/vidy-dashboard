@@ -19,6 +19,10 @@
       align-items: center;
       gap: 2rem;
 
+      @media (max-width: 550px) {
+        flex-wrap: wrap;
+      }
+
       .info {
         display: flex;
         flex-direction: column;

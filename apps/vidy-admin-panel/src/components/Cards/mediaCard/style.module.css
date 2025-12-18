@@ -1,0 +1,47 @@
+.mediaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+
+  .videoContainer {
+    position: relative;
+    width: fit-content;
+
+    .thumbnail {
+      width: 8rem;
+      height: 12rem;
+      border-radius: 0.6rem;
+      object-fit: cover;
+    }
+
+    .playIconContainer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(var(--black), 0.2);
+
+      .playIcon {
+        width: 2rem;
+        height: 2rem;
+        filter: var(--white-filter);
+      }
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 125%;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}

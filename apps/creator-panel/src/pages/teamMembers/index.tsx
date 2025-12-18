@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import WalkthroughVideoButton from "@/components/WalkthroughVideoButton";
-import { DataTable } from "@repo/ui";
+import { DataTable } from "@repo/UI";
 import { TEAM_MEMBER_DATA } from "@repo/utilities";
 import { FC, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
