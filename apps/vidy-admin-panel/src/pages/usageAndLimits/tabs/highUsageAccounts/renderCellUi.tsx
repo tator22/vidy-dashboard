@@ -1,4 +1,3 @@
-import TableAction from "@/components/TableAction";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
 
@@ -22,15 +21,6 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
       <td
         style={{ whiteSpace: "nowrap" }}
       >{`${row?.storage_used}/${row?.storage_limit}`}</td>
-    );
-  }
-
-  // Action
-  else if (el === "action") {
-    return (
-      <td>
-        <TableAction />
-      </td>
     );
   }
 

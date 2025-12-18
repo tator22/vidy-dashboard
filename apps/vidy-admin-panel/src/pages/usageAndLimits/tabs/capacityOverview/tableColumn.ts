@@ -11,10 +11,6 @@ export const TableColumn = [
     id: "storage_distribution_by_plan",
     label: "Storage Distribution by Plan",
   },
-  {
-    id: "action",
-    label: "Action",
-  },
 ] as const;
 
 export type TableColumnId = (typeof TableColumn)[number]["id"];

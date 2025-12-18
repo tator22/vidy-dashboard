@@ -1,7 +1,6 @@
-import TableAction from "@/components/TableAction";
+import { Text } from "@repo/UI";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
-import { Text } from "@repo/UI";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -80,15 +79,6 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
         >
           Enterprise: {row?.storage_distribution_by_plan?.enterprise}
         </Text>
-      </td>
-    );
-  }
-
-  // Action
-  else if (el === "action") {
-    return (
-      <td>
-        <TableAction />
       </td>
     );
   }

@@ -5,7 +5,6 @@ export const TableColumn = [
   { id: "storage_used", label: "Storage Used / Storage Limit" },
   { id: "number_of_campaigns", label: "Number of Campaigns" },
   { id: "flag_status", label: "Flag Status" },
-  { id: "action", label: "action" },
 ] as const;
 
 export type TableColumnId = (typeof TableColumn)[number]["id"];

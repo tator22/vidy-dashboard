@@ -167,6 +167,9 @@ import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
 import ARCHIVE from "./svgs/archive.svg";
 import CLEAN_UP from "./svgs/clean-up.svg";
+import PURGE from "./svgs/purge.svg";
+import DISABLE from "./svgs/disable.svg";
+import SUSPEND_ACCOUNT from "./svgs/suspend_account.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -343,5 +346,8 @@ export const ASSET_PATHS = {
     DELETE,
     ARCHIVE,
     CLEAN_UP,
+    PURGE,
+    DISABLE,
+    SUSPEND_ACCOUNT,
   },
 };

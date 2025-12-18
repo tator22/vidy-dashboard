@@ -100,6 +100,8 @@
       "storage_heavy_campaigns": "Storage heavy Campaigns",
       "enter_hight_hits": "Enter hit threshold (e.g., 100000)",
       "enter_storage_in_numbers": "Enter storage threshold (e.g., 50 GB)",
+      "soft_delete": "Soft Delete",
+      "archive": "Archive",
       "DETAIL": {
         "heading": "Campaign Detail",
         "details": "Details",
@@ -121,10 +123,15 @@
     "STORAGE_AND_ASSETS": {
       "heading": "Storage & Assets",
       "storage_by_account": "Storage by account",
-      "storage_by_campaign": "Storage by campaign"
+      "storage_by_campaign": "Storage by campaign",
+      "purge_old_media": "Purge Old Media",
+      "enable_automated_cleanup": "Enable Automated Cleanup"
     },
     "FLAGS_AND_ABUSE": {
-      "heading": "Flags & Abuse"
+      "heading": "Flags & Abuse",
+      "suspend_account": "Suspend Account",
+      "disable_specific_campaign": "Disable Specific Campaign",
+      "add_admin_note": "Add Admin Note"
     },
     "SYSTEM_SETTING": {
       "heading": "System Setting",

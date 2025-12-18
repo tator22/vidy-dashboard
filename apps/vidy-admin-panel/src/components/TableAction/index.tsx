@@ -6,8 +6,8 @@ import "./style.css";
 
 const TableAction = ({
   // isView = true,
-  isDelete = true,
-  isUpdate = true,
+  isDelete,
+  isUpdate,
   // onClickView,
   onClickUpdate,
   onClickDelete,

@@ -2,6 +2,11 @@ import StatusChip from "@/components/StatusChip";
 import moment from "moment";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
+import TableAction, {
+  TableActionMenuItemRender,
+} from "@/components/TableAction";
+import { ASSET_PATHS } from "@repo/assets";
+import { useTranslation } from "react-i18next";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -11,6 +16,12 @@ interface RenderCellsUiProps {
 }
 
 const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
+  // Hooks
+  const { t } = useTranslation();
+
+  // Variables
+  const translationKey = "PAGES.CAMPAIGNS";
+
   // Table Columns
 
   if (el === "created_at") {
@@ -41,13 +52,22 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   }
 
   // Action
-  // else if (el === "action") {
-  //   return (
-  //     <td>
-  //       <Actions actions={["DELETE", "ARCHIVE"]} />
-  //     </td>
-  //   );
-  // }
+  else if (el === "action") {
+    return (
+      <td>
+        <TableAction isDelete>
+          <TableActionMenuItemRender
+            icon={ASSET_PATHS.SVGS.ARCHIVE}
+            name={t(`${translationKey}.archive`)}
+          />
+          <TableActionMenuItemRender
+            icon={ASSET_PATHS.SVGS.DELETE}
+            name={t(`${translationKey}.soft_delete`)}
+          />
+        </TableAction>
+      </td>
+    );
+  }
 
   // Default
   else {

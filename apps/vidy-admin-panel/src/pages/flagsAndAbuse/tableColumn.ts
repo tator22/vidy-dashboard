@@ -6,6 +6,7 @@ export const TableColumn = [
   { id: "status", label: "Status" },
   { id: "created_at", label: "Created At" },
   { id: "last_updated", label: "Last Updated" },
+  { id: "actions", label: "Actions" },
 ] as const;
 
 export type TableColumnId = (typeof TableColumn)[number]["id"];
