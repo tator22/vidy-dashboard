@@ -1,5 +1,4 @@
 import StatusChip from "@/components/StatusChip";
-import TableAction from "@/components/TableAction";
 import moment from "moment";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
@@ -42,13 +41,13 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   }
 
   // Action
-  else if (el === "action") {
-    return (
-      <td>
-        <TableAction />
-      </td>
-    );
-  }
+  // else if (el === "action") {
+  //   return (
+  //     <td>
+  //       <Actions actions={["DELETE", "ARCHIVE"]} />
+  //     </td>
+  //   );
+  // }
 
   // Default
   else {

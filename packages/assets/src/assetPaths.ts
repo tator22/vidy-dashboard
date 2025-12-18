@@ -144,12 +144,15 @@ import STORAGE_AND_ASSET_FILLED from "./svgs/storage-and-asset-filled.svg";
 import STORAGE_AND_ASSET_OUTLINE from "./svgs/storage-and-asset-outline.svg";
 import STORAGE from "./svgs/storage.svg";
 import STORIES from "./svgs/STORIES.svg";
+import SUPPORT_ICON_FILLED from "./svgs/support-icon-filled.svg";
+import SUPPORT_ICON_OUTLINE from "./svgs/support-icon-outline.svg";
 import SUPPORT_FILLED from "./svgs/support_filled.svg";
 import SUPPORT_OUTLINE from "./svgs/support_outline.svg";
 import SWITCH_OFF from "./svgs/switch-off.svg";
 import SWITCH_ON from "./svgs/switch-on.svg";
 import SYSTEM_SETTING_FILLED from "./svgs/system-setting-filled.svg";
 import SYSTEM_SETTING_OUTLINE from "./svgs/system-setting-outline.svg";
+import DELETE from "./svgs/table-action-delete.svg";
 import TEAM_MEMBERS_FILLED from "./svgs/team_members_filled.svg";
 import TEAM_MEMBERS_OUTLINE from "./svgs/team_members_outline.svg";
 import TIKTOK from "./svgs/TIKTOK.svg";
@@ -162,6 +165,8 @@ import USERS_AND_ACCOUNTS_OUTLINE from "./svgs/users-and-accounts-outline.svg";
 import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
+import ARCHIVE from "./svgs/archive.svg";
+import CLEAN_UP from "./svgs/clean-up.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -332,6 +337,11 @@ export const ASSET_PATHS = {
     FLAGS_AND_ABUSE_OUTLINE,
     SYSTEM_SETTING_FILLED,
     SYSTEM_SETTING_OUTLINE,
+    SUPPORT_ICON_FILLED,
+    SUPPORT_ICON_OUTLINE,
     DROPDOWN_ICON,
+    DELETE,
+    ARCHIVE,
+    CLEAN_UP,
   },
 };

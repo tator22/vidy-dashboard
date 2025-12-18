@@ -46,4 +46,6 @@
     saturate(2139%) hue-rotate(357deg) brightness(103%) contrast(97%);
   --gray-filter: brightness(0) saturate(100%) invert(79%) sepia(0%)
     saturate(1775%) hue-rotate(235deg) brightness(82%) contrast(95%);
+  --table-action-icon-filter: brightness(0) saturate(100%) invert(20%) sepia(0%)
+    saturate(1665%) hue-rotate(188deg) brightness(86%) contrast(92%);
 }

@@ -7,10 +7,10 @@ import {
 } from "@repo/utilities";
 import { FC, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
-import { useNavigate } from "react-router";
 
 export const UsersAndAccounts: FC = (): JSX.Element => {
   // Hooks

@@ -47,6 +47,7 @@ export const CampaignDetail: FC = () => {
   return (
     <div className={styles.userAndAccountDetail}>
       <Header
+        isBack
         heading={t(`${translationKey}.heading`)}
         rightChildren={<StatusChip status={"active"} />}
       />

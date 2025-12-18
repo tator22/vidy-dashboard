@@ -1,5 +1,5 @@
 import StatusChip from "@/components/StatusChip";
-import TableAction from "@/components/TableAction";
+import moment from "moment";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
 
@@ -22,23 +22,23 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   // }
 
   // Last Active At
-  // else if (el === "last_active_at") {
-  //   return (
-  //     <td style={{ whiteSpace: "nowrap" }}>
-  //       {moment(row?.last_active_at).format("DD, MMMM YYYY")}
-  //     </td>
-  //   );
-  // }
+  if (el === "last_active_at") {
+    return (
+      <td style={{ whiteSpace: "nowrap" }}>
+        {moment(row?.last_active_at).format("DD, MMMM YYYY")}
+      </td>
+    );
+  }
 
   // Name
   if (el === "account_name") {
     return <td style={{ whiteSpace: "nowrap" }}>{row?.account_name}</td>;
   }
 
-  // Branding
-  else if (el === "branding") {
-    return <td>{row?.branding ? "On" : "Off"}</td>;
-  }
+  // // Branding
+  // else if (el === "branding") {
+  //   return <td>{row?.branding ? "On" : "Off"}</td>;
+  // }
 
   // Status
   else if (el === "status") {
@@ -58,14 +58,31 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     );
   }
 
-  // Action
-  else if (el === "action") {
+  // Storage
+  else if (el === "storage_used") {
     return (
-      <td>
-        <TableAction />
-      </td>
+      <td style={{ whiteSpace: "nowrap" }}>{`${row.storage_used}/15GB`}</td>
     );
   }
+
+  // Storage
+  else if (el === "hits_this_month") {
+    return (
+      <td
+        style={{ whiteSpace: "nowrap" }}
+      >{`${row.hits_this_month}/10000000`}</td>
+    );
+  }
+
+  // Action
+  // else if (el === "action") {
+  //   return (
+  //     <td>
+  //       {/* <TableAction /> */}
+  //       <Actions actions={["DELETE"]} />
+  //     </td>
+  //   );
+  // }
 
   // Default
   else {

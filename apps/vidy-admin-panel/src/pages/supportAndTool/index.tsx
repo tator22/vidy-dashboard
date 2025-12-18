@@ -1,7 +1,7 @@
 import { Text } from "@repo/UI";
 import classes from "./style.module.css";
 
-const Dashboard = () => {
+const SupportAndTool = () => {
   return (
     <div className={classes.dashboard}>
       <Text
@@ -12,10 +12,10 @@ const Dashboard = () => {
           },
         }}
       >
-        Dashboard
+        Support Tool / Notes
       </Text>
     </div>
   );
 };
 
-export default Dashboard;
+export default SupportAndTool;

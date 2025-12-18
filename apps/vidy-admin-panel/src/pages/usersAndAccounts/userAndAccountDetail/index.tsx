@@ -53,6 +53,7 @@ export const UserAndAccountDetail: FC = () => {
   return (
     <div className={styles.userAndAccountDetail}>
       <Header
+        isBack
         heading={t(`${translationKey}.heading`)}
         rightChildren={
           <>

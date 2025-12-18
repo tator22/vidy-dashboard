@@ -1,8 +1,6 @@
-import StatusChip from "@/components/StatusChip";
-import TableAction from "@/components/TableAction";
+import moment from "moment";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
-import moment from "moment";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;

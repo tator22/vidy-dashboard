@@ -16,6 +16,15 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     return <td style={{ whiteSpace: "nowrap" }}>{row?.account_name}</td>;
   }
 
+  // Storage
+  else if (el === "storage_used") {
+    return (
+      <td
+        style={{ whiteSpace: "nowrap" }}
+      >{`${row?.storage_used}/${row?.storage_limit}`}</td>
+    );
+  }
+
   // Action
   else if (el === "action") {
     return (

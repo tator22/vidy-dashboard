@@ -6,6 +6,7 @@ import { FlagsAndAbuse } from "@/pages/flagsAndAbuse/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
 import { PlanAndBilling } from "@/pages/plansAndBilling/index.js";
 import { StorageAndAsset } from "@/pages/storageAndAsset/index.js";
+import SupportAndTool from "@/pages/supportAndTool/index.js";
 import { SystemSetting } from "@/pages/systemSetting/index.js";
 import { UsageAndLimit } from "@/pages/usageAndLimits/index.js";
 import { UsersAndAccounts } from "@/pages/usersAndAccounts/index.js";
@@ -78,6 +79,10 @@ export const router = createBrowserRouter([
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.SYSTEM_SETTINGS,
         element: <SystemSetting />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.SUPPORT_TOOLS_OR_NOTES,
+        element: <SupportAndTool />,
       },
     ],
   },

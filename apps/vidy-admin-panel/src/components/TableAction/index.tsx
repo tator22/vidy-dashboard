@@ -5,13 +5,13 @@ import { Popover } from "react-tiny-popover";
 import "./style.css";
 
 const TableAction = ({
-  isView,
-  isDelete,
-  isUpdate,
-  onClickView,
+  // isView = true,
+  isDelete = true,
+  isUpdate = true,
+  // onClickView,
   onClickUpdate,
   onClickDelete,
-  anchorElement,
+  // anchorElement,
   children,
   disabled,
   displayIcon,
@@ -39,19 +39,6 @@ const TableAction = ({
     setIsOpen(!isOpen);
   };
 
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
-
-  // const open = Boolean(anchorEl);
-  // const id = open ? "simple-popover" : undefined;
-
-  // useEffect(() => {
-  //   if (anchorElement) {
-  //     handleClose();
-  //   }
-  // }, [anchorElement]);
-
   return (
     <div
       className="tableActionMainContainer"
@@ -63,30 +50,31 @@ const TableAction = ({
       <Popover
         isOpen={isOpen}
         clickOutsideCapture
-        positions={["top", "right", "left", "bottom"]}
+        positions={["bottom", "right", "left", "top"]}
         padding={10}
         containerClassName="TableAction"
+        align="end"
         containerStyle={{
-          border: "1px solid red",
+          zIndex: "10100100101",
         }}
         onClickOutside={handleClick}
         content={
           <ul className="tableActionMenu" style={{ ...style }}>
             {heading && <li className="tableActionMenuHeading">{heading}</li>}
 
-            {isView && (
+            {/* {isView && (
               <TableActionMenuItemRender
                 icon={ASSET_PATHS.SVGS.EYE_ICON}
-                name="view_detail"
+                name="view"
                 onClick={(e) => {
                   e.stopPropagation();
                   if (onClickView) onClickView(e);
                 }}
               />
-            )}
+            )} */}
             {isUpdate && (
               <TableActionMenuItemRender
-                // icon={Icons.EDIT_PENCIL}
+                icon={ASSET_PATHS.SVGS.ACTION_EDIT}
                 name="edit"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -97,7 +85,7 @@ const TableAction = ({
             {children}
             {isDelete && (
               <TableActionMenuItemRender
-                // icon={Icons.ACTION_DELETE_ICON}
+                icon={ASSET_PATHS.SVGS.DELETE}
                 name="delete"
                 isDelete={isDelete}
                 onClick={(e) => {
