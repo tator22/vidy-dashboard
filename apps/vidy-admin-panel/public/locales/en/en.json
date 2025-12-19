@@ -146,7 +146,8 @@
       "purge_old_media": "Remove all of the media",
       "enable_automated_cleanup": "Remove all of his media",
       "search": "Search",
-      "preview_campaign": "Preview Campaign"
+      "preview_campaign": "Preview Campaign",
+      "select_account": "Select Account"
     },
     "FLAGS_AND_ABUSE": {
       "heading": "Flags & Abuse",
@@ -178,7 +179,10 @@
       "label_2": "Google Play receipt validation endpoint",
       "placeholder": "Enter URI (https://www.example.com)",
       "save": "Save",
-      "branding": "Branding"
+      "branding": "Branding",
+      "terms_of_service": "Terms of Service",
+      "privacy_policy": "Privacy Policy",
+      "campaign_guidelines": "Campaign Guidelines"
     },
     "SUPPORT": {
       "heading": "Support",

@@ -3,8 +3,11 @@ import { RenderTab, renderTabProps } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
+import { CampaignGuidelines } from "./tabs/campaignGuidelines";
 import { GlobalFeature } from "./tabs/globalFeature";
 import { Plans } from "./tabs/plans";
+import { PrivacyPolicy } from "./tabs/privacyPolicy";
+import { TermsOfService } from "./tabs/termsOfService";
 import { Webhook } from "./tabs/webhook";
 
 export const SystemSetting: FC = () => {
@@ -26,6 +29,18 @@ export const SystemSetting: FC = () => {
       label: t(`${translationKey}.webhook`),
       key: "webhook",
     },
+    {
+      label: t(`${translationKey}.terms_of_service`),
+      key: "terms_of_service",
+    },
+    {
+      label: t(`${translationKey}.privacy_policy`),
+      key: "privacy_policy",
+    },
+    {
+      label: t(`${translationKey}.campaign_guidelines`),
+      key: "campaign_guidelines",
+    },
   ];
 
   //  Local State
@@ -44,6 +59,12 @@ export const SystemSetting: FC = () => {
           return <GlobalFeature />;
         case "webhook":
           return <Webhook />;
+        case "terms_of_service":
+          return <TermsOfService />;
+        case "privacy_policy":
+          return <PrivacyPolicy />;
+        case "campaign_guidelines":
+          return <CampaignGuidelines />;
         default:
           return <p>No component found</p>;
       }

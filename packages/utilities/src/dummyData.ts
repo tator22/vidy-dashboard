@@ -563,69 +563,6 @@ export const HIGH_USAGE_ACCOUNTS = [
   },
 ];
 
-export const CAPACITY_OVERVIEW = [
-  {
-    total_hits_across_platforms: {
-      per_day: 1240,
-      per_month: 37200,
-    },
-    total_storage_used: "52 GB",
-    storage_distribution_by_plan: {
-      free: "10 GB",
-      pro: "25 GB",
-      enterprise: "17 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 870,
-      per_month: 26100,
-    },
-    total_storage_used: "39 GB",
-    storage_distribution_by_plan: {
-      free: "7 GB",
-      pro: "20 GB",
-      enterprise: "12 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 1580,
-      per_month: 47400,
-    },
-    total_storage_used: "65 GB",
-    storage_distribution_by_plan: {
-      free: "12 GB",
-      pro: "30 GB",
-      enterprise: "23 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 640,
-      per_month: 19200,
-    },
-    total_storage_used: "27 GB",
-    storage_distribution_by_plan: {
-      free: "5 GB",
-      pro: "14 GB",
-      enterprise: "8 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 2110,
-      per_month: 63300,
-    },
-    total_storage_used: "82 GB",
-    storage_distribution_by_plan: {
-      free: "15 GB",
-      pro: "40 GB",
-      enterprise: "27 GB",
-    },
-  },
-];
-
 export const PLAN_OVERVIEW = [
   {
     plan_name: "starter",

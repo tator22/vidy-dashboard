@@ -1,45 +1,39 @@
-import { DataTable } from "@repo/UI";
-import { CAPACITY_OVERVIEW } from "@repo/utilities";
-import { FC, ReactNode } from "react";
-import RenderCellsUi from "./renderCellUi";
-import styles from "./style.module.css";
-import { TableColumn } from "./tableColumn";
+import { CapacityOverviewCard } from "./overviewCard";
+import classes from "./style.module.css";
 
-export const CapacityOverview: FC = () => {
-  // Variables
-  const showData = TableColumn.map((el) => el.id);
-
-  // const handleRowClick = () => {
-  //   navigate(
-  //     generateRoutePath({
-  //       url: CONSTANTS.PATHS.LISTING_DETAIL,
-  //       params: {
-  //         id: String(1),
-  //       },
-  //     })
-  //   );
-  // };
+const CapacityOverview = () => {
+  const dummyData = {
+    total_hits_across_platforms: {
+      per_day: 1240,
+      per_month: 37200,
+    },
+    total_storage_used: "52 GB",
+    storage_distribution_by_plan: {
+      free: "10 GB",
+      pro: "25 GB",
+      enterprise: "17 GB",
+    },
+  };
 
   return (
-    <div className={styles.code}>
-      <DataTable
-        headCells={TableColumn as any}
-        rows={CAPACITY_OVERVIEW as []}
-        // onClickRow={handleRowClick}
-        render={(row: any): ReactNode =>
-          showData?.map((el, index) => (
-            <RenderCellsUi key={`campaign-${index}`} row={row} el={el} />
-          ))
-        }
+    <div className={classes.capacityOverview}>
+      <CapacityOverviewCard
+        data={dummyData}
+        heading="Hits per day/month"
+        variant="hits"
       />
-
-      {/* Modal */}
-      {/* {enableAddCodeModal && (
-        <AddNewCode
-          isOpen={enableAddCodeModal}
-          onClose={handleEnableAddCodeModal}
-        />
-      )} */}
+      <CapacityOverviewCard
+        data={dummyData}
+        heading="Storage distribution by plan"
+        variant="distribution"
+      />
+      <CapacityOverviewCard
+        data={dummyData}
+        heading=" Storage used"
+        variant="storage"
+      />
     </div>
   );
 };
+
+export default CapacityOverview;

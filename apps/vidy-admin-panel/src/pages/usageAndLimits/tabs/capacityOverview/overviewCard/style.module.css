@@ -1,0 +1,23 @@
+.capacityOverviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  border: 0.15rem solid rgb(var(--black), 0.08);
+  background-color: rgb(var(--primary), 0.04);
+  padding: 1rem 2rem;
+
+  .heading {
+    font-size: 2rem;
+    line-height: 125%;
+    font-weight: 400;
+    color: rgb(var(--black), 0.7);
+    text-transform: capitalize;
+  }
+
+  .renderInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
