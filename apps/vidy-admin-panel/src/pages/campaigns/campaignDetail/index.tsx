@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import StatusChip from "@/components/StatusChip";
-import { RenderTab, renderTabProps } from "@repo/UI";
+import { Button, RenderTab, renderTabProps, Separator } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
@@ -49,7 +49,44 @@ export const CampaignDetail: FC = () => {
       <Header
         isBack
         heading={t(`${translationKey}.heading`)}
-        rightChildren={<StatusChip status={"active"} />}
+        rightChildren={
+          <>
+            <Button
+              variant="secondary"
+              size="medium"
+              text={t(`${translationKey}.preview_campaign`)}
+            />
+            <Button
+              variant="secondary"
+              size="medium"
+              text={t(`${translationKey}.archive`)}
+            />
+            <Button
+              variant="secondary"
+              size="medium"
+              text={t(`${translationKey}.soft_delete`)}
+              buttonProps={{
+                style: {
+                  backgroundColor: "rgb(var(--error), 0.05)",
+                  color: "rgb(var(--error))",
+                },
+              }}
+            />
+            <Button
+              variant="primary"
+              size="medium"
+              text={t(`${translationKey}.delete`)}
+              buttonProps={{
+                style: {
+                  backgroundColor: "rgb(var(--error))",
+                  color: "rgb(var(--white))",
+                },
+              }}
+            />
+            <Separator direction="vertical" />
+            <StatusChip status={"active"} />
+          </>
+        }
       />
 
       <div className={styles.addMedia}>

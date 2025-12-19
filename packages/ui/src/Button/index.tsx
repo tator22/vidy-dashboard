@@ -118,7 +118,7 @@ export const Button: FC<{
     <button
       {...buttonProps}
       disabled={isDisabled}
-      className={`Button largeClickableElement ${buttonProps?.className || ""}`}
+      className={`Button ${buttonProps?.className || ""}`}
       style={
         {
           ...buttonProps?.style,

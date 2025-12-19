@@ -80,6 +80,20 @@
         "submit": "Submit",
         "add_note": "Add note",
         "placeholder": "Enter you note."
+      },
+      "ADD_NEW_ACCOUNT_MODAL": {
+        "heading": "Add New Account",
+        "cta": "Submit",
+        "name": "Name",
+        "email": "Email",
+        "password": "Password",
+        "limits": "Limits",
+        "custom_pricing": "Custom Pricing",
+        "name_placeholder": "Enter name",
+        "email_placeholder": "Enter email",
+        "password_placeholder": "Enter password",
+        "custom_pricing_placeholder": "Enter custom pricing",
+        "limits_placeholder": "Enter limits"
       }
     },
     "USAGE_AND_LIMIT": {
@@ -102,6 +116,7 @@
       "enter_storage_in_numbers": "Enter storage threshold (e.g., 50 GB)",
       "soft_delete": "Soft Delete",
       "archive": "Archive",
+      "preview_campaign": "Preview Campaign",
       "DETAIL": {
         "heading": "Campaign Detail",
         "details": "Details",
@@ -112,7 +127,11 @@
         "account": "Account",
         "branding_status": "Branding status",
         "stats": "Stats",
-        "storage_used": "Storage Used"
+        "storage_used": "Storage Used",
+        "soft_delete": "Soft Delete",
+        "archive": "Archive",
+        "preview_campaign": "Preview Campaign",
+        "delete": "Delete"
       }
     },
     "PLANS_AND_BILLING": {
@@ -124,14 +143,22 @@
       "heading": "Storage & Assets",
       "storage_by_account": "Storage by account",
       "storage_by_campaign": "Storage by campaign",
-      "purge_old_media": "Purge Old Media",
-      "enable_automated_cleanup": "Enable Automated Cleanup"
+      "purge_old_media": "Remove all of the media",
+      "enable_automated_cleanup": "Remove all of his media",
+      "search": "Search",
+      "preview_campaign": "Preview Campaign"
     },
     "FLAGS_AND_ABUSE": {
       "heading": "Flags & Abuse",
       "suspend_account": "Suspend Account",
       "disable_specific_campaign": "Disable Specific Campaign",
-      "add_admin_note": "Add Admin Note"
+      "add_admin_note": "Add Admin Note",
+      "change_status": "Change Status",
+      "filters": "Filters",
+      "filter": "Filter",
+      "apply": "Apply Filter",
+      "cancel": "Cancel",
+      "status": "Status"
     },
     "SYSTEM_SETTING": {
       "heading": "System Setting",

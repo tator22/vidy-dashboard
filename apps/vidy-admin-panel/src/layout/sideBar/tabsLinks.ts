@@ -60,7 +60,7 @@ export const ADMIN_SIDEBAR_TABS = [
   },
   {
     key: "support-tools-or-notes",
-    label: "Support Tools / Notes",
+    label: "Support",
     link: CONSTANTS.VIDY_ADMIN_PATHS.SUPPORT_TOOLS_OR_NOTES,
     icon: ASSET_PATHS.SVGS.SUPPORT_ICON_OUTLINE,
     active_icon: ASSET_PATHS.SVGS.SUPPORT_ICON_FILLED,

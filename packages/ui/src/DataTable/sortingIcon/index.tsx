@@ -1,5 +1,6 @@
 import { ASSET_PATHS } from "@repo/assets";
 import { MouseEventHandler } from "react";
+import "./style.css";
 
 export const SortingIcon = ({
   sortBy,
@@ -11,12 +12,12 @@ export const SortingIcon = ({
   id: string | number | undefined;
 }) => {
   // Functions
-  const addClassName = () => {
+  const getIcon = () => {
     if (sortBy === "") {
-      return ASSET_PATHS.SVGS.LEFT_ARROW;
+      return ASSET_PATHS.SVGS.DOWN_SORTING;
     } else if (sortBy === id || sortBy === `-${id}`) {
       if (sortBy.includes("-")) {
-        return ASSET_PATHS.SVGS.LEFT_ARROW;
+        return ASSET_PATHS.SVGS.UP_SORTING;
       } else {
         return ASSET_PATHS.SVGS.LEFT_ARROW;
       }
@@ -24,11 +25,13 @@ export const SortingIcon = ({
   };
 
   return (
-    <img
-      src={addClassName()}
-      alt="sorting icon"
-      className="sortingIcon"
-      onClick={onClick}
-    />
+    <div className="iconBox">
+      <img
+        src={getIcon()}
+        alt="sorting icon"
+        className="sortingIcon"
+        onClick={onClick}
+      />
+    </div>
   );
 };

@@ -41,7 +41,7 @@ export const CONSTANTS = {
     STORAGE_AND_ASSETS: "/storage-and-assets",
     FLAGS_AND_ABUSE: "/flags-and-abuse",
     SYSTEM_SETTINGS: "/system-settings",
-    SUPPORT_TOOLS_OR_NOTES: "/support-tools-or-notes",
+    SUPPORT_TOOLS_OR_NOTES: "/support",
   },
   ROLE: {
     ADMIN: "admin",
@@ -53,6 +53,9 @@ export const CONSTANTS = {
     SUSPENDED: "suspended",
     ARCHIVED: "archived",
     DISABLED: "disabled",
+    UNDER_REVIEW: "Under Review",
+    OPEN: "Open",
+    RESOLVED: "Resolved",
   },
   SIDEBAR_MODE: "sidebarMode",
   QR_BODY_SHAPES: [

@@ -1,31 +1,39 @@
 import { DataTable } from "@repo/UI";
-import { HIGH_USAGE_ACCOUNTS } from "@repo/utilities";
+import {
+  CONSTANTS,
+  generateRoutePath,
+  HIGH_USAGE_ACCOUNTS,
+} from "@repo/utilities";
 import { FC, ReactNode } from "react";
+import { useNavigate } from "react-router";
 import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
 
 export const HighUsageAccounts: FC = () => {
+  // Hooks
+  const navigate = useNavigate();
+
   // Variables
   const showData = TableColumn.map((el) => el.id);
 
-  // const handleRowClick = () => {
-  //   navigate(
-  //     generateRoutePath({
-  //       url: CONSTANTS.PATHS.LISTING_DETAIL,
-  //       params: {
-  //         id: String(1),
-  //       },
-  //     })
-  //   );
-  // };
+  const handleRowClick = () => {
+    navigate(
+      generateRoutePath({
+        url: CONSTANTS.VIDY_ADMIN_PATHS.USERS_AND_ACCOUNTS_DETAIL,
+        params: {
+          id: String(1),
+        },
+      })
+    );
+  };
 
   return (
     <div className={styles.code}>
       <DataTable
         headCells={TableColumn as any}
         rows={HIGH_USAGE_ACCOUNTS as []}
-        // onClickRow={handleRowClick}
+        onClickRow={handleRowClick}
         render={(row: any): ReactNode =>
           showData?.map((el, index) => (
             <RenderCellsUi

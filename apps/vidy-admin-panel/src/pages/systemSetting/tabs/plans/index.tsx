@@ -1,7 +1,7 @@
+import EditPlanModal from "@/components/EditPlanModal";
 import { Button, Text } from "@repo/UI";
 import { PRICING_PLANS } from "@repo/utilities";
 import { FC, MouseEventHandler, useState } from "react";
-import EditPlanModal from "./editPlanModal";
 import classes from "./style.module.css";
 
 export const Plans: FC = () => {
@@ -83,6 +83,15 @@ export const PlanCard = ({
             className: classes.yearly,
           }}
         >{`${price_per_year}/yr, billed annually`}</Text>
+      </div>
+
+      <div className={classes.yearlyPrice}>
+        <Text
+          tag="p"
+          containerProps={{
+            className: classes.yearly,
+          }}
+        >{`${15000} Hits/month`}</Text>
       </div>
 
       <Text

@@ -8,6 +8,7 @@ import {
 import { FC, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import AddNewAccount from "./addNewAccount";
 import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
@@ -22,11 +23,11 @@ export const UsersAndAccounts: FC = (): JSX.Element => {
   const showData = TableColumn.map((el) => el.id);
 
   // Local State
-  const [enableAddCodeModal, setEnableAddCodeModal] = useState(false);
+  const [enableAddAccountModal, setEnableAddAccountModal] = useState(false);
 
   // Functions
   const handleEnableAddCodeModal = () => {
-    setEnableAddCodeModal(!enableAddCodeModal);
+    setEnableAddAccountModal((prev) => !prev);
   };
 
   const handleRowClick = () => {
@@ -65,12 +66,12 @@ export const UsersAndAccounts: FC = (): JSX.Element => {
       />
 
       {/* Modal */}
-      {/* {enableAddCodeModal && (
-        <AddNewCode
-          isOpen={enableAddCodeModal}
+      {enableAddAccountModal && (
+        <AddNewAccount
+          isOpen={enableAddAccountModal}
           onClose={handleEnableAddCodeModal}
         />
-      )} */}
+      )}
     </div>
   );
 };

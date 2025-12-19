@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 import { StorageByAccount } from "./tabs/storageByAccount";
 import { StorageByCampaign } from "./tabs/storageByCampaign";
+import { Searchbar } from "@/layout/searchbar";
 
 export const StorageAndAsset: FC = () => {
   // Hooks
@@ -56,7 +57,16 @@ export const StorageAndAsset: FC = () => {
 
   return (
     <div className={styles.code}>
-      <Header heading={t(`${translationKey}.heading`)} />
+      <Header
+        heading={t(`${translationKey}.heading`)}
+        rightChildren={
+          <Searchbar
+            inputProps={{
+              placeholder: t(`${translationKey}.search`),
+            }}
+          />
+        }
+      />
 
       <div className={styles.addMedia}>
         <RenderTab

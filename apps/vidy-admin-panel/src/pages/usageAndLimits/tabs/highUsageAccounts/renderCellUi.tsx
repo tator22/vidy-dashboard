@@ -24,6 +24,15 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     );
   }
 
+  // Storage
+  else if (el === "storage_limit") {
+    return (
+      <td
+        style={{ whiteSpace: "nowrap" }}
+      >{`${row?.hits_used}/${row?.hit_limit}`}</td>
+    );
+  }
+
   // Default
   else {
     return <td>{el !== undefined && row?.[el] ? row?.[el] : "-"}</td>;

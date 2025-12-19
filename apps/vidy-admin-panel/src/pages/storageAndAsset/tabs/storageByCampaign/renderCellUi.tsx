@@ -29,6 +29,10 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
             name={t(`${translationKey}.purge_old_media`)}
             icon={ASSET_PATHS.SVGS.PURGE}
           />
+          <TableActionMenuItemRender
+            name={t(`${translationKey}.preview_campaign`)}
+            icon={ASSET_PATHS.SVGS.PREVIEW}
+          />
         </TableAction>
       </td>
     );

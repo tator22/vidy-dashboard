@@ -10,10 +10,12 @@
   align-items: center;
   justify-content: center;
   width: max-content;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .Button:enabled:hover {
-  background-color: var(--backgroundHoverColor) !important;
+  background-color: var(--backgroundHoverColor);
 }
 
 .Button:disabled {

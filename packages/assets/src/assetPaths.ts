@@ -57,6 +57,7 @@ import ANGLE_RIGHT from "./svgs/angle-right.svg";
 import ANGLE_RIGHT_WITHOUT_ROUND from "./svgs/angle_right.svg";
 import APPLE_PAY from "./svgs/apple.svg";
 import APPS from "./svgs/apps.svg";
+import ARCHIVE from "./svgs/archive.svg";
 import ASK_A_QUESTION_FILLED from "./svgs/ask-a-question-filled.svg";
 import ASK_A_QUESTION_OUTLINED from "./svgs/ask-a-question-outlined.svg";
 import BILLING_FILLED from "./svgs/billing-filled.svg";
@@ -67,6 +68,7 @@ import CHECKED_ICON from "./svgs/check.svg";
 import CHECKBOX_CHECKED from "./svgs/checkbox-checked.svg";
 import CHECKBOX_UNCHECKED from "./svgs/checkbox-unchecked.svg";
 import CIRCLE_SHAPE from "./svgs/circle.svg";
+import CLEAN_UP from "./svgs/clean-up.svg";
 import CLOSE_ICON from "./svgs/close_icon.svg";
 import COMMENT from "./svgs/comment.svg";
 import COMPANY from "./svgs/company.svg";
@@ -78,6 +80,7 @@ import DASHBOARD_OUTLINE from "./svgs/dashboard-outline.svg";
 import DEFAULT_FILLED from "./svgs/default_filled.svg";
 import DEFAULT_OUTLINE from "./svgs/default_outline.svg";
 import DEFAULT_QR_CODE_ICON from "./svgs/default_qr_code_icon.svg";
+import DISABLE from "./svgs/disable.svg";
 import DOWNLOAD from "./svgs/download.svg";
 import DROPDOWN_ICON from "./svgs/dropdown-icon.svg";
 import EMPTY_ICON from "./svgs/empty-icon.svg";
@@ -108,11 +111,14 @@ import PLANS_AND_BILLING_OUTLINE from "./svgs/plan-and-billing-outline.svg";
 import PLAY from "./svgs/play_icon.svg";
 import PLUS from "./svgs/plus.svg";
 import PROFILE_EDIT_ICON from "./svgs/profile_edit_icon.svg";
+import PURGE from "./svgs/purge.svg";
 import RADIO_OFF from "./svgs/radio-off.svg";
 import RADIO_ON from "./svgs/radio-on.svg";
 import REELS from "./svgs/REELS.svg";
 import SEARCH from "./svgs/search.svg";
 import SHARE from "./svgs/share.svg";
+import DOWN_SORTING from "./svgs/down-sort.svg";
+import UP_SORTING from "./svgs/up-sort.svg";
 import APP_STORE from "./svgs/socialIcons/app_store.svg";
 import BLUESKY from "./svgs/socialIcons/bluesky.svg";
 import DISCORD from "./svgs/socialIcons/discord.svg";
@@ -148,6 +154,7 @@ import SUPPORT_ICON_FILLED from "./svgs/support-icon-filled.svg";
 import SUPPORT_ICON_OUTLINE from "./svgs/support-icon-outline.svg";
 import SUPPORT_FILLED from "./svgs/support_filled.svg";
 import SUPPORT_OUTLINE from "./svgs/support_outline.svg";
+import SUSPEND_ACCOUNT from "./svgs/suspend_account.svg";
 import SWITCH_OFF from "./svgs/switch-off.svg";
 import SWITCH_ON from "./svgs/switch-on.svg";
 import SYSTEM_SETTING_FILLED from "./svgs/system-setting-filled.svg";
@@ -165,11 +172,8 @@ import USERS_AND_ACCOUNTS_OUTLINE from "./svgs/users-and-accounts-outline.svg";
 import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
-import ARCHIVE from "./svgs/archive.svg";
-import CLEAN_UP from "./svgs/clean-up.svg";
-import PURGE from "./svgs/purge.svg";
-import DISABLE from "./svgs/disable.svg";
-import SUSPEND_ACCOUNT from "./svgs/suspend_account.svg";
+import PREVIEW from "./svgs/preview.svg";
+import CHANGE_STATUS from "./svgs/change-status.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -349,5 +353,9 @@ export const ASSET_PATHS = {
     PURGE,
     DISABLE,
     SUSPEND_ACCOUNT,
+    DOWN_SORTING,
+    UP_SORTING,
+    PREVIEW,
+    CHANGE_STATUS,
   },
 };

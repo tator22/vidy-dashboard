@@ -54,7 +54,7 @@ const FilterModal = ({
             type: "date",
           }}
         />
-        <Input
+        {/* <Input
           label={t(`${translationKey}.hight_hits`)}
           inputProps={{
             required: true,
@@ -67,7 +67,7 @@ const FilterModal = ({
             required: true,
             placeholder: t(`${translationKey}.enter_storage_in_numbers`),
           }}
-        />
+        /> */}
       </div>
     </Modal>
   );
