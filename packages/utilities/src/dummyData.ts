@@ -1099,3 +1099,46 @@ export const MEDIA_FILES = [
     videoUrl: "#",
   },
 ];
+
+export const SUPPORT_NOTES_DATA = [
+  {
+    id: "SUP-001",
+    account_name: "Acme Marketing",
+    type: "Support",
+    message: "Unable to upload assets for Campaign CMP-10234.",
+    status: "Open",
+    created_at: "2025-12-15 10:32:45",
+  },
+  {
+    id: "SUP-002",
+    account_name: "Zenith Studios",
+    type: "Issue",
+    message: "Unexpected spike in hits detected since yesterday.",
+    status: "In Progress",
+    created_at: "2025-12-14 16:18:10",
+  },
+  {
+    id: "SUP-003",
+    account_name: "PixelCraft Designs",
+    type: "Note",
+    message: "Client requested plan downgrade starting next billing cycle.",
+    status: "Closed",
+    created_at: "2025-12-13 09:05:30",
+  },
+  {
+    id: "SUP-004",
+    account_name: "Nova Digital",
+    type: "Feedback",
+    message: "Dashboard performance is much better after the latest update.",
+    status: "Resolved",
+    created_at: "2025-12-12 14:42:55",
+  },
+  {
+    id: "SUP-005",
+    account_name: "BrightAds Agency",
+    type: "Support",
+    message: "Billing invoice not generated for November month.",
+    status: "Open",
+    created_at: "2025-12-11 11:27:08",
+  },
+];

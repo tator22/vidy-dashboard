@@ -56,6 +56,8 @@ export const CONSTANTS = {
     UNDER_REVIEW: "Under Review",
     OPEN: "Open",
     RESOLVED: "Resolved",
+    CLOSED: "Closed",
+    IN_PROGRESS: "In Progress",
   },
   SIDEBAR_MODE: "sidebarMode",
   QR_BODY_SHAPES: [

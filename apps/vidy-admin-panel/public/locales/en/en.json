@@ -179,6 +179,12 @@
       "placeholder": "Enter URI (https://www.example.com)",
       "save": "Save",
       "branding": "Branding"
+    },
+    "SUPPORT": {
+      "heading": "Support",
+      "replay": "Replay",
+      "change_status": "Change Status",
+      "close_ticket": "Close Ticket"
     }
   },
   "MODALS": {}

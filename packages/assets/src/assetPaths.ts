@@ -174,6 +174,8 @@ import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
 import PREVIEW from "./svgs/preview.svg";
 import CHANGE_STATUS from "./svgs/change-status.svg";
+import REPLY from "./svgs/reply.svg";
+import CLOSED from "./svgs/closed.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -357,5 +359,7 @@ export const ASSET_PATHS = {
     UP_SORTING,
     PREVIEW,
     CHANGE_STATUS,
+    REPLY,
+    CLOSED,
   },
 };

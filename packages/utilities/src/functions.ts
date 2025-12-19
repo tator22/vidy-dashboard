@@ -29,6 +29,7 @@ export const getStatusColor = (status: string) => {
     case CONSTANTS.STATUS.ARCHIVED:
       return "--archived";
     case CONSTANTS.STATUS.DISABLED:
+    case CONSTANTS.STATUS.CLOSED:
       return "--error";
     case CONSTANTS.STATUS.UNDER_REVIEW:
       return "--under-review";
@@ -36,6 +37,8 @@ export const getStatusColor = (status: string) => {
       return "--open";
     case CONSTANTS.STATUS.RESOLVED:
       return "--resolved";
+    case CONSTANTS.STATUS.IN_PROGRESS:
+      return "--warning";
 
     default:
       return "--black";
