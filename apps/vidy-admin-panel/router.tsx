@@ -1,12 +1,12 @@
+import { AccountBillingSnapshot } from "@/pages/accountBillingSnapshot/index.js";
 import Authentication from "@/pages/authentication/index.js";
 import { CampaignDetail } from "@/pages/campaigns/campaignDetail/index.js";
 import { Campaigns } from "@/pages/campaigns/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
 import { FlagsAndAbuse } from "@/pages/flagsAndAbuse/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
-import { PlanAndBilling } from "@/pages/plansAndBilling/index.js";
 import { StorageAndAsset } from "@/pages/storageAndAsset/index.js";
-import SupportAndTool from "@/pages/supportAndTool/index.js";
+import { Support } from "@/pages/support/index.js";
 import { SystemSetting } from "@/pages/systemSetting/index.js";
 import { UsageAndLimit } from "@/pages/usageAndLimits/index.js";
 import { UsersAndAccounts } from "@/pages/usersAndAccounts/index.js";
@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING,
-        element: <PlanAndBilling />,
+        element: <AccountBillingSnapshot />,
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.STORAGE_AND_ASSETS,
@@ -82,7 +82,7 @@ export const router = createBrowserRouter([
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.SUPPORT_TOOLS_OR_NOTES,
-        element: <SupportAndTool />,
+        element: <Support />,
       },
     ],
   },

@@ -1,3 +1,4 @@
+import EditPlanModal from "@/components/EditPlanModal";
 import Header from "@/components/Header";
 import StatusChip from "@/components/StatusChip";
 import { Button, RenderTab, renderTabProps, Separator } from "@repo/UI";
@@ -31,6 +32,7 @@ export const UserAndAccountDetail: FC = () => {
     key: "details",
   });
   const [enableAddNoteModal, setEnableAddNoteModal] = useState(false);
+  const [enablePlanEditModal, setEnablePlanEditModal] = useState(false);
 
   // Functions
   const renderTabItem = () => {
@@ -50,6 +52,10 @@ export const UserAndAccountDetail: FC = () => {
     setEnableAddNoteModal((prev) => !prev);
   };
 
+  const handleEditPlan = () => {
+    setEnablePlanEditModal((prev) => !prev);
+  };
+
   return (
     <div className={styles.userAndAccountDetail}>
       <Header
@@ -61,6 +67,9 @@ export const UserAndAccountDetail: FC = () => {
               text={t(`${translationKey}.change_plan`)}
               size="medium"
               variant="secondary"
+              buttonProps={{
+                onClick: handleEditPlan,
+              }}
             />
             <Button
               text={t(`${translationKey}.add_note`)}
@@ -102,6 +111,10 @@ export const UserAndAccountDetail: FC = () => {
           onClose={handleEnableAddNoteModal}
           isOpen={enableAddNoteModal}
         />
+      )}
+
+      {enablePlanEditModal && (
+        <EditPlanModal onClose={handleEditPlan} isOpen={enablePlanEditModal} />
       )}
     </div>
   );

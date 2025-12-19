@@ -31,7 +31,8 @@
   "dependencies": {
     "@repo/assets": "*",
     "@repo/utilities": "*",
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "react-quill": "^2.0.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

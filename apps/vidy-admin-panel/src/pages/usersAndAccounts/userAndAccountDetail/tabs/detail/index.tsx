@@ -16,8 +16,6 @@ const Details = () => {
   // States
   const [firstUser, setFirstUser] = useState(data);
 
-  // Functions
-
   // Effects
   useEffect(() => {
     setFirstUser(data);
@@ -70,11 +68,13 @@ const Details = () => {
         />
         <InfoCard
           title={t(`${translationKey}.storage_used`)}
-          value={String(firstUser.storage_used)}
+          value={String(`${firstUser.storage_used}GB / 15GB`)}
         />
         <InfoCard
           title={t(`${translationKey}.hits_used_plan_limit`)}
-          value={String(firstUser.hits_this_month)}
+          value={String(
+            `${firstUser.hits_this_month} / ${firstUser.hit_limit}`
+          )}
         />
       </InfoWrapper>
     </div>

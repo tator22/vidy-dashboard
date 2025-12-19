@@ -20,6 +20,9 @@
   --under-process: 251, 189, 8;
   --archived: 148, 163, 184;
   --link-color: 0, 158, 255;
+  --open: 46, 125, 50;
+  --under-review: 245, 124, 0;
+  --resolved: 97, 97, 97;
 
   /* Theme Filters */
   --primary-filter: brightness(0) saturate(100%) invert(30%) sepia(74%)

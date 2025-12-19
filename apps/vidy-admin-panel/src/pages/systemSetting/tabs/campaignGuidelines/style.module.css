@@ -1,0 +1,6 @@
+.privacyPolicy {
+  padding: 0rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

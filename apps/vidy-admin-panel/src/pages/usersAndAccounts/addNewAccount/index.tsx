@@ -1,7 +1,6 @@
-import { ASSET_PATHS } from "@repo/assets";
-import { Input, Modal, Textarea } from "@repo/UI";
+import { Input, Modal } from "@repo/UI";
 import { useTranslation } from "react-i18next";
-import styles from "./style.module.css";
+import classes from "./style.module.css";
 
 const AddNewAccount = ({
   isOpen,
@@ -14,58 +13,55 @@ const AddNewAccount = ({
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.USERS_AND_ACCOUNTS";
+  const translationKey = "PAGES.USERS_AND_ACCOUNTS.ADD_NEW_ACCOUNT_MODAL";
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={t(`${translationKey}.new_code`)}
-      primaryButtonText={t(`${translationKey}.modal_cta`)}
-      primaryButtonProps={{ className: styles.primaryButton, onClick: onClose }}
+      title={t(`${translationKey}.heading`)}
+      primaryButtonText={t(`${translationKey}.cta`)}
+      primaryButtonProps={{
+        className: classes.primaryButton,
+        onClick: onClose,
+      }}
     >
-      <div className={styles.addListing}>
+      <div className={classes.inputGroup}>
         <Input
           label={t(`${translationKey}.name`)}
           inputProps={{
             required: true,
-            placeholder: t(`${translationKey}.enter_name`),
+            placeholder: t(`${translationKey}.name_placeholder`),
           }}
         />
-        <Textarea
-          label={t(`${translationKey}.detail`)}
-          placeholder={t(`${translationKey}.enter_detail`)}
-        />
-
         <Input
-          label={t(`${translationKey}.link`)}
-          leftNode={<span className={styles.prefix}>videoleads.com/</span>}
+          label={t(`${translationKey}.email`)}
           inputProps={{
             required: true,
+            placeholder: t(`${translationKey}.email_placeholder`),
           }}
-          helperText={t(`${translationKey}.link_warning`)}
-          helperTextIcon={ASSET_PATHS.SVGS.WARNING}
         />
-
-        {/* <div className={styles.listingType}>
-          <Label text={t(`${translationKey}.listing_type`)} />
-          
-          <div className={styles.renderCheckbox}>
-          <CheckBox
-              inputProps={{
-                checked: true,
-                required: true,
-              }}
-              label={t(`${translationKey}.multiple_listing`)}
-            />
-            <CheckBox
-              label={t(`${translationKey}.individual_listing`)}
-              inputProps={{
-                required: true,
-              }}
-            />
-          </div>
-        </div> */}
+        <Input
+          label={t(`${translationKey}.password`)}
+          inputProps={{
+            required: true,
+            placeholder: t(`${translationKey}.password_placeholder`),
+          }}
+        />
+        <Input
+          label={t(`${translationKey}.limits`)}
+          inputProps={{
+            required: true,
+            placeholder: t(`${translationKey}.limits_placeholder`),
+          }}
+        />
+        <Input
+          label={t(`${translationKey}.custom_pricing`)}
+          inputProps={{
+            required: true,
+            placeholder: t(`${translationKey}.custom_pricing_placeholder`),
+          }}
+        />
       </div>
     </Modal>
   );

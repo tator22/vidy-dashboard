@@ -3,7 +3,7 @@ import { RenderTab, renderTabProps } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
-import { CapacityOverview } from "./tabs/capacityOverview";
+import CapacityOverview from "./tabs/capacityOverview";
 import { HighUsageAccounts } from "./tabs/highUsageAccounts";
 
 export const UsageAndLimit: FC = () => {

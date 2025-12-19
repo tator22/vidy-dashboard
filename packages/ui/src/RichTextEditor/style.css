@@ -1,0 +1,37 @@
+.ql-container {
+  margin-top: 1rem !important;
+  border: none !important;
+  line-height: 3rem !important;
+  background-color: rgb(var(--white));
+  border-radius: 1.5rem !important;
+}
+
+.ql-editor {
+  border-radius: 1.5rem !important;
+  border: 0.15rem solid rgb(var(--primary), 0.05) !important;
+  padding: 2rem !important;
+  font-size: 2rem !important;
+  height: 40rem !important;
+
+  > p {
+    line-height: 1.35;
+    font-size: 2rem;
+  }
+}
+
+.ql-editor.ql-blank::before {
+  left: 2rem !important;
+  top: 2rem !important;
+  font-size: 2rem !important;
+}
+
+.ql-toolbar {
+  border: none !important;
+  border-radius: 1.5rem !important;
+  border: 0.15rem solid rgb(var(--primary), 0.05) !important;
+  background-color: rgb(var(--white));
+}
+
+h1 {
+  line-height: 1.35;
+}

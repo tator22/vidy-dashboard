@@ -6,6 +6,7 @@ import moment from "moment";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { TableColumnId } from "./tableColumn";
+import StatusChip from "@/components/StatusChip";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -60,6 +61,19 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     );
   }
 
+  // Status
+  else if (el === "status") {
+    return (
+      <td
+        style={{
+          whiteSpace: "nowrap",
+        }}
+      >
+        <StatusChip status={row?.status} />
+      </td>
+    );
+  }
+
   // Last Updated
   else if (el === "last_updated") {
     return (
@@ -90,6 +104,10 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
           <TableActionMenuItemRender
             name={t(`${translationKey}.add_admin_note`)}
             icon={ASSET_PATHS.SVGS.PLUS}
+          />
+          <TableActionMenuItemRender
+            name={t(`${translationKey}.change_status`)}
+            icon={ASSET_PATHS.SVGS.CHANGE_STATUS}
           />
         </TableAction>
       </td>

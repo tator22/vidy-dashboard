@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
-import { RenderTab, renderTabProps } from "@repo/UI";
+import { Dropdown, RenderTab, renderTabProps } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 import { StorageByAccount } from "./tabs/storageByAccount";
 import { StorageByCampaign } from "./tabs/storageByCampaign";
+import { Searchbar } from "@/layout/searchbar";
+import { USERS_AND_ACCOUNTS } from "@repo/utilities";
 
 export const StorageAndAsset: FC = () => {
   // Hooks
@@ -56,7 +58,28 @@ export const StorageAndAsset: FC = () => {
 
   return (
     <div className={styles.code}>
-      <Header heading={t(`${translationKey}.heading`)} />
+      <Header
+        heading={t(`${translationKey}.heading`)}
+        rightChildren={
+          <>
+            {activeTab.key === "storage_by_account" ? (
+              <Searchbar
+                inputProps={{
+                  placeholder: t(`${translationKey}.search`),
+                }}
+              />
+            ) : (
+              <Dropdown
+                placeholder={t(`${translationKey}.select_account`)}
+                data={USERS_AND_ACCOUNTS}
+                displayKey="account_name"
+                setSelectedValue={(value) => console.log(value)}
+                valueKey={"account_id"}
+              />
+            )}
+          </>
+        }
+      />
 
       <div className={styles.addMedia}>
         <RenderTab

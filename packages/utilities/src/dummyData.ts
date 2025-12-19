@@ -563,69 +563,6 @@ export const HIGH_USAGE_ACCOUNTS = [
   },
 ];
 
-export const CAPACITY_OVERVIEW = [
-  {
-    total_hits_across_platforms: {
-      per_day: 1240,
-      per_month: 37200,
-    },
-    total_storage_used: "52 GB",
-    storage_distribution_by_plan: {
-      free: "10 GB",
-      pro: "25 GB",
-      enterprise: "17 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 870,
-      per_month: 26100,
-    },
-    total_storage_used: "39 GB",
-    storage_distribution_by_plan: {
-      free: "7 GB",
-      pro: "20 GB",
-      enterprise: "12 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 1580,
-      per_month: 47400,
-    },
-    total_storage_used: "65 GB",
-    storage_distribution_by_plan: {
-      free: "12 GB",
-      pro: "30 GB",
-      enterprise: "23 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 640,
-      per_month: 19200,
-    },
-    total_storage_used: "27 GB",
-    storage_distribution_by_plan: {
-      free: "5 GB",
-      pro: "14 GB",
-      enterprise: "8 GB",
-    },
-  },
-  {
-    total_hits_across_platforms: {
-      per_day: 2110,
-      per_month: 63300,
-    },
-    total_storage_used: "82 GB",
-    storage_distribution_by_plan: {
-      free: "15 GB",
-      pro: "40 GB",
-      enterprise: "27 GB",
-    },
-  },
-];
-
 export const PLAN_OVERVIEW = [
   {
     plan_name: "starter",
@@ -1097,5 +1034,48 @@ export const MEDIA_FILES = [
     thumbnail:
       "https://images.unsplash.com/photo-1522743791393-522312deeebf?q=80&w=916&auto=format&fit=crop&ixlib=rb-4.1.0",
     videoUrl: "#",
+  },
+];
+
+export const SUPPORT_NOTES_DATA = [
+  {
+    id: "SUP-001",
+    account_name: "Acme Marketing",
+    type: "Support",
+    message: "Unable to upload assets for Campaign CMP-10234.",
+    status: "Open",
+    created_at: "2025-12-15 10:32:45",
+  },
+  {
+    id: "SUP-002",
+    account_name: "Zenith Studios",
+    type: "Issue",
+    message: "Unexpected spike in hits detected since yesterday.",
+    status: "In Progress",
+    created_at: "2025-12-14 16:18:10",
+  },
+  {
+    id: "SUP-003",
+    account_name: "PixelCraft Designs",
+    type: "Note",
+    message: "Client requested plan downgrade starting next billing cycle.",
+    status: "Closed",
+    created_at: "2025-12-13 09:05:30",
+  },
+  {
+    id: "SUP-004",
+    account_name: "Nova Digital",
+    type: "Feedback",
+    message: "Dashboard performance is much better after the latest update.",
+    status: "Resolved",
+    created_at: "2025-12-12 14:42:55",
+  },
+  {
+    id: "SUP-005",
+    account_name: "BrightAds Agency",
+    type: "Support",
+    message: "Billing invoice not generated for November month.",
+    status: "Open",
+    created_at: "2025-12-11 11:27:08",
   },
 ];

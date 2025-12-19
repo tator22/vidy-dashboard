@@ -3,6 +3,7 @@ import { CheckBox } from "../../Checkbox";
 import { SortingIcon } from "../sortingIcon";
 import { AdditionalHeadCell, HeadCell } from "../type";
 import "./style.css";
+import clsx from "clsx";
 
 export const Head = ({
   headCells,
@@ -83,7 +84,12 @@ export const Head = ({
               sortChange(headCell);
             }}
           >
-            <div className="columnLabelAndSortingIcon">
+            <div
+              className={clsx(
+                "columnLabelAndSortingIcon",
+                headCell?.enableSorting && "clickable"
+              )}
+            >
               <p className="columnLabel" title={headCell?.label}>
                 {headCell?.label}
               </p>

@@ -57,6 +57,10 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
       <td>
         <TableAction isDelete>
           <TableActionMenuItemRender
+            icon={ASSET_PATHS.SVGS.PREVIEW}
+            name={t(`${translationKey}.preview_campaign`)}
+          />
+          <TableActionMenuItemRender
             icon={ASSET_PATHS.SVGS.ARCHIVE}
             name={t(`${translationKey}.archive`)}
           />
