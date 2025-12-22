@@ -83,6 +83,50 @@ export function generateRoutePath({
   return url.replace(/:([\w]+)/g, (_, key) => params[key] || `:${key}`);
 }
 
+export const getUsageState = (
+  used: number,
+  limit: number
+): {
+  percentage: number;
+  status: "unlimited" | "exceeded" | "warning" | "safe";
+  backgroundColor?: string;
+  color?: string;
+} => {
+  if (!limit || limit === Infinity) {
+    return {
+      percentage: 0,
+      status: "unlimited",
+      backgroundColor: "",
+    };
+  }
+
+  const percentage = (used / limit) * 100;
+
+  if (percentage >= 95) {
+    return {
+      percentage: Math.round(percentage),
+      status: "exceeded",
+      backgroundColor: "rgb(var(--error), 0.05)",
+      color: "rgb(var(--error))",
+    };
+  }
+
+  if (percentage >= 75) {
+    return {
+      percentage: Math.round(percentage),
+      status: "warning",
+      backgroundColor: "rgb(var(--warning), 0.05)",
+      color: "rgb(var(--warning))",
+    };
+  }
+
+  return {
+    percentage: Math.round(percentage),
+    status: "safe",
+    backgroundColor: "",
+  };
+};
+
 // /**
 //  * Main function: Convert hex → CSS filter
 //  */

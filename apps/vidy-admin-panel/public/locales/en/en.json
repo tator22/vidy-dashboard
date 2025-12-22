@@ -54,6 +54,12 @@
     "USERS_AND_ACCOUNTS": {
       "heading": "Users & Accounts",
       "new_cta": "Create Account",
+      "filters": "Filters",
+      "filter": "Filter",
+      "type": "Type",
+      "apply": "Apply Filter",
+      "cancel": "Cancel",
+      "search": "Search",
       "DETAIL": {
         "heading": "User & Accounts Detail",
         "account_name": "Account name",
@@ -73,7 +79,8 @@
         "add_note": "Add Note",
         "change_plan": "Change Plan",
         "change_logs": "Change Logs",
-        "details": "Details"
+        "details": "Details",
+        "mrr": "MRR (Monthly Recurring Revenue)"
       },
       "ADD_NOTES_MODAL": {
         "admin_note": "Admin Note",
@@ -86,14 +93,19 @@
         "cta": "Submit",
         "name": "Name",
         "email": "Email",
-        "password": "Password",
-        "limits": "Limits",
-        "custom_pricing": "Custom Pricing",
+        "password": "Temporary Password",
+        "campaign_limit": "Campaign Limit",
+        "share_storage_limit": "Share Storage Limit",
+        "monthly_hit_limit": "Monthly Hit Limit",
+        "campaign_limit_placeholder": "Enter campaign limit",
+        "share_storage_limit_placeholder": "Enter share storage limit",
+        "monthly_hit_limit_placeholder": "Enter monthly Hit limit",
+        "monthly_pricing_rate": "Monthly Pricing Rate",
         "name_placeholder": "Enter name",
         "email_placeholder": "Enter email",
         "password_placeholder": "Enter password",
-        "custom_pricing_placeholder": "Enter custom pricing",
-        "limits_placeholder": "Enter limits"
+        "monthly_pricing_rate_placeholder": "Enter Monthly Pricing Rate pricing",
+        "campaign_limits_placeholder": "Enter limits"
       }
     },
     "USAGE_AND_LIMIT": {
@@ -190,6 +202,5 @@
       "change_status": "Change Status",
       "close_ticket": "Close Ticket"
     }
-  },
-  "MODALS": {}
+  }
 }

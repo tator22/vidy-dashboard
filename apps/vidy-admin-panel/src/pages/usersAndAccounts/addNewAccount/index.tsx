@@ -49,17 +49,26 @@ const AddNewAccount = ({
           }}
         />
         <Input
-          label={t(`${translationKey}.limits`)}
+          label={t(`${translationKey}.campaign_limit`)}
           inputProps={{
             required: true,
-            placeholder: t(`${translationKey}.limits_placeholder`),
+            placeholder: t(`${translationKey}.campaign_limit_placeholder`),
           }}
         />
         <Input
-          label={t(`${translationKey}.custom_pricing`)}
+          label={t(`${translationKey}.monthly_hit_limit`)}
           inputProps={{
             required: true,
-            placeholder: t(`${translationKey}.custom_pricing_placeholder`),
+            placeholder: t(`${translationKey}.monthly_hit_limit_placeholder`),
+          }}
+        />
+        <Input
+          label={t(`${translationKey}.monthly_pricing_rate`)}
+          inputProps={{
+            required: true,
+            placeholder: t(
+              `${translationKey}.monthly_pricing_rate_placeholder`
+            ),
           }}
         />
       </div>

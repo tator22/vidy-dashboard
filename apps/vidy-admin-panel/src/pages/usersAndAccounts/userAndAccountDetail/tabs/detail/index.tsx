@@ -1,25 +1,40 @@
 import { InfoWrapper } from "@/components/InfoWrapper";
 import { InfoCard, Separator } from "@repo/UI";
-import { USERS_AND_ACCOUNTS } from "@repo/utilities";
+import { CONSTANTS, getUsageState, USERS_AND_ACCOUNTS } from "@repo/utilities";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router";
 
 const Details = () => {
   // Hooks
   const { t } = useTranslation();
+  const { id } = useParams();
 
-  // Variables
-  const translationKey = "PAGES.USERS_AND_ACCOUNTS.DETAIL";
   const data = USERS_AND_ACCOUNTS[0];
 
   // States
   const [firstUser, setFirstUser] = useState(data);
 
+  // Variables
+  const translationKey = "PAGES.USERS_AND_ACCOUNTS.DETAIL";
+  const hitUsageState = getUsageState(
+    firstUser.hits_this_month,
+    firstUser.total_limit
+  );
+  const storageUsageState = getUsageState(firstUser.storage_used, 15);
+  const isAccount = firstUser.type === "account";
+
   // Effects
   useEffect(() => {
-    setFirstUser(data);
-  }, []);
+    if (id) {
+      USERS_AND_ACCOUNTS.forEach((item) => {
+        if (item.id === Number(id)) {
+          setFirstUser(item);
+        }
+      });
+    }
+  }, [id]);
 
   return (
     <div>
@@ -50,6 +65,12 @@ const Details = () => {
       <Separator />
 
       <InfoWrapper title={t(`${translationKey}.plan_details`)}>
+        {isAccount && (
+          <InfoCard
+            title={t(`${translationKey}.mrr`)}
+            value={`${CONSTANTS.CURRENCY_SYMBOL}${firstUser.mrr}`}
+          />
+        )}
         <InfoCard
           title={t(`${translationKey}.current_plan`)}
           value={firstUser.current_plan}
@@ -64,17 +85,35 @@ const Details = () => {
         />
         <InfoCard
           title={t(`${translationKey}.total_campaigns`)}
-          value={String(firstUser.total_campaigns)}
+          value={
+            isAccount
+              ? `${firstUser.total_campaigns} / 100`
+              : `${firstUser.total_campaigns}`
+          }
         />
         <InfoCard
           title={t(`${translationKey}.storage_used`)}
-          value={String(`${firstUser.storage_used}GB / 15GB`)}
+          style={{
+            backgroundColor: storageUsageState.backgroundColor,
+            color: storageUsageState.color,
+          }}
+          value={
+            isAccount
+              ? `${firstUser.storage_used}GB / 15GB`
+              : `${firstUser.storage_used}GB`
+          }
         />
         <InfoCard
           title={t(`${translationKey}.hits_used_plan_limit`)}
-          value={String(
-            `${firstUser.hits_this_month} / ${firstUser.hit_limit}`
-          )}
+          style={{
+            backgroundColor: hitUsageState.backgroundColor,
+            color: hitUsageState.color,
+          }}
+          value={
+            isAccount
+              ? `${firstUser.hits_this_month} / ${firstUser.total_limit}`
+              : `${firstUser.hits_this_month}`
+          }
         />
       </InfoWrapper>
     </div>
