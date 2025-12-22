@@ -2,6 +2,8 @@ import StatusChip from "@/components/StatusChip";
 import moment from "moment";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
+import { Text } from "@repo/UI";
+import { CONSTANTS } from "@repo/utilities";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -13,14 +15,6 @@ interface RenderCellsUiProps {
 const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   // Table Columns
 
-  // if (el === "created_at") {
-  //   return (
-  //     <td style={{ whiteSpace: "nowrap" }}>
-  //       {moment(row?.created_at).format("DD, MMMM YYYY")}
-  //     </td>
-  //   );
-  // }
-
   // Last Active At
   if (el === "last_active_at") {
     return (
@@ -30,9 +24,43 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     );
   }
 
+  // Type
+  else if (el === "type") {
+    return (
+      <td style={{ whiteSpace: "nowrap", textTransform: "capitalize" }}>
+        {row?.type}
+      </td>
+    );
+  }
+
   // Name
-  if (el === "account_name") {
-    return <td style={{ whiteSpace: "nowrap" }}>{row?.account_name}</td>;
+  else if (el === "account_name") {
+    return (
+      <td style={{ display: "flex", flexDirection: "column" }}>
+        <Text
+          containerProps={{
+            style: {
+              fontSize: "inherit",
+              color: "inherit",
+              whiteSpace: "nowrap",
+            },
+          }}
+        >
+          {row?.account_name}
+        </Text>
+        <Text
+          containerProps={{
+            style: {
+              fontSize: "inherit",
+              color: "inherit",
+              whiteSpace: "nowrap",
+            },
+          }}
+        >
+          {row?.email}
+        </Text>
+      </td>
+    );
   }
 
   // // Branding
@@ -70,19 +98,18 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     return (
       <td
         style={{ whiteSpace: "nowrap" }}
-      >{`${row.hits_this_month}/10000000`}</td>
+      >{`${row.hits_this_month}/${row?.total_limit}`}</td>
     );
   }
 
-  // Action
-  // else if (el === "action") {
-  //   return (
-  //     <td>
-  //       {/* <TableAction /> */}
-  //       <Actions actions={["DELETE"]} />
-  //     </td>
-  //   );
-  // }
+  // MRR
+  else if (el === "mrr") {
+    return (
+      <td
+        style={{ whiteSpace: "nowrap" }}
+      >{`${CONSTANTS.CURRENCY_SYMBOL} ${row?.mrr}`}</td>
+    );
+  }
 
   // Default
   else {

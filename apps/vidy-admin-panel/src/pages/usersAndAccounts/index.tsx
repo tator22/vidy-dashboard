@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { DataTable } from "@repo/UI";
+import { Button, DataTable } from "@repo/UI";
 import {
   CONSTANTS,
   generateRoutePath,
@@ -9,9 +9,11 @@ import { FC, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import AddNewAccount from "./addNewAccount";
+import FilterModal from "./filterModal";
 import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
+import { Searchbar } from "@/layout/searchbar";
 
 export const UsersAndAccounts: FC = (): JSX.Element => {
   // Hooks
@@ -24,18 +26,23 @@ export const UsersAndAccounts: FC = (): JSX.Element => {
 
   // Local State
   const [enableAddAccountModal, setEnableAddAccountModal] = useState(false);
+  const [enableFilterModal, setEnableFilterModal] = useState(false);
 
   // Functions
   const handleEnableAddCodeModal = () => {
     setEnableAddAccountModal((prev) => !prev);
   };
 
-  const handleRowClick = () => {
+  const handleEnableFilterModal = () => {
+    setEnableFilterModal((prev) => !prev);
+  };
+
+  const handleRowClick = (rowId: string) => {
     navigate(
       generateRoutePath({
         url: CONSTANTS.VIDY_ADMIN_PATHS.USERS_AND_ACCOUNTS_DETAIL,
         params: {
-          id: String(1),
+          id: rowId,
         },
       })
     );
@@ -48,6 +55,22 @@ export const UsersAndAccounts: FC = (): JSX.Element => {
         heading={t(`${translationKey}.heading`)}
         buttonTitle={t(`${translationKey}.new_cta`)}
         onButtonClick={handleEnableAddCodeModal}
+        rightChildren={
+          <>
+            <Searchbar
+              inputProps={{
+                placeholder: t(`${translationKey}.search`),
+              }}
+            />
+            <Button
+              variant="secondary"
+              text={t(`${translationKey}.filter`)}
+              buttonProps={{
+                onClick: handleEnableFilterModal,
+              }}
+            />
+          </>
+        }
       />
 
       <DataTable
@@ -70,6 +93,12 @@ export const UsersAndAccounts: FC = (): JSX.Element => {
         <AddNewAccount
           isOpen={enableAddAccountModal}
           onClose={handleEnableAddCodeModal}
+        />
+      )}
+      {enableFilterModal && (
+        <FilterModal
+          isOpen={enableFilterModal}
+          onClose={handleEnableFilterModal}
         />
       )}
     </div>

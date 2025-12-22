@@ -379,12 +379,33 @@ export const mediaCards = [
   },
 ];
 
+export const PLAN_LIMITS = {
+  starter: {
+    total_limit: 20000,
+  },
+  essentials: {
+    total_limit: 100000,
+  },
+  growth: {
+    total_limit: 250000,
+  },
+  pro_plus: {
+    total_limit: 600000,
+  },
+  custom: {
+    total_limit: Infinity,
+  },
+};
+
 export const USERS_AND_ACCOUNTS = [
   {
+    id: 1,
     account_id: "ACC001",
     account_name: "Techify Labs",
     email: "admin@techifylabs.com",
     platforms: ["iOS", "Android"],
+    type: "campaing",
+    billing_type: "campaign_based",
     current_plan: "growth",
     status: "active",
     created_at: "2024-03-15T10:45:00Z",
@@ -393,12 +414,17 @@ export const USERS_AND_ACCOUNTS = [
     storage_used: 12.5,
     hits_this_month: 185000,
     hit_limit: 250000,
+    total_limit: PLAN_LIMITS.growth.total_limit,
+    mrr: 890,
   },
   {
+    id: 2,
     account_id: "ACC002",
     account_name: "BlueWave Media",
     email: "contact@bluewave.io",
     platforms: ["iOS"],
+    type: "account",
+    billing_type: "account_based",
     current_plan: "starter",
     status: "active",
     created_at: "2024-09-01T09:30:00Z",
@@ -407,12 +433,18 @@ export const USERS_AND_ACCOUNTS = [
     storage_used: 850,
     hits_this_month: 9200,
     hit_limit: 20000,
+    total_limit: PLAN_LIMITS.starter.total_limit,
+    monthly_charge: 99,
+    mrr: 99,
   },
   {
+    id: 3,
     account_id: "ACC003",
     account_name: "TrendBoost",
     email: "support@trendboost.com",
     platforms: ["Android"],
+    type: "account",
+    billing_type: "account_based",
     current_plan: "pro_plus",
     status: "suspended",
     created_at: "2023-11-22T16:15:00Z",
@@ -421,12 +453,18 @@ export const USERS_AND_ACCOUNTS = [
     storage_used: 38.7,
     hits_this_month: 510000,
     hit_limit: 600000,
+    total_limit: PLAN_LIMITS.pro_plus.total_limit,
+    monthly_charge: 499,
+    mrr: 499,
   },
   {
+    id: 4,
     account_id: "ACC004",
     account_name: "CreativeX Agency",
     email: "team@creativex.co",
     platforms: ["iOS", "Android"],
+    type: "campaing",
+    billing_type: "campaign_based",
     current_plan: "essentials",
     status: "active",
     created_at: "2025-02-10T12:00:00Z",
@@ -435,12 +473,17 @@ export const USERS_AND_ACCOUNTS = [
     storage_used: 6.8,
     hits_this_month: 74000,
     hit_limit: 100000,
+    total_limit: PLAN_LIMITS.essentials.total_limit,
+    mrr: 420,
   },
   {
+    id: 5,
     account_id: "ACC005",
     account_name: "Direct Sales Client - AlphaCorp",
     email: "sales@alphacorp.com",
     platforms: ["iOS"],
+    type: "campaing",
+    billing_type: "account_based",
     current_plan: "custom",
     status: "active",
     created_at: "2025-12-01T08:00:00Z",
@@ -449,6 +492,9 @@ export const USERS_AND_ACCOUNTS = [
     storage_used: 25.4,
     hits_this_month: 320000,
     hit_limit: 500000,
+    total_limit: PLAN_LIMITS.custom.total_limit,
+    monthly_charge: 1200,
+    mrr: 1200,
   },
 ];
 
